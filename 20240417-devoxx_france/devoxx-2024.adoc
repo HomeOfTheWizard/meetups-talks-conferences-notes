@@ -1,83 +1,178 @@
 = Devoxx France 2024
-:imagesdir: ./images 1️⃣
-:toc: 2️⃣
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 4
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
 
 
 == Mercredi
 === 09h00 - 09h25 (Amphi BLEU) bienvenu au devoxx 2024
-
 .Speakers: Antonio, Nicolas Bartigole, Zouheir Cadi
 
-Notes
+Notes:
 
 === 09h35 - 10h00 (Amphi BLEU) AI en medicine, ou somme nous
 ==== Abstract
 
-.Speakers: Jean-Emmanuel Bibault
+.Speaker: Jean-Emmanuel Bibault
+Médecin cancérologue et chercheur spécialisé en Intelligence Artificielle. Il a un doctorat en informatique biomédicale et a réalisé un post-doctorat à l'Université de Stanford, dans le laboratoire d'Intelligence Artificielle appliquée à la Santé. Il est Professeur des Universités - Praticien Hospitalier à l'Université de Paris / Hôpital Européen Georges Pompidou et chercheur à l’INSERM. Ses recherches portent sur l'apprentissage machine appliqué au diagnostic et à la prédiction. Il est lauréat 2019 de l'Académie Nationale de Médecine pour ses travaux sur la prédiction de la réponse thérapeutique par Intelligence Artificielle. Il a par ailleurs développé plusieurs applications iPhone et Android et cofondé une startup dans ce domaine, revendue en 2014.
+En 2023, il a publié "2041, L'Odyssée de la médecine" aux Editions Equateurs, livre qui raconte comment l'IA en médecine est née et comment elle a et va changer les soins.
 
-=== 10h00 - 10h30 -------------------------- BREAK -------------------------
+```
+Les techniques de machine learning sont actuellement utilisées pour entraîner de nombreux modèles en médecine. Pourquoi connaissons-nous un tel âge d’or de l’IA appliquée à la médecine ? Cette présentation illustrera l’utilisation de l’IA par différents exemples publiés : prédiction du risque de développer un risque 5 ans à l’avance, interprétation automatisée d’image médicale, détection par Deep Learning de mélanome, prédiction de la survie sur simple scanner, pilotage de robots chirurgicaux, dépistage de la dépression sur instagram, chaque exemple sera expliqué et commenté. Mais l’IA comporte également des risques liés à la gestion des données d’entraînement, aux biais ou encore les attaques adversarielles. Les perspectives de développement à 10 à 15 ans seront enfin abordées pour comprendre comment l’IA va changer la santé de tous.
+```
 
-=== 10h30 - 12h30 (Neuilly 152) refactorez votre code vers le data oriented programming
+Notes:
+
+=== 10h00 - 10h30 ------------------------------------- BREAK -------------------------------------
+
+=== 10h30 - 12h30 (Neuilly 152) Refactorez votre code vers le data oriented programming
 ==== Abstract
+.Speaker: José Paumard
+José est Java Developer Advocate au Java Platform Group chez Oracle. Anciennement maître de conférences à l'Université Sorbonne Paris Nord pendant 25 ans, il est Java Champion, Rockstar JavaOne, speaker régulier dans de nombreuses conférences : Devoxx (France, Belgique, UK), JavaOne, Oracle Code One, DevNexus, JFokus. Il a été consultant en entreprise pendant 25 ans, fortement investi en qualité des applications logicielles et Software Craftsmanship. Il est membre du Paris JUG, co-organisateur du Paris JUG Java Day et de JChateau, une unconference annuelle. Il contribue au site https://dev.java/, tient le JEP Café sur YouTube, et publie également une série de shorts : Cracking the Java Coding Interview.
 
-.speaker José Paumard
+```
+La Programmation Orienté Données est une approche alternative à la Programmation Objet, qui vous permet d'organiser votre code différemment. Elle s'appuie sur les records, les types scellés, les switch expressions exhaustives, et le pattern matching. Ce lab part d'une application simple, et vous guide pas à pas vers la réorganisation du code en appliquant les principes de la programmation orientée données. Il vous permettra d'avoir une meilleure vision de ce qu'est la programmation orientée données, et de pouvoir l'appliquer à bon escient dans vos applications.
+```
 
-=== 10h30 - 11h15 (Amphi BLEU) instrumentez votre appli spring boot et quarkus avec opentelemetry
+=== 10h30 - 11h15 (Amphi BLEU) Instrumentez votre appli spring boot et quarkus avec opentelemetry
 ==== Abstract
+.Speaker: Bruno Baptista
+Ingénieur Principal chez Red Hat travaillant avec des sujets d'observabilité au sein de l'équipe Quarkus. Avec plus de 15 ans d'expérience en tant qu'ingénieur d'entreprise, Bruno a travaillé comme architecte de systèmes, dirigé des équipes d'assurance de qualité et de développement et acquis des compétences en analyse des exigences et en processus de développement.
+Au cours de son parcours professionnel, il a contribué à des projets open source comme OpenTelemetry, Quarkus, Apache TomEE et Eclipse MicroProfile. Il continue également de contribuer à l'organisation du Coimbra Java Users Group (JUG) et de la conférence JNation au Portugal.
 
-.speaker Bruno Baptista
-.speaker Jean Bisutti
+.Speaker: Jean Bisutti
+Jean travaille à Microsoft dans l'équipe produit Application Insights (Azure monitor). Approver sur le projet OpenTelemetry Java instrumentation, il est aussi le créateur du projet open source QuickPerf et a été nommé Java Champion.
 
-=== 11h15 - 11h35 -------------------------- BREAK -------------------------
+```
+Vous avez développé votre première application native GraalVM. Vous bénéficier maintenant d'un démarrage rapide et d'une faible utilisation des ressources. Mais comment être sûre que votre application fonctionne correctement, sans erreur et sans requêtes SQL lentes ?
+Comment instrumenter et observer vos applications natives Spring Boot et Quarkus avec OpenTelemetry ?
+Rejoignez-nous à cette session mêlant explications et live coding où nous répondrons à cette question !
+```
+
+Notes:
+
+=== 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
 
 === 11h35 - 12h20 (Paris 141) High-Speed DDD (revisited)
 ==== Abstract
-Faire du DDD quand tout va trop vite, c’est possible ? Le contexte de startup pousse très souvent les gens du produit à chercher en permanence à avoir de l’impact, et de l’impact à court terme. Mais si on se limite au court terme, on va très rapidement se retrouver incapable d’avancer. Tout simplement. A force de prendre des raccourcis, de contracter de la dette technique et encore pire: de la dette fonctionnelle… on se retrouve bloqué dans des ornières aux pires moments.
-Alors comment survivre dans ce contexte et éviter la banqueroute liée à cette dette fonctionnelle qui ne fait que s’accumuler à cette cadence élevée ? Comment concilier cette urgence et la volonté de bien faire ? Comment garder une code base cohérente avec nos usages et notre domaine, tout en gardant une cadence acceptable pour le produit ?
-Dans ce talk basé sur des cas réels et applicables dans des contextes hors start-up, nous verrons quelques solutions concrètes à ce problème mêlant DDD stratégique, architecture et design. Nous verrons aussi quelques patterns à la mode à absolument éviter en chemin et pourquoi… avant finalement de voir comment on peut tacler la cause originelle de cette tension Produit/Tech.
-
 .speaker THOMAS PIERRAIN
 VP of Engineering au sein d'une scale-up européenne en plein essor (Agicap), Thomas est un ancien entrepreneur, consultant, architecte et programmeur eXtreme obsédé par les cas d'usage (par opposition à l'approche orienté solution) depuis plus de 25 ans. Egalement co-organisateur des meetups DDD France (et ancien BDD Paris), Thomas aime utiliser l'autonomie, le DDD et le TDD pour booster son efficacité et celle des autres au travail.
 
+```
+Faire du DDD quand tout va trop vite, c’est possible ? Le contexte de startup pousse très souvent les gens du produit à chercher en permanence à avoir de l’impact, et de l’impact à court terme. Mais si on se limite au court terme, on va très rapidement se retrouver incapable d’avancer. Tout simplement. A force de prendre des raccourcis, de contracter de la dette technique et encore pire: de la dette fonctionnelle… on se retrouve bloqué dans des ornières aux pires moments.
+Alors comment survivre dans ce contexte et éviter la banqueroute liée à cette dette fonctionnelle qui ne fait que s’accumuler à cette cadence élevée ? Comment concilier cette urgence et la volonté de bien faire ? Comment garder une code base cohérente avec nos usages et notre domaine, tout en gardant une cadence acceptable pour le produit ?
+Dans ce talk basé sur des cas réels et applicables dans des contextes hors start-up, nous verrons quelques solutions concrètes à ce problème mêlant DDD stratégique, architecture et design. Nous verrons aussi quelques patterns à la mode à absolument éviter en chemin et pourquoi… avant finalement de voir comment on peut tacler la cause originelle de cette tension Produit/Tech.
+```
+
+Notes:
+
+
 === 12h35 - 12h50 (Paris 242AB) SOPS, passez un savons a vos secret en clair
 ==== Abstract
-
 .speaker Sylvain Meteyer
+Tech Lead à onepoint, je viens du monde PHP, j'aime la CI/CD et la conteneurisation, tout comme me simplifier la vie en automatisant mes tâches du quotidien.
 
-=== 13h00 - 13h30 ------------------------------------- LUNCH -----------------------------------
+```
+Chacun à ses secrets. Vos applications également. Cependant, tout comme nous avons droit à notre jardin secret, nos secrets aimeraient bien avoir leur petit coin ou ils peuvent indiquer leur données sensibles…​ Au vu de tous dans un dépôt Git consultable par toute votre équipe, cela s’annonce compliqué ? Venez voir comment SOPS peut vous aider, et vous pourrez ensuite passer un savon à quiconque pousse des secrets en clair sur vos dépôts !
+```
+
+Notes:
+
+=== 13h00 - 13h30 ------------------------------------- LUNCH -------------------------------------
 
 === 13h30 - 14h15 (Paris 143) Bootiful spring boot 3.3
 ==== Abstract
-
 .speaker Josh Long
+Josh (@starbuxman) has been the first Spring Developer Advocate since 2010. Josh is a Java Champion, author of 7 books (including "Reactive Spring") and numerous best-selling video training (including "Building Microservices with Spring Boot Livelessons" with Spring Boot co-founder Phil Webb), and an open-source contributor (Spring Boot, Spring Integration, Axon, Spring Cloud, Activiti, Vaadin, etc), a Youtuber (Coffee + Software with Josh Long as well as my Spring Tips series ), and a podcaster ("A Bootiful Podcast").
 
+```
+Spring Framework 6+ and Spring Boot 3+ are here, which means new baselines and possibilities. Spring Framework implies a Java 17 and Jakarta EE baseline and offers new support for building GraalVM-native images and a compile-time component model in the new Spring AOT engine. It also features a new observability layer, declarative HTTP and RSocket clients, preliminary Project Loom and CRaC support, ProblemDetail support, and much more. Developer productivity is second to none with first class support for Testcontainers, Docker Compose, and live reloads. Spring makes idiomatic use of the latest Kotlin features like coroutines and extension functions. Join me Spring Developer Advocate Josh Long (@starbuxman) and we’ll explore next-gen Spring together
+```
+
+Notes:
 
 === 14h35 - 15h20 (Maillot) Nous somme ensemble, we are here together
 ==== Abstract
-
 .speaker Remi Forax
+Je suis Maitre de Conférence à l'Université Gustave Eiffel (à Marne la Vallée).
+Je passe la moitié de mon temps à discuter avec des élèves sur les langages de programmation et le reste de mon temps à faire de la recherche sur la langage Java.
+Depuis un peu plus d'une quizaine d'années, je fait partie des gens qui fabrique les spécifications du langage Java, dans mon cas, j'ai travaillé et je continue à travailler sur les lambdas, les modules, les records/sealed-types, le pattern-matching, les value-types.
+Je suis aussi un developpeur Open Source, en plus de l'OpenJDK, je maintiens quelques libraries connues et pas connues.
+
+```
+Java 22 est sorti avec en preview une nouvelle API pour créer soi-même ses propres opérations sur les Streams, un peu comme l'API des collecteurs mais pour les transformations intermédiaires effectuées par un stream.
+Je vous propose d'en profiter pour faire un petit retour sur les concepts derrière un Stream, comment cela fonctionne en interne, comment les opérations (parallel/stateful/short-circuit) sont définies. Puis de sauter dans le grand bain et découvrir la nouvelle méthode gather() et l'API des Gatherers et ce que l'on peut faire avec. Enfin, nous verrons les limitations et les améliorations possibles de cette nouvelle API.
+```
+
+Notes:
 
 === 15h20 - 17h00 ------------------------------------- NETWORKING -----------------------------------
 
-
 === 17h00 - 17h30 (Paris 241) Zero thrust sur un cluster K8S avec Istio
 ==== Abstract
-
 .speaker Anis Zouaoui
+Je suis Anis Zouaoui, fondateur et CTO d'Adservio, et je me définis comme un développeur béni par la sagesse de la production. Mon parcours professionnel est guidé par une quête constante d'amélioration et d'innovation, notamment dans les domaines de la fiabilité et de la performance.
 
-=== 17h30 - 17h50 ------------------------------------- BREAK -----------------------------------
+```
+L'année 2023 a été marquée par des progrès significatifs pour Istio, depuis son intégration au projet d'incubation de la CNCF et le lancement de l'Ambient Mesh en 2022. Ces évolutions ont renforcé l'utilisation d'Istio dans les architectures de cloud hybride et de réseaux Zero Trust.
+Le Zero Trust, pivot de la sécurité réseau moderne, s'est imposé comme une norme grâce à Istio. L'intégration des technologies SPIFFE et SPIRE dans Istio a été optimisée, offrant une gestion d'identité plus robuste et adaptable aux environnements Kubernetes et non Kubernetes.
+Le NGAC (Next Generation Access Control), remplaçant progressivement le RBAC, a émergé en 2023 comme une solution plus flexible et granulaire pour les grandes infrastructures Kubernetes. Il répond aux besoins complexes de conformité et de sécurité.
+Concernant les clusters Kubernetes en environnements hybrides, de nouvelles stratégies de gestion, notamment via Tetrate Service Bridge (TSB), ont facilité la gestion multi-tenant et l'interopérabilité entre les clusters. TSB, basé sur Istio, a évolué en tant que plateforme Zero Trust pour les clouds hybrides.
+Cette présentation mettra en exergue les dernières tendances d'Istio et leur impact sur les architectures cloud modernes. Nous explorerons comment Istio facilite la création de réseaux Zero Trust dans le contexte des clouds hybrides, un sujet crucial pour les professionnels du cloud et les ingénieurs de sécurité.
+```
+
+Notes:
+
+=== 17h30 - 17h50 ------------------------------------- BREAK -------------------------------------
 
 
 === 17h50 - 18h20 (Neuilly 252AB) La fin des mdp partagé avec Vault et Boundary
 ==== Abstract
-On peut allier devX et sécurité. Fini les mots de passe de base de données partagés par toute l'équipe ! Fini les identifiants à durée de vie infinie !
-Grâce à Boundary et Vault, il est possible, à partir de briques opensource, de mettre en place un système où chaque développeur est autorisé selon ses droits à accéder à des assets privés (serveur, base de donnée, cluster Kubernetes) sans posséder le moindre mot de passe.
-Lors de cette démonstration technique, nous allons montrer l'implémentation des outils et des cas pratiques d'utilisation.
-
 .speaker Clément Fage
 Clément, SecOps @Padok, est passionné de cybersécurité et jongle entre execution d’attaques et plan de défenses des infrastructures cloud ! Il travaille également sur des sujets de recherches novateurs pour renforcer la sécurité du cloud. Présentateur amateur, il aime participer à des conférences pour partager ses connaissances et en apprendre plus avec celles des autres !
 
 .speaker Josephine St-Joannis
+
+```
+On peut allier devX et sécurité. Fini les mots de passe de base de données partagés par toute l'équipe ! Fini les identifiants à durée de vie infinie !
+Grâce à Boundary et Vault, il est possible, à partir de briques opensource, de mettre en place un système où chaque développeur est autorisé selon ses droits à accéder à des assets privés (serveur, base de donnée, cluster Kubernetes) sans posséder le moindre mot de passe.
+Lors de cette démonstration technique, nous allons montrer l'implémentation des outils et des cas pratiques d'utilisation.
+```
+
+Notes:
 
 == Jeudi
 
@@ -91,7 +186,7 @@ Most of the time when we make mistakes in our code, a message gets displayed wro
 Join Mark on a tour through some of the worst mistakes in the history of programming. Learn what went wrong, why it went wrong, how much it cost, and how things can be pretty funny when they’re not happening to you.
 ```
 
-Notes
+Notes:
 
 === 09h35 - 10h00 (Amphi BLEU) Un monde shooté aux métaux
 ==== Abstract
@@ -109,9 +204,9 @@ https://www.duchess-france.org/
 Dans cette conférence intitulée "Un monde shooté aux métaux", Guillaume Pitron, expert des enjeux géopolitiques liés aux ressources naturelles, et Agnes Crepet, spécialiste en technologies éco-responsables, s'unissent pour aborder la dépendance croissante de nos sociétés aux métaux rares et ses implications profondes. Ils exploreront comment cette consommation excessive impacte l'environnement, l'économie mondiale et les relations sociales, en dévoilant les chaînes d'approvisionnement complexes qui relient les mines isolées aux technologies quotidiennes. La discussion soulignera les conséquences environnementales de l'extraction des métaux, les défis éthiques et les tensions géopolitiques qu'elle engendre.
 ```
 
-Notes
+Notes:
 
-=== 10h00 - 10h30 -------------------------- BREAK -------------------------
+=== 10h00 - 10h30 ------------------------------------- BREAK -------------------------------------
 
 === 10h30 - 12h30 (Neuilly 152) Comprendre l'IA: construisez votre propre chatGPT avec LangChain4J
 ==== Abstract
@@ -150,7 +245,7 @@ Une chose est sure : vous n’êtes pas prêts !
 
 Notes:
 
-=== 12h20 - 13h00 ------------------------------------- LUNCH -----------------------------------
+=== 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
 
 === 13h30 - 14h15 (Paris 143) La fin des archis event-based ? Orchestration avec Temporal
 ==== Abstract
@@ -194,7 +289,7 @@ De nos jours, une bonne partie de nos plateformes de développement et productio
 
 Notes:
 
-=== 16h30 - 17h00 NETWORKING
+=== 16h30 - 17h00 ------------------------------------- NETWORKING -----------------------------------
 
 === 17h00 - 17h30 (Paris 241) Instrumentez vos applications Java avec OpenTelemetry !
 ==== Abstract
@@ -228,53 +323,64 @@ Notes:
 
 === 9h00 - 9h25 (AMPHI BLEU) Comment modeliser l'etat du monde en 2100
 ==== Abstract
+```
 Comment modéliser l’état du monde en 2100 ? Pas la question la plus simple ! Mais en 1972 un groupe de chercheurs du MIT a essayé de répondre à cette question : c’est le fameux et fascinant rapport Meadows. Et ils ont compris bien des choses avant tout le monde. Dans cette conférence interactive, je vous fais un résumé en 20 minutes de la méthode et surtout des résultats du rapport Meadows !
+```
 
 .speaker ANATOLE CHOUARD
 Je m’appelle Anatole, j’ai 27 ans et je suis vulgarisateur scientifique ! Pour ça j’ai 2 casquettes : je suis à la fois conférencier et sur YouTube. Après des études en classe préparatoire PC (Physique-Chimie), j’ai étudié les mathématiques appliquées à l’École Polytechnique, puis la modélisation mathématique à la University College de Londres. J’applique maintenant ces enseignements dans ma vulgarisation des sciences !
 
-Notes
+Notes:
 
 === 9h35 - 9h55 (AMPHI BLEU) Cybercecurité, un sujet geopolitique
 ==== Abstract
-La cybersécurité est souvent vue, à juste titre, sous un angle technique, opérationnel et réglementaire. L’incroyable évolution de la menace informatique nous concerne tous, à titre individuel, au niveau des organisations mais également à l’échelle des Etats. Dans un contexte général de fortes tensions géopolitiques, le cyber est devenu un ingrédient majeur dont l’usage se systématise dans des conflits qualifiés « d’hybrides ». Passionnante et effrayante, cette militarisation de l’espace numérique nous concerne toutes et tous !
-
 .speaker GUILLAUME POUPARD
 Polytechnicien (X92) et docteur en cryptographie, Guillaume Poupard débute sa carrière en tant que chef du laboratoire de cryptologie de la Direction Centrale de la Sécurité des Systèmes d’Information (DCSSI) qui deviendra, en 2009, l’Agence Nationale de la Sécurité des Systèmes d’Information (ANSSI).
 En 2005, il rejoint le ministère de la Défense où il se spécialisera dans la cyberdéfense, avant d’intégrer en 2010 la Direction Générale de l’Armement (DGA) en tant que responsable des pôles sécurité des systèmes d’information et cyberdéfense. En 2014, il est appelé à prendre la direction générale de l’ANSSI, fonction qu’il occupera jusqu’à fin de l’année 2022.
 En janvier 2023, il rejoint Docaposte en tant que Directeur Général Adjoint en charge notamment des domaines data/IA, cyber et cloud.
 
-Notes
+```
+La cybersécurité est souvent vue, à juste titre, sous un angle technique, opérationnel et réglementaire. L’incroyable évolution de la menace informatique nous concerne tous, à titre individuel, au niveau des organisations mais également à l’échelle des Etats. Dans un contexte général de fortes tensions géopolitiques, le cyber est devenu un ingrédient majeur dont l’usage se systématise dans des conflits qualifiés « d’hybrides ». Passionnante et effrayante, cette militarisation de l’espace numérique nous concerne toutes et tous !
+```
+
+Notes:
 
 
 === 10h30 - 12h30 (NEUILLY 253) Si j'etais un hacker, comment j'attaquerais votre K8S
 ==== Abstract
+```
 Un cluster Kubernetes est un orchestrateur de conteneurs qui permet de déployer et de gérer des applications de manière efficace. Cependant, en raison de sa complexité, un tel cluster peut facilement être vulnérable aux attaques et sa sécurité peut être compromise. Pour éviter cela, la meilleure option reste de tester ses défenses en se mettant dans la peau d’un attaquant !
 Devenez vous-même un hacker pour la durée de cet atelier. Vous allez réaliser les différentes étapes de compromission un cluster Kubernetes et du compte AWS sous-jacent. Nous aborderons différentes techniques d’attaques en commençant par l'exécution de commandes sur un pod puis, grâce à différentes élévations de privilège, la compromission totale du cluster. Nous mettrons également en place des mesures préventives dans le but d’empêcher ces différentes failles de sécurité d’être exploitées.
+```
 
 .speaker THIBAULT LENGAGNE
 Head of Cybersecurity à Padok, Thibault est en charge de la branche spécialisée en sécurité Cloud, en tant que directeur technique. Son but : allier Sécurité et DevOps pour trouver des solutions innovantes qui protègent les systèmes tout en améliorant le quotidien des développeurs.
-Notes
+
+Notes:
 
 
 === 10h30 - 11h15 (NEUILLY 251) Model mithosys, ne pas se tromper entre monolith et microservices
 ==== Abstract
+```
 Tout comme le développement doit être itératif, le design du logiciel doit changer lorsque le contexte et notre compréhension du problème évoluent. Au fur et à mesure qu'un logiciel se développe pour résoudre plus de problèmes, il devient moins souple dans sa capacité à évoluer. Des tensions apparaissent au sein du modèle métier du logiciel qui peine à rester cohérent.
 Finalement, il atteint une masse critique et devient un monolithe de code en spaghetti... Comment pouvons nous déterminer quand il est temps de modulariser notre logiciel ? Comment prendre la décision de le scinder en plusieurs modules ou services ? Comment gérer la différenciation progressive de nos modèles métiers tout en évitant les couplages inutiles ? Il n'est pas facile de découper son logiciel en deux car déterminer les bonnes frontières peut s'avérer être compliqué.
 Découvrez avec nous le Model Mitosis, une approche dynamique utilisée pour diviser un modèle métier en plusieurs modèles qui seront façonnés et découplés de manière itérative. Gagnez en flexibilité afin de mieux déterminer quand diviser votre logiciel en plusieurs services tout en évitant de payer les coût d'échelle des microservices ou bien de devenir un monolithe distribué.
+```
 
 .speaker Julien TOPCU
 Julien est un Tech Coach avec 15 ans d'expérience, spécialisé dans le Domain-Driven Design (#DDD). Son expertise réside dans l'aide aux organisations pour construire des systèmes à forte valeur métier. Julien se concentre sur l'alignement de l'organisation, de l'architecture et des pratiques logicielles avec le métier. En tant que membre de la fondation OWASP, il promeut activement les bonnes pratiques en matière de sécurité applicatives. Speaker international, Julien aime partager ses connaissances avec la communauté.
 Fondateur de CraftsRecords, il aide les membres de notre communauté à se lancer dans le monde des conférences.
 
-Notes
+Notes:
 
 
 === 11h35 - 12h15 (PARIS 242AB) Comment ça marche l'IA Generative ? LLM, RAG sous le capot.
 ==== Abstract
+```
 45 minutes pour comprendre (un peu) comment ces algorithmes arrivent à écrire des poèmes ou répondre à des questions mieux que ta grand-mère.
 Tout le monde n'a que ça à la bouche : "Generative AI". Parmi les modèles les plus captivants de cette sphère se trouvent les LLM et RAG (Retrieval-Augmented Generation). Ce talk technique vise à dévoiler les mécanismes et les principes fondamentaux qui animent ces puissantes architectures d’IA.
 Plongée dans les Modèles de Langage à Grande Echelle (LLM)
+```
 
 .speaker ARNAUD PICHERY
 En tant que passionné par le développement logiciel, j'ai adoré avoir pu passer ces 30 dernières années à travailler dans ce domaine. En tant que VP Engineering chez Dataiku (la plateforme d'IA et d'apprentissage automatique leader dans le monde), je dirige actuellement les équipes qui travaillent sur le cœur de Dataiku DSS.
@@ -282,46 +388,103 @@ Développeur autodidacte, j'ai commencé à programmer en langage d'assemblage e
 De nos jours, si je ne suis pas en réunion d'équipe, en train de peaufiner un backlog, de passer en revue une nouvelle fonctionnalité ou de rédiger des spécifications, je tape certainement frénétiquement dans IntelliJ pour développer une nouvelle fonctionnalité DSS.
 Notes
 
+==== Notes:
 
 === 11h35 - 12h15 (PARIS 143 Conference) Naviger dans le labyrinth de la gestion des dependences maven
 ==== Abstract
+```
 La gestion de dépendances est une partie cruciale mais complexe du développement d'applications modernes, souvent enveloppée de mystère et, avouons-le, parfois source d'angoisse ! Le périple commence dans le domaine de la JVM, où Gradle et Maven proposent des approches divergentes pour la résolution des dépendances, la gestion des conflits et les mécanismes de contrôle par l'utilisateur. Élargir le champ d'application à l'univers NPM révèle encore plus de contrastes.
 Les différences clés émergent à partir de la gestion des dépôts centraux - comme Maven Central ou NPM registry - notamment en termes de confiance et de sécurité. Au sein d'un projet, le processus de résolution, les mécanismes de mise en cache et d'autres facteurs peuvent avoir un impact significatif sur la fiabilité et la reproductibilité des builds. Ces éléments influencent également ce qui apparaît dans les Software Bill Of Materials (SBOMs) et comment des outils comme GitHub fournissent des informations sur les graphes de dépendances pour les projets hébergés.
 Cette session vise à doter les participants de connaissances approfondies sur ces paysages variés. Comprendre les subtilités, les choix et les limites des technologies utilisées est essentiel. Notre objectif est de vous fournir les connaissances et stratégies nécessaires pour éviter le redouté 'enfer des dépendances' dans votre prochain projet, assurant ainsi un processus de publication et de release fluide et sécurisé.
+```
 
-.speaker LOUIS JACOMET
+.Speaker: LOUIS JACOMET
 Louis Jacomet has been perfecting his knowledge of Java for more than 20 years. Always a developer at heart, his role evolved over the last years to include technical team leading, coaching and some management. In addition to the bits and bytes, Louis is interested in people management skills mandatory to create a productive project team. To complete the buzzword bingo, Louis is interested in agile practices for the visibility, communication and result orientation it promotes. After working remotely from Belgium for Terracotta, with a focus on Ehcache, Louis is now part of the Gradle build tool team.
 
-.speaker Hervé Boutemy
+.Speaker: Hervé Boutemy
+TODO
 
+==== Notes:
 
-=== 12h20 - 13h00 ------------------------------------- LUNCH -----------------------------------
+=== 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
 
 === 13h00 - 13h15 (Paris 141) AssertJ comme un pro
 ==== Abstract
+.Speaker: Thomas Fabre
+Un Thomas Fabre sauvage apparaît. Grand amateur de musique, lecture ou dessin. Curieux de la première heure, Thomas est multi-passion. Le mieux dans tout ça, c’est qu’il aime bien aller jusqu’au bout des choses, et tout comprendre. Tout, ça veut aussi dire parfois des choses passionnantes que peu de gens osent aller regarder, que l’on parle de Garbage collector ou des paradigmes des langages.
+Et d’ailleurs les langages, Thomas en connait un rayon. Après une formation en autodidacte sur C / C++ au lycée, il n’a eu de cesse de les chercher. Les plus curieux, les plus performants, les nouveaux, les anciens, les shinys et les légendaires ! L’idée et qu’il les captures tous.
+Bien que sa quête de connaissance ne cessera jamais, il commence à se dire qu’après quelques années, il y en a des choses à dire qui peuvent intéresser les gens.
 
-.speaker Thomas Fabre
+```
+Vous ne connaissez pas AssertJ ? Venez jeter un œil à la plus puissante des bibliothèques d’assertion sur le marché !
+Si vous la connaissez, peut-être ne savez-vous pas tout ce qu’on peut faire avec…
+Bien souvent cette bibliothèque n’est pas utilisée aussi bien qu’elle pourrait l’être.
+Venez découvrir ou redécouvrir AssertJ pour vous perfectionner dans l’écriture de vos tests !
+```
+
+==== Notes
 
 
 === 13h30 - 14h15 (MAIOLLOT Conference) Infra sans mdp, cauchemard des attaquant
 ==== Abstract
-
 .speaker Thibault Langagne
+Head of Cybersecurity à Padok, Thibault est en charge de la branche spécialisée en sécurité Cloud, en tant que directeur technique. Son but : allier Sécurité et DevOps pour trouver des solutions innovantes qui protègent les systèmes tout en améliorant le quotidien des développeurs.
 
+```
+La gestion des secrets a toujours été un sujet complexe : comment et où les stocker, comment les partager,qui les utilise, ont-ils été volés ? Sérieusement, quand avez-vous changé le mot de passe de votre base de données pour la dernière fois ? Selon les chiffres de Verizon, 49% des attaques informatiques impliquent le vol et l'utilisation de secrets, parfois des mois après leur exfiltration.
+Est-il possible de construire un écosystème sans secret long-terme, en coupant ainsi l’herbe sous le pied des hackers ? Les avancées technologiques récentes (SSO, OIDC, Cloud IAM, Workload Identity, Vault credential brokering, Just-in-Time access) rendent ce rêve non seulement réalisable, mais en prime, elles simplifient la vie des développeurs.
+A la lumière de plus d’une dizaine de missions dans des écosystèmes différents, Thibault se propose de vous montrer par des exemples concrets le chemin vers l’infrastructure “Zero-Creds” :
+Comment supprimer les secrets utilisés par les développeurs ? (applicatifs, base de données, clés SSH…)
+Quels mécanismes et outils permettent la rotation automatique des secrets utilisés par les machines ?
+A la fin du talk, vous connaitrez toutes les bonnes pratiques et outils pour supprimer tout secret long-terme de votre écosystème.
+```
+
+==== Notes
 
 === 14h35 - 15h20 (MAILLOT Conference) programmer sa propre JVM avec JIT
 ==== Abstract
+.Speaker: Olivier Poncet
+Geek, ex-nerd repenti, je code, je teste, je bricole, je soude et parfois fait sauter les plombs. CTO et spécialiste du magiciel, je suis aussi libriste dans l'âme et très impliqué dans le mouvement des logiciels libres.
 
-.speaker Olivier Poncet
+```
+La compilation « Just In Time » est une technique d'exécution très utilisée depuis de nombreuses années au sein des machines virtuelles de langages tels que Java, C#, JavaScript, etc .... Elle permet d'interpréter et d'exécuter un byte-code tout en le transformant « à la volée » vers le langage machine natif de la machine hôte nous permettant ainsi d'obtenir des performances bien plus élevées lors d'une seconde exécution du code.
+Ces techniques de recompilation dynamique peuvent être complexes à appréhender lorsque l'on est néophyte sur le sujet, c'est pourquoi nous allons démystifier ensemble ce sujet. Dans ce talk nous mettrons en œuvre et en live notre propre machine virtuelle avec JIT intégrée pour une calculatrice RPN (Reverse Polish Notation), sans aucun framework ni infrastructure de compilation extérieure, en émettant nous même le code machine x86_64 nécessaire à l'exécution.
+Puisse le dieu des « segmentation fault (core dumped) » être avec nous !
+```
+
+==== Notes
 
 === 15h40 - 16h25 (Amphy BLEU Conference) progammation parallel SIMD avec l'API Vector
 ==== Abstract
+.Speaker: José Paumard
+José est Java Developer Advocate au Java Platform Group chez Oracle. Anciennement maître de conférences à l'Université Sorbonne Paris Nord pendant 25 ans, il est Java Champion, Rockstar JavaOne, speaker régulier dans de nombreuses conférences : Devoxx (France, Belgique, UK), JavaOne, Oracle Code One, DevNexus, JFokus. Il a été consultant en entreprise pendant 25 ans, fortement investi en qualité des applications logicielles et Software Craftsmanship. Il est membre du Paris JUG, co-organisateur du Paris JUG Java Day et de JChateau, une unconference annuelle. Il contribue au site https://dev.java/, tient le JEP Café sur YouTube, et publie également une série de shorts : Cracking the Java Coding Interview.
 
-.speaker José Paumard
+```
+a première version de l'API Vector a été publié en incubation avec le JDK 16. Nous en sommes à la 7ème incubation dans le JDK 22, et avons une version suffisamment stable de l'API pour pouvoir l'étudier et examiner comment elle fonctionne. L'API Vector peut grandement accélérer vos calculs en mémoire, en utilisant le noyau de calcul SIMD (Single Instruction Multiple Data) de votre CPU, un concept déjà présent dans les ordinateurs parallèles des années 80. Cette session vous explique les différences entre la programmation parallèle et le calcul parallèle de l'API Stream, les principes de la programmation SIMD et comment les choses fonctionnent en internes. Vous découvrirez comment utiliser l'API Vector et les gains en performance que vous pouvez en attendre pour vos calculs en mémoire
+```
 
-=== 16h30 - 17h30 ------------------------------NETWORKING ------------------------------
+==== Notes
+
+=== 16h30 - 17h30 ------------------------------------- NETWORKING -----------------------------------
 
 === 17h45 - 18h30 (NEUILLY 153) les cast codeurs en chair en os et en beret
 ==== Abstract
+.Speakers: Antonio Goncalves,
+Antonio Goncalves is a senior developer living in Paris. He evolved in the Java EE landscape for a while and then moved on to Spring, Micronaut and Quarkus. From distributed systems to microservices and functions, today he works at Microsoft helping his customers to develop the Cloud architecture that suits them the best.
+Aside from working on Azure, Antonio wrote a few books (Java EE and Quarkus), talks at international conferences (Devoxx, JavaOne, GeeCon…), writes technical papers and articles, gives on-line courses (PluralSight, Udemy) and co-presents the Technical French pod cast Les Cast Codeurs. He has co-created the Paris JUG, Voxxed Microservices and Devoxx France. For all his work for the community he has been made Java Champion a few years ago.
 
-.speaker Antonio Goncalves, Arnaud Heritier, Katia Aresti
+.Speaker: Arnaud Heritier
+I'm engineering manager with more than 20 years of professional experience, acquired in software editors, in services companies and consulting groups.
+I joined Doctolib in 2022. In charge of Engineering Efficiency teams, we help development teams optimise their methods, processes and tools to deliver new features and evolutions with less effort and increasing quality.
+We have in charge the developers tools, the application packaging, the continuous integration / delivery platform, and the design system used by Doctolib applications.
+Specialties: Software Development practices and tooling
+
+.Speaker: Katia Aresti
+Katia Aresti est Principal Software Engineer chez Red Hat, spécialisée dans le développement du produit open-source Infinispan/Data Grid. Elle se concentre sur l'intégration avec Quarkus, Spring-Boot, et travaille sur des éléments essentiels tels que la Console Web du Serveur Infinispan, le développement de la compatibilité avec Redis, Multimap ainsi que sur la création de tutoriels. Membre de Duchess France, Devoxx France, et Java Champion depuis 2019 et Les Cast Codeurs depuis 2023, elle partage son expertise lors de conférences sur Java, le développement professionnel, Infinispan et Quarkus. Passionnée par l'open source, elle s'investit également dans le théâtre en tant que présidente de la troupe d'improvisation Improrphelins et la danse.
+
+```
+Les Cast Codeurs, le papy des podcasts de développement francophones revient cette année à Devoxx pour clôturer cette belle conférence dans la relaxation, la joie et une petite pointe de perspective philosophique. Venez partager avec le public vos impressions de cette cuvée Devoxx, des choses qui vous on surpris, des tendances qui se dessinent.
+```
+
+==== Notes
+
