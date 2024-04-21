@@ -36,12 +36,13 @@ endif::[]
 toc::[]
 
 
-
 == Mercredi
 === 09h00 - 09h25 (Amphi BLEU) bienvenu au devoxx 2024
 .Speakers: Antonio, Nicolas Bartigole, Zouheir Cadi
 
-Notes:
+=== Notes
+.
+.image:20240417_080455.jpg[]
 
 === 09h35 - 10h00 (Amphi BLEU) AI en medicine, ou somme nous
 ==== Abstract
@@ -54,7 +55,8 @@ En 2023, il a publié "2041, L'Odyssée de la médecine" aux Editions Equateurs,
 Les techniques de machine learning sont actuellement utilisées pour entraîner de nombreux modèles en médecine. Pourquoi connaissons-nous un tel âge d’or de l’IA appliquée à la médecine ? Cette présentation illustrera l’utilisation de l’IA par différents exemples publiés : prédiction du risque de développer un risque 5 ans à l’avance, interprétation automatisée d’image médicale, détection par Deep Learning de mélanome, prédiction de la survie sur simple scanner, pilotage de robots chirurgicaux, dépistage de la dépression sur instagram, chaque exemple sera expliqué et commenté. Mais l’IA comporte également des risques liés à la gestion des données d’entraînement, aux biais ou encore les attaques adversarielles. Les perspectives de développement à 10 à 15 ans seront enfin abordées pour comprendre comment l’IA va changer la santé de tous.
 ```
 
-Notes:
+=== Notes
+
 
 === 10h00 - 10h30 ------------------------------------- BREAK -------------------------------------
 
@@ -66,6 +68,9 @@ José est Java Developer Advocate au Java Platform Group chez Oracle. Ancienneme
 ```
 La Programmation Orienté Données est une approche alternative à la Programmation Objet, qui vous permet d'organiser votre code différemment. Elle s'appuie sur les records, les types scellés, les switch expressions exhaustives, et le pattern matching. Ce lab part d'une application simple, et vous guide pas à pas vers la réorganisation du code en appliquant les principes de la programmation orientée données. Il vous permettra d'avoir une meilleure vision de ce qu'est la programmation orientée données, et de pouvoir l'appliquer à bon escient dans vos applications.
 ```
+
+.
+.image:20240417_103128.jpg[]
 
 === 10h30 - 11h15 (Amphi BLEU) Instrumentez votre appli spring boot et quarkus avec opentelemetry
 ==== Abstract
@@ -82,7 +87,7 @@ Comment instrumenter et observer vos applications natives Spring Boot et Quarkus
 Rejoignez-nous à cette session mêlant explications et live coding où nous répondrons à cette question !
 ```
 
-Notes:
+=== Notes
 
 === 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
 
@@ -97,7 +102,7 @@ Alors comment survivre dans ce contexte et éviter la banqueroute liée à cette
 Dans ce talk basé sur des cas réels et applicables dans des contextes hors start-up, nous verrons quelques solutions concrètes à ce problème mêlant DDD stratégique, architecture et design. Nous verrons aussi quelques patterns à la mode à absolument éviter en chemin et pourquoi… avant finalement de voir comment on peut tacler la cause originelle de cette tension Produit/Tech.
 ```
 
-Notes:
+=== Notes
 
 
 === 12h35 - 12h50 (Paris 242AB) SOPS, passez un savons a vos secret en clair
@@ -109,7 +114,20 @@ Tech Lead à onepoint, je viens du monde PHP, j'aime la CI/CD et la conteneurisa
 Chacun à ses secrets. Vos applications également. Cependant, tout comme nous avons droit à notre jardin secret, nos secrets aimeraient bien avoir leur petit coin ou ils peuvent indiquer leur données sensibles…​ Au vu de tous dans un dépôt Git consultable par toute votre équipe, cela s’annonce compliqué ? Venez voir comment SOPS peut vous aider, et vous pourrez ensuite passer un savon à quiconque pousse des secrets en clair sur vos dépôts !
 ```
 
-Notes:
+=== Notes
+.
+.image:20240417_123712.jpg[]
+
+alternative a vault
+fait par mozilla
+    chiffrer les fichier avec SOPS
+        peut etre partagé
+        chiffrer partiellement possible
+    dechiffrer avec la clé privé
+    gestion des utilisateurs via config file sops
+.image:20240417_124811.jpg[]
+.image:20240417_124915.jpg[]
+.image:20240417_124952.jpg[]
 
 === 13h00 - 13h30 ------------------------------------- LUNCH -------------------------------------
 
@@ -122,7 +140,28 @@ Josh (@starbuxman) has been the first Spring Developer Advocate since 2010. Josh
 Spring Framework 6+ and Spring Boot 3+ are here, which means new baselines and possibilities. Spring Framework implies a Java 17 and Jakarta EE baseline and offers new support for building GraalVM-native images and a compile-time component model in the new Spring AOT engine. It also features a new observability layer, declarative HTTP and RSocket clients, preliminary Project Loom and CRaC support, ProblemDetail support, and much more. Developer productivity is second to none with first class support for Testcontainers, Docker Compose, and live reloads. Spring makes idiomatic use of the latest Kotlin features like coroutines and extension functions. Join me Spring Developer Advocate Josh Long (@starbuxman) and we’ll explore next-gen Spring together
 ```
 
-Notes:
+=== Notes
+.
+.image:20240417_133138.jpg[]
+.image:20240417_133425.jpg[]
+.image:20240417_133430.jpg[]
+
+records are tupls of data name and type.
+that is what called by java team: data oriented programming
+
+spring ai, support rag models
+we need to keep the AIs fresh to that they are usable.
+need to give it info regularly.
+this pipeline is called rag,
+
+use virtual threads when calling AI services, it takes time
+
+buildpack
+java is the second language that use the less electricity to run.
+python = java * 38
+
+graal compilation takes time, like C.
+app uses really small data
 
 === 14h35 - 15h20 (Maillot) Nous somme ensemble, we are here together
 ==== Abstract
@@ -134,17 +173,129 @@ Je suis aussi un developpeur Open Source, en plus de l'OpenJDK, je maintiens que
 
 ```
 Java 22 est sorti avec en preview une nouvelle API pour créer soi-même ses propres opérations sur les Streams, un peu comme l'API des collecteurs mais pour les transformations intermédiaires effectuées par un stream.
-Je vous propose d'en profiter pour faire un petit retour sur les concepts derrière un Stream, comment cela fonctionne en interne, comment les opérations (parallel/stateful/short-circuit) sont définies. Puis de sauter dans le grand bain et découvrir la nouvelle méthode gather() et l'API des Gatherers et ce que l'on peut faire avec. Enfin, nous verrons les limitations et les améliorations possibles de cette nouvelle API.
+Je vous propose d'en profiter pour faire un petit retour sur les concepts derrière un Stream, comment cela fonctionne en interne, comment les opérations (parallel/stateful/short-circuit) sont définies. Puis de sauter dans le grand bain et découvrir la nouvelle méthode gather() et l'API des Gatherers et ce que l'on peut faire avec.
+Enfin, nous verrons les limitations et les améliorations possibles de cette nouvelle API.
 ```
 
-Notes:
+=== Notes
+API gatherer c'est en preview.
+(value class à venir dans java)
+.image:20240417_143738.jpg[]
 
-=== 15h20 - 17h00 ------------------------------------- NETWORKING -----------------------------------
+on push les donnée, JVM galere quand on pull.
+tirer les type pas possible a cause de inlining, mais je peux push des profile de types.
+je peux pas stocker beaucoup de profil de type pour pas occuper beaucoup de memoire pour les class.
+dans les test JMH je n'ai pas ce soucis, mais en prod je peux l'avoir. (car JMH test chaque boud de code separement, load juste les class concerné par le test)
+spliterator se split autant de coeur que j'ai.
+.image:20240417_144116.jpg[]
+
+les operation au milieu
+ils prennent des valeurs, et push des valeurs.
+on peut implementer la logic pour savoir quel valeur et comment je push, au stage suivant.
+Le stage d'apres peut me dire, "arrete" j'en peut plus. Donc mon operation doit etre capable de backpropage l'info.
+la fonction "integrator" de l'API
+les operation peuvent avoir des etat (state), comme "limit".
+La fonction "initializer" de l'API sers a ca.
+.image:20240417_144518.jpg[]
+
+"Combiner" c'est pour aggreger les element recu.
+"finisher" c'est pour decider si je push un etat ou pas.
+
+```
+Gatherer<String, ?, String> filter(){
+    return Gatherer.of(IntegratorofGreedy((_, element, downstream) -> {
+        if()
+            downstream.push(element);
+    }
+}
+```
+
+.
+.image:20240417_145235.jpg[]
+.image:20240417_145231.jpg[]
+
+TIP: les class local sont top pour les test unitaire.
+TIP: je peux faire des java "void main()" sans "String args[]"
+
+limit est un operator avec un state 'counter'
+il doit combiner les state aussi mainteantn.
+
+Les operation que j'ai deja, sont parallellizable.
+je peux forcer l'utilisation d'un gatherer en sequentiel only (groupby2 va bugger en parallel)
+
+WARNING: n'utilise pas les stream paralell quand tu as un appli web
+
+optimisation est possible en mergeant des gatherer ou gatherer avec collector.
+.image:20240417_150104.jpg[]
+
+Les gatherer n'ont pas le moyen de dire qu'un operatio guarde le size des object qu'il defile.
+C'est pour ca que le toList qui existe est plus performant. car l'operator map qui exist dis qu'il ne change pas le size de la list.
+donc ke toList sais deja la taille de la liste a créer a la fin.
+.image:20240417_150754.jpg[]
+.image:20240417_151322.jpg[]
+.image:20240417_151916.jpg[]
+
+=== 15h45 - 16h30 (Maillot) Applications resilient, dans un monde
+==== Abstract
+.speaker Pascal MARTIN
+
+```
+AWS Hero
+```
+
+=== Notes
+X-Nines les meusures de disponibilité d'une application
+99.999 (nombre de decimale est important)
+les neufs n'ont pas d'importance si les users ne sont pas content.
+.image:20240417_154130.jpg[]
+
+WARNING: les 9 de toute les dependence ce multiplie pour calculer le 9 de mon appli.
+
+Les SLA ne rembourse pas l'image de ton appli qui est cassé.
+
+"blast radius" est le perimetre d'impacte d'un application.
+Les appli qui ne marche pas si mon appli tombe.
+on arrete les dependence. (cache ? nope. Messages)
+.image:20240417_160333.jpg[]
+SLI Service level Indicator
+SLO Objective (meme indicateurs que ceux du SLI, mais ce qu'on a réélement avec l'effor et budget aloué)
+SLA Agreement (apres avoir definit les SLI et SLO) contrat avec un Users/Client.
+Les alert \o<
+Je doit alerter qqch que si je peux agire.
+Ex si j'ai AZ Paris qui tombe chez AWS et que j'ai pas moyen de migrer, ca sert a rien d'alerter.
+AWS va corriger avant que j'ai une solution de migration.
+.image:20240417_160337.jpg[]
+setup des timeout court permet de ne pas surcharger l'appli avec des requetes longue,
+qui va créer une cumulation de surcharge et faire tomber l'appli
+(potentiellement requete ne va pas marcher si c'est plus lent que d'hab, et la connection/thread reste occupé)
+.image:20240417_161015.jpg[]
+Read replicas permet la resilience.
+Ca coute cher, à voir si vraiment besoin.
+
+Le cache créer 2 comportement different. Pas top pour créer de l'asynchronicité entre microservice.
+Etaler les expiration du cache, qui nous permet de tabasser la DB d'un coup pour tout les donnée caché.
+Random jitter.
+
+TIP: Ca marche pas ? trop long ? coupe et ressaie. Mais un nombre limité, et en attendant un peu.
+
+Definir un mode degradé de service.
+Il faut pas tout planté pour un failure partiel. Il faut quand meme fournir le service qui a marché au client, sans celui qui a fail.
+ex: 3 article commandé sur le panier de 4 article validé.
+.image:20240417_162206.jpg[]
+Chaos engineering.
+Prevoir que tout va casser. On tolere mieux les casse.
+Chaos Monkey
+
+
+
+=== 16h30 - 17h00 ------------------------------------- NETWORKING -----------------------------------
 
 === 17h00 - 17h30 (Paris 241) Zero thrust sur un cluster K8S avec Istio
 ==== Abstract
 .speaker Anis Zouaoui
-Je suis Anis Zouaoui, fondateur et CTO d'Adservio, et je me définis comme un développeur béni par la sagesse de la production. Mon parcours professionnel est guidé par une quête constante d'amélioration et d'innovation, notamment dans les domaines de la fiabilité et de la performance.
+Je suis Anis Zouaoui, fondateur et CTO d'Adservio, et je me définis comme un développeur béni par la sagesse de la production.
+Mon parcours professionnel est guidé par une quête constante d'amélioration et d'innovation,
+notamment dans les domaines de la fiabilité et de la performance.
 
 ```
 L'année 2023 a été marquée par des progrès significatifs pour Istio, depuis son intégration au projet d'incubation de la CNCF et le lancement de l'Ambient Mesh en 2022. Ces évolutions ont renforcé l'utilisation d'Istio dans les architectures de cloud hybride et de réseaux Zero Trust.
@@ -154,7 +305,24 @@ Concernant les clusters Kubernetes en environnements hybrides, de nouvelles stra
 Cette présentation mettra en exergue les dernières tendances d'Istio et leur impact sur les architectures cloud modernes. Nous explorerons comment Istio facilite la création de réseaux Zero Trust dans le contexte des clouds hybrides, un sujet crucial pour les professionnels du cloud et les ingénieurs de sécurité.
 ```
 
-Notes:
+=== Notes
+Zero trust c'est le anti de kerberos, ou on considere secure tout ce qui est dans le meme reseau interne.
+Ca ne remplace pas ce qui est fait pour securiser les appel depuis l'exterieur. ex: token based auth ou pass autogeneré/update. Comme le secret engines de vault.
+
+istio fait l'intermediaure pour tout les appel inter service K8S.
+Ca nous permet de securiser les echanges.
+.image:20240417_170830.jpg[]
+.image:20240417_171150.jpg[]
+.image:20240417_171258.jpg[]
+invoi ambiant reduit les resource utilisé, par rapport a un agent par pod.
+Huble UI est comme wireshark pour K8s
+.image:20240417_171323.jpg[]
+Steps:
+    Block tout vers l'exterieur
+    Ajoute du mTLS
+.image:20240417_171447.jpg[]
+.image:20240417_171548.jpg[]
+KIALI UI
 
 === 17h30 - 17h50 ------------------------------------- BREAK -------------------------------------
 
@@ -162,7 +330,9 @@ Notes:
 === 17h50 - 18h20 (Neuilly 252AB) La fin des mdp partagé avec Vault et Boundary
 ==== Abstract
 .speaker Clément Fage
-Clément, SecOps @Padok, est passionné de cybersécurité et jongle entre execution d’attaques et plan de défenses des infrastructures cloud ! Il travaille également sur des sujets de recherches novateurs pour renforcer la sécurité du cloud. Présentateur amateur, il aime participer à des conférences pour partager ses connaissances et en apprendre plus avec celles des autres !
+Clément, SecOps @Padok, est passionné de cybersécurité et jongle entre execution d’attaques et plan de défenses des infrastructures cloud !
+Il travaille également sur des sujets de recherches novateurs pour renforcer la sécurité du cloud.
+Présentateur amateur, il aime participer à des conférences pour partager ses connaissances et en apprendre plus avec celles des autres !
 
 .speaker Josephine St-Joannis
 
@@ -172,7 +342,33 @@ Grâce à Boundary et Vault, il est possible, à partir de briques opensource, d
 Lors de cette démonstration technique, nous allons montrer l'implémentation des outils et des cas pratiques d'utilisation.
 ```
 
-Notes:
+=== Notes
+plusieurs acces a la DB (admin, appli, utilisateurs ect..)
+tout le monde peut partager les secrets. meme si ils sont sur Vault.
+
+necessité de compte nominative pour les DBA et developpeurs.
+mdp doit etre temporaire.
+
+Vault permet de generer des id temporaire
+Boundary permet aux users/dev de les utiliser facilement.
+
+NOTE: regarde comment utiliser vault pour generer et créer des ID sur les DB comme postgresql
+secret engines VAULT.
+
+On peut monitorer les session en cours sur le UI de boundary.
+.image:20240417_175235.jpg[]
+.image:20240417_175627.jpg[]
+.image:20240417_175826.jpg[]
+.image:20240417_175858.jpg[]
+.image:20240417_180004.jpg[]
+.image:20240417_180214.jpg[]
+.image:20240417_180544.jpg[]
+.image:20240417_180832.jpg[]
+.image:20240417_181430.jpg[]
+
+la configuration peut etre fait en casc terraform et K8s.
+
+Boundary est un produit de Hashicorp
 
 == Jeudi
 
@@ -186,14 +382,48 @@ Most of the time when we make mistakes in our code, a message gets displayed wro
 Join Mark on a tour through some of the worst mistakes in the history of programming. Learn what went wrong, why it went wrong, how much it cost, and how things can be pretty funny when they’re not happening to you.
 ```
 
-Notes:
+=== Notes
+Stand up on programing mistakes.
+.image:20240418_091012.jpg[]
+
+Y2K bug, years was saved in two characters. cobol was using pic(9)
+Y2K22
+Y2K38
+Intel Pentium FPU floating point unit. everyone realised the bug cause QUAKE was glitching.
+NULL Tony Hiare invented, billion dolar mistake. initiated for ALGOL W that was using records in a heap, so need reference.
+.image:20240418_091415.jpg[]
+
+In space noone can set a breakpoint.
+Mariner 1, spec error. missil thought it was going to explode due to program error on its monitoring.
+Mars climate orbiter, Lokchedd Martin, used imperial measures to define the impulse power, but nasa uses metrics.
+Ariane 5, this is what happens when you copy paste. ariane 4 was in 16 bit, but ariane5 was 32.
+.image:20240418_092756.jpg[]
+
+HeartBleed
+Log4j
+
+Stanislav Petrov. It was just the sun that was triggering russian anti missile system.
+
 
 === 09h35 - 10h00 (Amphi BLEU) Un monde shooté aux métaux
 ==== Abstract
-.Speakers GUILLAUME PITRON, AGNES CREPET
-Éminent journaliste, auteur et réalisateur français basé à Paris, Guillaume Pitron est reconnu pour ses essais perspicaces sur les impacts cachés des transitions énergétique et numérique. Parmi ses œuvres notables figurent "La Guerre des métaux rares" et "L’Enfer numérique", tous deux traduits en plusieurs langues et salués par de nombreux prix. La carrière de Pitron s'étend à de nombreuses collaborations médiatiques et contributions à des publications majeures telles que Le Monde diplomatique et National Geographic, démontrant son expertise sur les défis économiques, géopolitiques et environnementaux posés par les avancées technologiques. Son journalisme d'investigation, couvrant plus d'une centaine de reportages dans de nombreux pays, explore des questions critiques comme l'extraction des terres rares et les implications de l'agriculture robotisée. L'engagement de Pitron auprès d'institutions internationales et de plateformes médiatiques, ainsi que ses affiliations académiques et reconnaissances, soulignent son rôle de voix clé dans les discussions sur la durabilité, la souveraineté technologique et l'avenir de notre planète.
+.Speaker: GUILLAUME PITRON
+Éminent journaliste, auteur et réalisateur français basé à Paris, Guillaume Pitron est reconnu pour ses essais perspicaces
+sur les impacts cachés des transitions énergétique et numérique. Parmi ses œuvres notables figurent "La Guerre des métaux rares" et "L’Enfer numérique",
+tous deux traduits en plusieurs langues et salués par de nombreux prix. La carrière de Pitron s'étend à de nombreuses collaborations médiatiques
+et contributions à des publications majeures telles que Le Monde diplomatique et National Geographic, démontrant son expertise sur les défis économiques,
+géopolitiques et environnementaux posés par les avancées technologiques. Son journalisme d'investigation,
+couvrant plus d'une centaine de reportages dans de nombreux pays, explore des questions critiques comme l'extraction des terres rares
+et les implications de l'agriculture robotisée. L'engagement de Pitron auprès d'institutions internationales et de plateformes médiatiques,
+ainsi que ses affiliations académiques et reconnaissances, soulignent son rôle de voix clé dans les discussions sur la durabilité,
+la souveraineté technologique et l'avenir de notre planète.
 
-Agnès Crepet est responsable de la longévité logicielle et de l'informatique chez Fairphone, une entreprise sociale créant un smartphone éthique, modulaire et réparable. Elle a cofondé Ninja Squad en France qui utilise et promeut l'Open Source et publie des livres informatiques à prix libre. Elle est également activement impliquée dans différentes communautés. Elle a cofondé MiXiT, un événement Tech annuel en France depuis 2011 qui travaille pour plus de diversité et d'éthique dans la Tech. Elle est également dans le board de Duchess France depuis 2010 qui rend les femmes dans l'informatique plus visibles.
+.Speaker: Agnès Crepet
+est responsable de la longévité logicielle et de l'informatique chez Fairphone, une entreprise sociale créant un smartphone éthique, modulaire et réparable.
+Elle a cofondé Ninja Squad en France qui utilise et promeut l'Open Source et publie des livres informatiques à prix libre.
+Elle est également activement impliquée dans différentes communautés. Elle a cofondé MiXiT,
+un événement Tech annuel en France depuis 2011 qui travaille pour plus de diversité et d'éthique dans la Tech.
+Elle est également dans le board de Duchess France depuis 2010 qui rend les femmes dans l'informatique plus visibles.
 
 https://ninja-squad.fr/
 http://fairphone.com/
@@ -201,28 +431,58 @@ http://mixitconf.org/
 https://www.duchess-france.org/
 
 ```
-Dans cette conférence intitulée "Un monde shooté aux métaux", Guillaume Pitron, expert des enjeux géopolitiques liés aux ressources naturelles, et Agnes Crepet, spécialiste en technologies éco-responsables, s'unissent pour aborder la dépendance croissante de nos sociétés aux métaux rares et ses implications profondes. Ils exploreront comment cette consommation excessive impacte l'environnement, l'économie mondiale et les relations sociales, en dévoilant les chaînes d'approvisionnement complexes qui relient les mines isolées aux technologies quotidiennes. La discussion soulignera les conséquences environnementales de l'extraction des métaux, les défis éthiques et les tensions géopolitiques qu'elle engendre.
+Dans cette conférence intitulée "Un monde shooté aux métaux", Guillaume Pitron, expert des enjeux géopolitiques liés aux ressources naturelles,
+et Agnes Crepet, spécialiste en technologies éco-responsables, s'unissent pour aborder la dépendance croissante de nos sociétés aux métaux rares
+et ses implications profondes. Ils exploreront comment cette consommation excessive impacte l'environnement, l'économie mondiale et les relations sociales,
+en dévoilant les chaînes d'approvisionnement complexes qui relient les mines isolées aux technologies quotidiennes.
+La discussion soulignera les conséquences environnementales de l'extraction des métaux, les défis éthiques et les tensions géopolitiques qu'elle engendre.
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_094026.jpg[]
+1200/1 est le ratio des poids de meteau necessaire pour produire un telephone portable de tel poid.
+Indium. Arrivé avec iphone1. Ce qui rend l'écran tactile.
+La solution n'est pas la subtitution. Mais aussi le recyclage. Actuellemet on ne recycle pas les metaux rare.
+
 
 === 10h00 - 10h30 ------------------------------------- BREAK -------------------------------------
+.
+.image:20240418_101751.jpg[]
 
 === 10h30 - 12h30 (Neuilly 152) Comprendre l'IA: construisez votre propre chatGPT avec LangChain4J
 ==== Abstract
 .Speaker: YOHAN LASORSA
-Open-source enthusiast and software craftsman, the web is the ultimate playground for Yohan. With a background of 15+ years in various fields such as applied research on mobile and IoT, architecture consulting and cloud applications development, he worked all the way down to the low-level stacks before diving into web development. As a full stack engineer and DIY hobbyist, he now enjoys pushing bits of JavaScript everywhere he can while sharing his passion with others.
+Open-source enthusiast and software craftsman, the web is the ultimate playground for Yohan.
+With a background of 15+ years in various fields such as applied research on mobile and IoT, architecture consulting and cloud applications development,
+he worked all the way down to the low-level stacks before diving into web development.
+As a full stack engineer and DIY hobbyist, he now enjoys pushing bits of JavaScript everywhere he can while sharing his passion with others.
 
 .Speaker: JULIEN DUBOIS
 Julien Dubois dirige deux équipes de Developer Advocates chez Microsoft, focalisées sur les technologies Java et JavaScript.
-Il est connu pour être le créateur et principal développeur du projet JHipster, ainsi que pour être un Java Champion. Au cours des 20 dernières années, Julien a principalement travaillé sur les technologies Java et Spring, dirigeant des équipes techniques pour de nombreux clients à travers toutes les industries. Comme il aime partager sa passion, Julien a écrit un livre sur Spring, parlé à plus de 200 conférences internationales, et a créé plusieurs projets Open Source populaires.
+Il est connu pour être le créateur et principal développeur du projet JHipster, ainsi que pour être un Java Champion.
+Au cours des 20 dernières années, Julien a principalement travaillé sur les technologies Java et Spring,
+dirigeant des équipes techniques pour de nombreux clients à travers toutes les industries. Comme il aime partager sa passion,
+Julien a écrit un livre sur Spring, parlé à plus de 200 conférences internationales, et a créé plusieurs projets Open Source populaires.
 
 ```
 Les technologies d'IA, et particulièrement les grand modèles de langages (LLM) poussent un peu partout comme des champignons ces derniers temps. Comment ces modèles fonctionnent-ils, et comment s'en servir dans vos applications?
 Dans ce workshop, nous allons construire de zéro un chatbot basé sur GPT-4 implémentant le pattern Retrieval Augmented Generation (RAG). En utilisant une base de documents de référence, le modèle sera capable de répondre à des questions en langage naturel, et de générer des réponses complètes et sourcées dans vos documents. Pour cela, nous allons créer un service SpringBoot qui s'appuiera sur le framework open-source LangChain4J, ainsi qu'un site web pour tester notre chatbot. Enfin, nous déploierons le tout sur Azure.
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_102820.jpg[]
+.image:20240418_102929.jpg[]
+.image:20240418_102937.jpg[]
+Xbox est sur azure donc on a plein de GPU. C'est pour ca que de L'IA sur azure est avantagieux
+spring AI est concurrant de LangChain4J
+.image:20240418_103026.jpg[]
+.image:20240418_103337.jpg[]
+.image:20240418_103420.jpg[]
+.image:20240418_103518.jpg[]
+.image:20240418_103521.jpg[]
+.image:20240418_103526.jpg[]
 
 === 12h35 - 12h50 (Paris 242AB) Je delegue tout mes tests à l'IA
 ==== Abstract
@@ -243,9 +503,24 @@ On prendra ensemble le temps de regarder ce qui marche bien, et aussi ses limite
 Une chose est sure : vous n’êtes pas prêts !
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_123558.jpg[]
+gemini chatGPT, codiumAI
+.image:20240418_123759.jpg[]
+le context projet permet de refacto les class, apres avoir generer les TU.
+.image:20240418_124550.jpg[]
+AsserJ permet une meilleur lisilibilité du code, donc marche mieux avec de l'IA
 
-=== 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
+CodiumAI fait un decoupage des prompt et prend le context projet, il a une meilleur resultat avec chatGPT.
+.image:20240418_124802.jpg[]
+peut generer des test qui n'existe pas et ce qui n'est pas encore couvert.
+pas de self hosting encore. pas de autocompletion sur intellij.
+.image:20240418_124950.jpg[]
+
+
+
+=== 12h50 - 13h30 ------------------------------------- LUNCH -------------------------------------
 
 === 13h30 - 14h15 (Paris 143) La fin des archis event-based ? Orchestration avec Temporal
 ==== Abstract
@@ -259,7 +534,55 @@ Son leitmotiv : simplifier votre code, éliminant toute la plomberie superflue.
 Rejoignez-moi dans 45 minutes de live coding d’un système de commande en ligne, simple mais puissant, efficace et fault-tolerant, tout ça en plain old java.
 ```
 
-Notes:
+=== Notes
+
+
+=== 13h30 - 14h15 (amphi bleu) Java rencontre l'IA: comment integrer les LLMs dans vos appli java avec LangChain4j
+==== Abstract
+.Speaker: LIZE RAES
+Lize Raes est ingénieure logicielle et responsable de l'IA dans une entreprise suisse spécialisée dans les logiciels pour la découverte de médicaments et la technologie génique. Parallèlement, elle développe des applications alimentées par LLM et fait partie intégrante de l'équipe LangChain4j.
+Lize aime utiliser la technologie pour résoudre des problèmes sociétaux.
+Cela l'a amenée par le passé à travailler en tant que chercheuse en implants cochléaires à l'Université de Gand, à développer un modèle de pronostic COVID-19 et à conseiller le gouvernement belge, ainsi qu'à s'engager en tant que membre du comité pour le hackathon CNCF + UN.
+Après le travail, on la trouve derrière son piano ou dans son atelier de menuiserie.
+
+```
+Vous voulez créer des applications intégrant les capacités des Large Language Models (LLMs) en utilisant Java et Spring Boot ?
+Avec LangChain4j, vous pouvez créer vos propres chatbots alimentés par l'IA, traiter de grandes quantités de données non structurées et automatiser des processus à l'aide de Services IA qui peuvent utiliser divers outils : invoquer des API, accéder à des bases de données et même exécuter dynamiquement du code généré!
+Dans cette présentation, nous couvrirons tout ce qu'il vous faut pour créer votre propre appli intélligent. D'abord nous explorerons les éléments de base: différents LLMs commerciaux et open source (OpenAI, Google Vertex, HuggingFace, etc.), chargeurs de documents, embeddings, de nombreuses vector stores, mémoire et outils. Ensuite, nous montrerons comment chaîner facilement ces éléments en utilisant une API Java concise et unifiée.
+Nous mettrons LangChain4j en action en construisant un agent de support client hautement compétent qui gère les réservations, les annulations et fournit des réponses personnalisées au client, conformes aux politiques de l'entreprise.
+Pour vous aider à démarrer avec vos propres applications, nous discuterons de la manière de choisir les bons LLMs, embeddings et vector stores, et les compromis à envisager.
+À la fin de cette présentation, vous serez en mesure de construire une application alimentée par LLM en utilisant Java, et vous saurez comment choisir les composants les plus adaptés à vos besoins spécifiques.
+```
+
+=== Notes
+.
+.image:20240418_133128.jpg[]
+LangChain etait en python.
+.image:20240418_133253.jpg[]
+Search vectoriel = embedding => RAG
+bases => LLMs
+.image:20240418_133403.jpg[]
+
+providers => ex; openAI Azure, OLAMA (local model)
+.image:20240418_133606.jpg[]
+
+few shots; me permet de simuler une convo precedente pour créer un state initialisé.
+.image:20240418_134445.jpg[]
+mistral vs ?
+
+on peut lui donner des tool que le LLM va pouvoir appeler.
+LLM peut créer sont propre tool en JS et les utiliser.
+.image:20240418_134609.jpg[]
+advanced RAG est un peu plus lent que le normal. mais pour le moment, car le LLM avance tout les jours
+.image:20240418_135016.jpg[]
+.image:20240418_140005.jpg[]
+.image:20240418_140036.jpg[]
+.image:20240418_140637.jpg[]
+.image:20240418_140131.jpg[]
+.image:20240418_140637.jpg[]
+.image:20240418_141524.jpg[]
+.image:20240418_141559.jpg[]
+
 
 
 === 14h35 - 15h20 (Maillot) Password-less apps: implementing WebAuthN
@@ -275,7 +598,39 @@ Josh (@starbuxman) has been the first Spring Developer Advocate since 2010. Josh
 Passwords are everywhere, and they’re a mess! Once you create a good, strong, secure password, you’re rewarded with the task of having to rotate them periodically and store them! There’s got to be a better way. Spring Security is the world’s most widely used security framework for application developers, and it is here to help. In this talk, join us, Daniel Garnier-Moiroux (Spring Security contributor) and Josh Long (Developer Advocate Extraodinaire), as we look at WebAuthN - a protocol and framework for passwordless authentication based on physical devices, like a Yubikey, a macOS touchID, or iOS FaceID - and how to integrate it into a Spring Boot application.
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_143410.jpg[]
+.image:20240418_143558.jpg[]
+PassKeys
+yubi-key
+WebauthN is a spec by W3C.
+putting the JS in your browser that allows the diff auth methods.
+.image:20240418_144540.jpg[]
+Authnticator is the real authmechanism.
+
+passkey is the modern way to authenticate. (vs password)
+.image:20240418_150432.jpg[]
+FIDO2 Fast Identity Online, alience Aple,Google,Microsoft.
+WebauthN + CTAP
+
+Works as Async chryptography
+A ceremony called "registration" is to publish the public key.
+.image:20240418_151959.jpg[]
+
+vs 2Factor, we are doing the 2 factors at once, we dont hknow who the user is when authenticating.
+
+webauthn4j, yubico webauthN allows you to decode and validate the auth request (attestation object)
+
+yubico documentation is gold
+coming soon in spring security !
+
+avec spring boot y a une dependence a metre dans le pom,
+et un config dans le securityFilterChain.
+Basta
+
+on peut enregistrer et valider des passkeys
+
 
 === 15h40 - 16h25 (Neuilly 153) Et ANSI dit voila comment securiser un container
 ==== Abstract
@@ -287,7 +642,49 @@ Mes domaines de prédilection ?
 De nos jours, une bonne partie de nos plateformes de développement et production fonctionnent avec Docker. Mais vous êtes déjà posé la question de la sécurisation de ce super outil ? Peut-être. En tout cas, l'ANSSI se l'est posé et à publier un certain nombre de recommandations relatives à la configuration et l'usage de Docker. Je vous propose de faire un tour ensemble de ce guide et vous découvrirez qu'il reste probablement quelques failles dans vos infras.
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_153951.jpg[]
+la version 3 de docker compose n'est pas la suite de docker compose 2.
+C'est plustot pour le swarm.
+.image:20240418_154407.jpg[]
+.image:20240418_154658.jpg[]
+
+1. Limiter que les conteneur cosomme tout les resouce sur la VM
+par default un container bouff toute la memoir.
+2. Limiter l'utilisation du CPU, en percentage de preference.
+3. dedier des control group pour chaque container. (docker le fait deja par default, n'y touche pas !)
+4. Isoler kes systems sensible de ficiers de l'hote (ne bind pas de volume sur le root!)
+5. restraindre l'acces auw peripherique de l'hote (ex: /dev/usb)
+6. restraindre l'ecriture de l'espace de stockage de chaque contaeneur
+7. limiter l'ecriture de l'espace de stockage l'enselble des contrenaeurs
+8. créer un sustem de stockage pour les donnée non persistante (super pour les cache)
+9. Céer un system de stockage pour les donnée persistante ou partagée
+10. tmpfs est pas mal
+11. docker a des log driver. on ne guarde pas les logs sur la machine ! on envoie ailleurs
+12. par default tout les contenar du meme noeud son sur le meme reseau.
+13. interdire la connexion du coneneur au reseau bridge docker0. docker compose créer par default un reseau specifique a chaque conteneur
+14. isoler l'interface reseau de l'hote
+15. créer un reseau dedié pour chaque connexion. Compose le fait aussi par default
+.image:20240418_160049.jpg[]
+.image:20240418_160344.jpg[]
+.image:20240418_161125.jpg[]
+
+les namespace nous permet de isoler les process sur linux.
+C'est ce que utilise Docker.
+
+16. dedier des namespace PID IPC et UTS pour chaque conteneur. (laisse la config par default)
+17. dedier un namespace USERID pour chaque conteneur
+
+Capabilities Kernel ce que notre process docker a le droit de faire.
+18. Interdir les capabilities kernel. Come ca il fait que tourner.
+gitlab par example ne demarre pas sans certain capabilities. Sonar ca marche sans capabilities.
+Faut tout interdir, et lui donner un par un. et lui donner juste ce qui a le droit.
+Die and retry.
+.image:20240418_161757.jpg[]
+.image:20240418_162054.jpg[]
+
+
 
 === 16h30 - 17h00 ------------------------------------- NETWORKING -----------------------------------
 
@@ -302,7 +699,7 @@ Mais démarrer avec OpenTelemetry peut être intimidant avec beaucoup de concept
 Joignez-vous à Bruce Bujon pour une présentation pragmatique, illustrée par du live-coding, des différentes façons d'instrumenter vos applications Java via les outils offerts par OpenTelemetry. Il abordera et implémentera aussi bien les instrumentations manuelles via le SDK, que les supports natifs des différents frameworks, ou encore les instrumentations automatiques à base d'agent. Vous serez alors en mesure de générer des traces dans vos applications, de connaître les avantages et les inconvénients des différentes approches, de savoir comment propager un contexte dans un environnement distribué et bien plus encore. Ne ratez pas sa présentation et commencez à améliorer votre observabilité dès aujourd'hui !
 ```
 
-Notes:
+=== Notes
 
 === 17h00 - 17h30 (Paris 241) Builds Reproductibles avec Apache Maven
 ==== Abstract
@@ -315,9 +712,88 @@ Dans cette session, nous démistyfierons les pratiques pour les Builds Reproduct
 Attention: si vous dormez pendant la session, vous aurez une sale note au quizz final permettant de vérifier les compétences acquises...
 ```
 
-Notes:
+=== Notes
+.
+.image:20240418_165822.jpg[]
+.image:20240418_170132.jpg[]
+A commencé dans 2019 dans maven (5 ans de travaille)
+vu initiallement a 2016 dans devoxx
+.image:20240418_170405.jpg[]
+https://reproducible-builds.org (2016)
+binaire linux ont initié ca.
+créer exactement le meme binaire, a chaque fois.
+securité de code.
+
+aide beaucoup quand fix sur du OSS.
+.image:20240418_171114.jpg[]
+on est sur que on a pas recuperer d'autre chose que le code sur git via le tarGz telechargé ?
+on est sur que on a rien mis d'info local dans le binaire qu'on a créé et mis sur maven central.
+amelior aussi a travers le cache, la perf du build.
+audit aussi le process de build.
+reproducible-build
+objectif: rebuild and validate the output
+requirement: build environment recorded or predefined
+prerequisite: build system needs to be made entirely deterministic.
+
+probleme dans java:
+timestamp est utilisé dans la construction du jar.
+
+buildspec est le fichier ou je definit mon build.
+.image:20240418_171500.jpg[]
+quel est le binaire, et ou telecharger le binaire pour comparer (maven central ?)
+meme si on target la meme version de java, si on compile avec un JDK different, le bytecode est different.
+sous windows et sous linux aussi ca sort un binaire different.
+la javadoc est signature gpg sont non reproductible.
+Ca créer un docker container avec l'env definis dans le buildspec et créer un build, et compare avec le binaire de reference (maven central?)
+.image:20240418_171850.jpg[]
+comment le configurer
+.image:20240418_171944.jpg[]
+1. definir le timestamp qui va aller dans le jar.
+y a un artifact maven qui aide a ameliorer la producibilité.
+Ca va deja aider a savoir quel dependence doit je upgrade pour avoir une meilleur producibilité dans mon projet à moi.
+.image:20240418_172205.jpg[]
+.image:20240418_172340.jpg[]
+ne fait pas install, sinon tu va ecraser ce que tu as dans le repo local, ton build.
+il faut faire verify pour que il telecharge le truc sur central dans ton repo local, et comparer ton build avec.
+Je peux aussi deja build 2 fois en local et voir si je créer la meme chose. La je peux install la premiere fois, et verify une 2eme fois.
+.image:20240418_172905.jpg[]
+.image:20240418_172958.jpg[]
 
 
+=== 17h50 - 18h20 (Paris 153) C'est pas le reseau, ça ping Marty!
+==== Abstract
+.Speaker: David Santiago
+```
+Microsoft
+```
+
+==== Notes
+.
+.image:20240418_175026.jpg[]
+Network 101
+il faut un IP adress pour atteindre un server sur un reseau IP.
+.image:20240418_175333.jpg[]
+sur le reseau il y a de l'infra et des composant (routers),
+.image:20240418_175511.jpg[]
+.image:20240418_175514.jpg[]
+.image:20240418_175553.jpg[]
+.image:20240418_175820.jpg[]
+
+le routage se fait a travers des table d'IP, qui se font mettre a jour dynamiquement. OFSP
+DHCP permet d'alouer dynamiquement au PC sur le reseau
+DNS permet de faire le lien entre les url et IP.
+.image:20240418_180212.jpg[]
+.image:20240418_180138.jpg[]
+.image:20240418_180544.jpg[]
+
+TCP on a un ack et transport control
+UDP est rapide. ex: stream video ou audio
+le routeur internet (une pate intern, une pate extern)
+Fait le NAT et DNAT pour le IP source des packet qui entre et qui sort de mon reseau intern vers l'internet.
+ping et traceroute ce base sur ICMP
+.image:20240418_181245.jpg[]
+.image:20240418_181645.jpg[]
+.image:20240418_181836.jpg[]
 
 == Vendredi
 
@@ -330,7 +806,7 @@ Comment modéliser l’état du monde en 2100 ? Pas la question la plus simple !
 .speaker ANATOLE CHOUARD
 Je m’appelle Anatole, j’ai 27 ans et je suis vulgarisateur scientifique ! Pour ça j’ai 2 casquettes : je suis à la fois conférencier et sur YouTube. Après des études en classe préparatoire PC (Physique-Chimie), j’ai étudié les mathématiques appliquées à l’École Polytechnique, puis la modélisation mathématique à la University College de Londres. J’applique maintenant ces enseignements dans ma vulgarisation des sciences !
 
-Notes:
+=== Notes
 
 === 9h35 - 9h55 (AMPHI BLEU) Cybercecurité, un sujet geopolitique
 ==== Abstract
@@ -343,20 +819,7 @@ En janvier 2023, il rejoint Docaposte en tant que Directeur Général Adjoint en
 La cybersécurité est souvent vue, à juste titre, sous un angle technique, opérationnel et réglementaire. L’incroyable évolution de la menace informatique nous concerne tous, à titre individuel, au niveau des organisations mais également à l’échelle des Etats. Dans un contexte général de fortes tensions géopolitiques, le cyber est devenu un ingrédient majeur dont l’usage se systématise dans des conflits qualifiés « d’hybrides ». Passionnante et effrayante, cette militarisation de l’espace numérique nous concerne toutes et tous !
 ```
 
-Notes:
-
-
-=== 10h30 - 12h30 (NEUILLY 253) Si j'etais un hacker, comment j'attaquerais votre K8S
-==== Abstract
-```
-Un cluster Kubernetes est un orchestrateur de conteneurs qui permet de déployer et de gérer des applications de manière efficace. Cependant, en raison de sa complexité, un tel cluster peut facilement être vulnérable aux attaques et sa sécurité peut être compromise. Pour éviter cela, la meilleure option reste de tester ses défenses en se mettant dans la peau d’un attaquant !
-Devenez vous-même un hacker pour la durée de cet atelier. Vous allez réaliser les différentes étapes de compromission un cluster Kubernetes et du compte AWS sous-jacent. Nous aborderons différentes techniques d’attaques en commençant par l'exécution de commandes sur un pod puis, grâce à différentes élévations de privilège, la compromission totale du cluster. Nous mettrons également en place des mesures préventives dans le but d’empêcher ces différentes failles de sécurité d’être exploitées.
-```
-
-.speaker THIBAULT LENGAGNE
-Head of Cybersecurity à Padok, Thibault est en charge de la branche spécialisée en sécurité Cloud, en tant que directeur technique. Son but : allier Sécurité et DevOps pour trouver des solutions innovantes qui protègent les systèmes tout en améliorant le quotidien des développeurs.
-
-Notes:
+=== Notes
 
 
 === 10h30 - 11h15 (NEUILLY 251) Model mithosys, ne pas se tromper entre monolith et microservices
@@ -371,7 +834,29 @@ Découvrez avec nous le Model Mitosis, une approche dynamique utilisée pour div
 Julien est un Tech Coach avec 15 ans d'expérience, spécialisé dans le Domain-Driven Design (#DDD). Son expertise réside dans l'aide aux organisations pour construire des systèmes à forte valeur métier. Julien se concentre sur l'alignement de l'organisation, de l'architecture et des pratiques logicielles avec le métier. En tant que membre de la fondation OWASP, il promeut activement les bonnes pratiques en matière de sécurité applicatives. Speaker international, Julien aime partager ses connaissances avec la communauté.
 Fondateur de CraftsRecords, il aide les membres de notre communauté à se lancer dans le monde des conférences.
 
-Notes:
+=== Notes
+dupliquer ne veux pas dire decoupler. quand c'st conceptuellement couplé.
+duoliquer des class en microservice, c'est pas top.
+monolith distribué !
+
+diviser par comportement
+et divicer les concept par la suite
+
+sharedkernel est le domain qui partagé par les 2 domaines
+
+anticorruption layer doit etre a l'exterieur de la couche qu'on veux proteger.
+
+BBOM big bowl of mud
+
+polution de concept ne viens pas forceent avec l'importation de type/class, mais notion/concept aussi.
+
+shared kernel n'est pas juste un lib common ou utils.
+Il doivent representer exactement le meme concept
+A reecouter ce talk.
+
+iteravitement
+ajouter dans sharedKerel, on va créer des tension de model, et on va devoir specialiser et dupliquer.
+
 
 
 === 11h35 - 12h15 (PARIS 242AB) Comment ça marche l'IA Generative ? LLM, RAG sous le capot.
@@ -384,12 +869,59 @@ Plongée dans les Modèles de Langage à Grande Echelle (LLM)
 
 .speaker ARNAUD PICHERY
 En tant que passionné par le développement logiciel, j'ai adoré avoir pu passer ces 30 dernières années à travailler dans ce domaine. En tant que VP Engineering chez Dataiku (la plateforme d'IA et d'apprentissage automatique leader dans le monde), je dirige actuellement les équipes qui travaillent sur le cœur de Dataiku DSS.
-Développeur autodidacte, j'ai commencé à programmer en langage d'assemblage et en C, en développant des jeux. J'ai commencé ma carrière professionnelle en Californie, en travaillant sur la naissance de la plateforme Microsoft .NET.
+Développeur autodidact, j'ai commencé à programmer en langage d'assemblage et en C, en développant des jeux. J'ai commencé ma carrière professionnelle en Californie, en travaillant sur la naissance de la plateforme Microsoft .NET.
 De nos jours, si je ne suis pas en réunion d'équipe, en train de peaufiner un backlog, de passer en revue une nouvelle fonctionnalité ou de rédiger des spécifications, je tape certainement frénétiquement dans IntelliJ pour développer une nouvelle fonctionnalité DSS.
 Notes
 
-==== Notes:
+==== Notes
+generative pretrained transformers GPT
+Large Language Model LLM
 
+2000s
+google translate a poussé beaucoup les recherche sur l'IA pour ameliorer les recherches.
+Embeders les mot dans un espace vectoriel
+
+LLM est un reseau de neuronnes.
+dans chaque neuronne on a une fonction linéaire, et on ajoute une partit non linéaire
+LLM font partit des model NLP(natural language processing)
+LLM est particulier pour generer du langage naturel.
+"L" dans LLM est large, chatGPT est enorme.
+lisent en moyenne 250 000 000 000 de mot pour s'entrainer. coute cher pour entrainer.
+ LM language model, predit la suite des mot avec la meilleur probabilité.
+
+Transformers
+une architecture de model dont se base les GPT.
+
+les model on besoin de decouper les phrase en token pour apprendre. les bout de mots qui font du sens ensemble tout seul.
+les token sont transformer en chiffre.
+mais le model a besoin d'apprendre aussi le sens des mot = token embedding.
+deux mot qui ont a peu pret le meme sens, sur l'axe X on donne le meme chiffre, on utilise l'axe Y pour faire la meme chose.
+
+puis on donne ces chifres au reseau neuronne pour qu'il apprenne.
+je donne aussi a met mot une valeur lié a sa position, une courbe.
+token + positional embedding est envoyé au reseau.
+
+Apres le preptraining viens le fine tuning.
+Question reponse et entrainement sur des donnée specialisé.
+ChatGPT = GPT + finetuning + apprentissage renforcé
+apprentissage renforcé est avec un feedback humain (on utilise un autre mdel qui va jouer avec le GPT)
+
+
+RAG
+LLMs sont entrainé a un certain moment dans le temps. Il n'est pas a jour.
+y a des connaissance qui ne sont pas publique (lnkedin)
+RAG permet d ajouter une DB de connaissance externe.
+Les DB d'embedding sont plus optimisé.
+
+Diffusion
+Jusqu'a recement on utilisais des GAN pour generer des images.
+une bibli d'image => un reseau de neuronne on demande si c'est vrai ou pas
+on va demander a un autre model de generer une image
+on demande a ces 2 model de se battre. tant que le disctiminateur arrive a dire si l'iage n'est pas vrai, on continue a demander a l'autre model de s'entrainer.
+
+on a reussi a generer des image a partir du text quad on a reussi a generer du text a partir de l'image.
+trouver le bruit est plus compute efficient que de debruiter une image.
+on lui donne du bruit et on dis que c'est une grenouille
 === 11h35 - 12h15 (PARIS 143 Conference) Naviger dans le labyrinth de la gestion des dependences maven
 ==== Abstract
 ```
@@ -404,7 +936,7 @@ Louis Jacomet has been perfecting his knowledge of Java for more than 20 years. 
 .Speaker: Hervé Boutemy
 TODO
 
-==== Notes:
+==== Notes
 
 === 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
 
@@ -423,6 +955,10 @@ Venez découvrir ou redécouvrir AssertJ pour vous perfectionner dans l’écrit
 ```
 
 ==== Notes
+OpenSource
+extraction de attribut est super simple avec assertJ
+softAssertions instead assertAll
+assertion sur donnée temporal (ex; closeTo())
 
 
 === 13h30 - 14h15 (MAIOLLOT Conference) Infra sans mdp, cauchemard des attaquant
@@ -440,6 +976,14 @@ A la fin du talk, vous connaitrez toutes les bonnes pratiques et outils pour sup
 ```
 
 ==== Notes
+74% des attach implique les erreur humain
+60% implique les mdp leak
+gitGardian, truffleDog, gitleak empech le leak.
+
+tmate te donne un debug shell pour voir ce qui se passe dans le runner github actions
+
+vault agent va creer un nouveau fichier/env var pour le seret qui a cahngé, donc mon appli qui tourne sur le pod doit verifier ca regulierement (ex: enotify)
+
 
 === 14h35 - 15h20 (MAILLOT Conference) programmer sa propre JVM avec JIT
 ==== Abstract
@@ -454,6 +998,8 @@ Puisse le dieu des « segmentation fault (core dumped) » être avec nous !
 
 ==== Notes
 
+
+
 === 15h40 - 16h25 (Amphy BLEU Conference) progammation parallel SIMD avec l'API Vector
 ==== Abstract
 .Speaker: José Paumard
@@ -464,6 +1010,24 @@ a première version de l'API Vector a été publié en incubation avec le JDK 16
 ```
 
 ==== Notes
+
+
+
+=== 15h40 - 16h25 (Amphy BLEU Conference) progammation parallel SIMD avec l'API Vector
+==== Abstract
+.Speaker: Julien Topcu
+
+==== Notes
+Archi N-tier commence a vieillir, logic etier est partout.
+
+maven enforcer plugin permet de verifier si
+arcunit verifie si j'ai pas des import inter module
+lean tdd
+
+des annotation custom me permet d'avoir une documentation de mon domain, et en plus je permet a spring de scanner mon domain
+sans que mon domaine ne connais spring.
+swapi 
+
 
 === 16h30 - 17h30 ------------------------------------- NETWORKING -----------------------------------
 
