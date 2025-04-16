@@ -1,0 +1,541 @@
+= Devoxx France 2024
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 2
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
+
+== Mercredi
+=== 09h00 - 09h45 (Amphi BLEU) KEYNOTE - Et si l'intelligence artificielle n'existais pas
+.Speakers: Luc Julia
+
+=== Notes
+.
+.image:
+
+=== 09h45 - 10h30 ------------------------------------- NETWORKING -------------------------------------
+
+
+=== 10h30 - 10h45 (Maillot) Iceberg, pouquoi devez vous connaitre ce nouveau format de stockage
+==== Abstract
+
+.Speaker: Bertrand Paquet
+Après avoir longtemps été consultant chez Octo, s'occupant plus particulièrement d'architecture, d'infra, de performances et de déploiement, après avoir passé deux ans chez Google en tant que SRE sur Google Search, Bertrand s'occupe maintenant de l'Engineering efficiency' chez Doctolib, le leader français de la prise de rendez-vous en ligne pour les médecins.
+
+```
+Apache Iceberg est un nouveau format de stockage de données, qui peut être utilisé sur n'importe ou (S3, GCS, Azure, en local …) Il est en train de s’imposer comme le format de stockage unique dans le monde de la data.
+Même si vous ne travaillez pas dans une équipe data, cela finira par vous impacter, car Iceberg ouvre de nouvelles perspectives architecturales.
+```
+
+=== Notes
+
+
+=== 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
+
+
+=== 11h35 - 12h20 (Amphi Bleu) Github copilot, aller plus loin que completion de code
+==== Abstract
+.Speaker: Kim-Adeline Miguel
+Je suis Senior Software Engineer chez GitHub, où je travaille sur et avec GitHub Copilot. Avant ça, je travaillais sur l'extension open-source Python pour VS Code depuis Vancouver, et avant avant ça j'étais en ESN. Au quotidien je suis plutôt axée TypeScript et IA, mais aussi tricot 🧶, Final Fantasy 14 🎮 et plantes vertes 🪴
+```
+La Programmation Orienté Données est une approche alternative à la Programmation Objet, qui vous permet d'organiser votre code différemment. Elle s'appuie sur les records, les types scellés, les switch expressions exhaustives, et le pattern matching. Ce lab part d'une application simple, et vous guide pas à pas vers la réorganisation du code en appliquant les principes de la programmation orientée données. Il vous permettra d'avoir une meilleure vision de ce qu'est la programmation orientée données, et de pouvoir l'appliquer à bon escient dans vos applications.
+```
+
+.Speaker: Sandra Parlant
+```
+Solutions architect who has worked with different customers in pre-sales, architecture, cloud, DevOps, development, and consulting. I am passionate about designing and delivering custom solutions for customers. When I'm not at work, I enjoy spending time with my baby girl and my family.
+```
+
+=== Notes
+.
+.image:
+
+
+=== 12h20 - 13h30 ------------------------------------- LUNCH -------------------------------------
+
+
+=== 12:35 - 12:50 (Paris 141 ) Snippets - non rien a avoir avec du code
+==== Abstract
+.speaker Josh Long
+Ane est Software Engineer chez Datadog. Elle est aussi oratrice de conférences et facilitatrice graphique.
+
+```
+Connaissez-vous les "Snippets"?
+Je vous présente l'utilisation de "snippets" comme un journal personnel de travail.
+Également connus comme "Google Snippets", ils prétendent être le secret de productivité de la Silicon Valley.```
+```
+
+=== Notes
+.
+.image:
+
+=== 12h50 - 13h30 ------------------------------------- LUNCH -------------------------------------
+
+=== 13h30 - 14h15 (Amphi Bleu) vol au dessus d'un nid de vulnerabilité
+==== Abstract
+.speaker Damien Lucas
+Ayant commencé ma carrière dans le mainframe, je suis maintenant développeur et Tech Lead Java depuis plusieurs années. J'adore lire la doc avant de me lancer dans le code. Et par dessus tout, j'aime échanger et transmettre sur ce que j'ai pu apprendre de mes expériences, des discussions avec mes pairs, des conférences vues ...
+```
+Durant ce talk, je vous présenterai les deux formats de SBOM existants : CycloneDX, soutenu par l'OWASP, et SPDX, par la Linux Foundation. Je vous expliquerai également comment nous avons automatisé leur génération depuis notre CI, ainsi que leur exploitation via DependencyTrack.
+```
+
+=== Notes
+
+=== 14h15 - 14h35 ------------------------------------- BREAK -------------------------------------
+
+=== 14h35 - 15h20 (Amphi Bleu) OAUTH2 et OpenID sous le capot
+==== Abstract
+.speaker Daniel Garnier-Moiroux
+Daniel est ingénieur dans les équipes Spring, où il contribue à Spring Security, et sur solutions dans le domaine de la gestion d'identité et du Single-Sign On. Il enseigne également l'ingénierie informatique aux Mines de Paris. Dans sa carrière, il a également été tech lead et consultant.
+```
+OpenID et OAuth2 sont les protocoles d'authentication et d'authorization web les plus répandus. Ce sont des protocoles compliqués, difficile à appréhender pour les novices, avec plein de concepts qui se mélangent. Souvent expliqué, rarement compris, ils se basent pourtant sur quelques primitives simples à mettre en oeuvre
+```
+
+=== Notes
+
+=== 15h20 - 15h40 ------------------------------------- BREAK -----------------------------------
+
+=== 15h40 - 16h25 (Amphi Bleu) Kubernetes en 2025
+==== Abstract
+.speaker Alain Regnier
+Alain Regnier est Architecte Technique et Entrepreneur passionné d’innovation.
+Il est CTO de la société Kubo Labs, spécialiste de Kubernetes on premise et sur le Cloud.
+
+```
+Au cours de cette présentation nous ferons le tour des dernières évolutions à connaitre pour mieux utiliser Kubernetes en 2025!
+Au programme: Gateway, kubectl debug, CRD, Operator, partage de GPU, Image Volumes, modification dynamique de ConfigMap, Container Storage Interface et SnapShots, eBPF, CEL pour le contrôle d'admission, request/limits au niveau des Pods, Kueue pour gérer les jobs, sécurité...
+```
+
+=== Notes
+
+=== 16h25 - 17h00 ------------------------------------- NETWORKING -------------------------------------
+
+
+=== 17h00 - 17h30 (Maillot) ça marche dans mon devcontainer !
+==== Abstract
+.speaker Benoit Moussaud
+
+Avec plus de 20 ans d'expérience en informatique d'entreprise, du développement à l'architecture globale d'applications d'entreprise complexes, mon domaine de prédilection est l'automatisation sous toutes ses formes: coté Dev en étant impliqué dans le projet open source Ant, l'intégration et le déploiement continue (CI /CD), les pratique DevOps appliquées non seulement aux application legacy mais aussi les applications cloud natives modernes. Les outils ne sont pas une fin: le processus humain est aussi essentiel : Agilité, Continuous Delivery et DevOps sont des méthodes et des pratiques. Intervenant dans de nombreuses conférences européennes (France, Suisse, Espagne, Belgique et Italie).
+.speaker Josephine St-Joannis
+
+```
+Configurer son environnement de développement peut être soit un plaisir (au début), soit une corvée (si cela se répète trop souvent).
+Il est généralement nécessaire de passer par un fichier README.md ou une page Wiki, de suivre les instructions (dans le bon ordre) en copiant-collant des commandes plus ou moins correctes et à jour (installation d'outils, synchronisation de référentiels) pour pouvoir lancer un build qui se termine par un succès et enfin l'application. Quel effort ! Surtout s'il faut recommencer avec le projet d'à côté en espérant qu'il n'y ait pas de conflit.
+Le projet devcontainer (https://containers.dev) offre une solution à ce problème : il permet de définir l'environnement de développement as code et de l'instancier automatiquement.
+Dans cette présentation axée sur la démonstration, nous verrons quels sont les prérequis, les différents concepts clés et comment plonger facilement dans le monde merveilleux des containers de développement.
+```
+
+=== Notes
+
+=== 17h30 - 17h50 ------------------------------------- BREAK -------------------------------------
+
+=== 17h50 - 18h20 (Amphi Bleu) Be more productive with IDEA
+==== Abstract
+.speaker Marit van Dijk
+
+Marit van Dijk is a software developer with over 20 years of diverse experience across various roles and companies. As a Java Champion and Developer Advocate at JetBrains, she is passionate about building awesome software in collaboration with amazing people, and making developers’ lives better.
+
+```
+IntelliJ IDEA is designed to help developers stay in the flow while working. It has a powerful editor, refactorings, navigation, and all kinds of smart features to help you write and read code. At the same time, it is jam packed with tools professional developers need, like Maven, Gradle, Spring, Git, Databases, Test tools and more. And did I mention a fantastic debugger?
+In this talk, you will see how IntelliJ IDEA supports your workflow without having to leave the IDE, and learn how you can be a happier and more productive developer.
+```
+
+=== Notes
+
+
+
+== Jeudi
+
+=== 09h00 - 09h25 (Amphi BLEU) Language IA et propagande
+==== Abstract
+.Speakers Elodie Mielczareck
+Elodie Mielczareck est sémiolinguiste (sémiologue pour le grand public). Elle est spécialisée dans le langage verbal (sémantique) et le langage non verbal (body language). Elle conseille également les dirigeants d’entreprise et accompagne certaines agences de communication et relations publiques internationales, notamment sur la question de la Raison d’être.
+
+```
+Les mots façonnent notre réel : ils construisent, manipulent, imposent, en un mot, ils performent ! Jamais neutre, toujours engagé, le langage devient un algorithme, calibré, biaisé, orienté. On parle souvent des politiciens et des communicants, mais les vrais maîtres du langage ne sont-ils pas devenus les codeurs et ingénieurs de notre époque? Comment les mots peuvent-ils encore avoir un sens à l’heure de Netflix et ChatGPT ? Voici les quelques questions qui seront soulevées lors de ce Keynote
+```
+
+
+=== 09h35 - 10h00 (Amphi BLEU) La territorialization des infrastructure comme levier de pouvoir
+==== Abstract
+.Speaker: Ophélie Coelho
+Ophélie Coelho est une chercheuse indépendante, autrice et conférencière, spécialisée dans la géopolitique du numérique. Elle est doctorante associée au Centre Internet et Société du CNRS et du laboratoire Carism (Panthéon-Assas).
+En 2023, elle publie "Géopolitique du numérique : l'impérialisme à pas de géants" aux Éditions de l'Atelier, où elle analyse la redistribution des pouvoirs entre acteurs étatiques et privés, ainsi que l'influence croissante des multinationales technologiques dans les relations internationales.
+
+
+```
+Alors que des investissements massifs sont annoncés pour le développement de l'IA, que représentent les infrastructures de données comme levier de pouvoir géopolitique ? Nous verrons dans cette keynote comment les acteurs de la tech et leurs Etats d'origine mettent en place des mécanismes de dépendances, qu'ils peuvent ensuite instrumentaliser pour orienter les relations internationales et les normes
+```
+
+=== Notes
+.
+
+
+=== 10h00 - 10h30 ------------------------------------- BREAK -------------------------------------
+
+
+=== 10h30 - 11h15 (Amphi Bleu) Les cles de l'architecture pour les devs
+==== Abstract
+.Speaker: CYRILLE MARTRAIRE
+Cyrille est CTO co-fondateur d'Arolla, un cabinet de conseil qui rassemble 130 enthousiastes de l'ingénierie logicielle moderne (Software Craft). Il est le fondateur de la communauté Paris Software Crafters, qui compte aujourd'hui plus de 5000 membres, est l'auteur du livre : "Living Documentation" chez Addison-Wesley et co-auteur du livre "Software Craft" chez Dunod. Cyrille est orateur régulier dans des conférences en Europe et au-delà.
+
+
+```
+Si vous êtes dev, vous participez de plus en plus aux décisions d’architecture, et c’est mieux ainsi. Mais quel est le minimum à savoir parmi toute l’étendue du sujet ?
+
+Cette session vous donnera les principales clés pour améliorer votre quotidien dans vos projets, chaque clé étant illustrée par des exemples concrets en code, json ou diagramme.
+
+Nous verrons notamment comment faire évoluer des API ou des flux asynchrones sans faire souffrir vos collègues, comment découper vos modules, vos données et vos instances pour moderniser ou scaler, comment faire des bons compromis techniques, et jusqu'à quel point se marier à nos frameworks favoris. Nous verrons aussi comment rester pragmatique tout en profitant des innovations. Vous repartirez avec une vision plus claire des différentes dimensions de l'architecture logicielle.
+```
+
+=== Notes
+.
+
+=== 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
+
+=== 11h35 - 12h20 (Amphi Bleu) Kuberenetes comment flinguer sa prod
+==== Abstract
+.Speaker: Denis Germain
+Je suis Staff Platform Engineer chez Lucca (ex-Deezer, Lectra, E.Leclerc), spécialiste de Kubernetes depuis 2017. J'ai accompagné les entreprises où j'ai travaillé dans la migration de workloads legacy vers des plateformes conteneurisées, tout en aidant les équipes de développement à adopter ce nouveau paradigme.
+
+```
+N'en déplaise à ceux qui pensent que Kubernetes ne sert à rien, 10 ans après le premier commit, cet outil est devenu un standard de-facto dans la gestion d'environnements containérisés en production.
+
+Il permet à de nombreuses équipes tech de gérer de manière efficace des logiciels hétérogènes, tout en apportant aux développeurs l'autonomie qu'ils souhaitent sur l'infrastructure.
+
+Pourtant, on ne peut pas non plus dire qu'installer, et pire... administrer un cluster Kubernetes soit quelque chose de trivial. En 7 ans de prod, dans 4 entreprises différentes, j'ai forcément rencontré de petits pépins, certains amusants (enfin... a posteriori).
+
+Je vous raconterai tout ça, sans tabou 😉.
+```
+
+=== Notes
+
+=== 12h20 - 13h30 ------------------------------------- LUNCH -------------------------------------
+
+=== 12h35 - 12h50 (Maillot) Du designe a la production, event driven architecture
+==== Abstract
+.Speaker: Vincent Dubois
+Je suis Staff Engineer chez Primary depuis 18 mois. Avant cela j’ai passé plus de 22 ans en ESN, chez des éditeurs de logiciels ou encore en startup. Je suis développeur, mais ce qui me motive avant tout, c’est le partage et l’animation de communautés techniques.
+```
+Les Event-Driven Architectures nous sont souvent présentées comme des solutions parfaites pour découpler les différentes parties d’un système.
+Si elles sont assez simples à mettre en oeuvre, elles viennent tout de même avec leur lot de contraintes, notamment pour suivre ce qui se passe en production.
+Chez Primary, nous avons fait le choix d’une Event-Driven Architecture depuis le premier jour pour notre backend.
+Je vous raconterai les hauts, les bas de ces deux dernières années, ainsi que les défis à venir. Vous repartirez avec des éléments concrets pour savoir si cela est pertinent de vous lancer dans ce style d’architecture.
+```
+
+=== Notes
+
+=== 13h00 - 13h15 (Maillot) TDD et IA
+==== Abstract
+.Speaker: Benoit Prioux
+Après 12 ans chez Lectra, éditeur de logiciel basé à Bordeaux, je suis maintenant Senior Software Engineer chez [Alan](https://alan.com/) depuis 4 ans.
+
+```
+Ces dernières années, l'intelligence artificielle a révolutionné notre manière d'aborder le développement logiciel.
+Vous avez peut-être déjà entendu dire : "Super, avec Copilot, plus besoin d'écrire des tests, il peut les générer pour moi."
+Mais est-ce vraiment compatible avec le Test Driven Development (TDD) ? 🤔
+
+Dans cette conférence, nous explorerons comment l'IA peut être intégrée efficacement dans votre boucle de développement (🔴 - 🟢 - 🔄).
+À travers des exemples concrets, nous verrons comment utiliser des outils basés sur l'IA pour améliorer et accélérer le processus de développement, tout en respectant les principes fondamentaux du TDD. 🚀
+Que vous soyez sceptique ou curieux, venez découvrir comment l'IA peut devenir votre meilleur allié. 🤝
+```
+
+=== Notes
+
+=== 13h15 - 14h35 ------------------------------------- LUNCH -------------------------------------
+
+
+=== 14h35 - 15h20 (Amphi bleu) Optimiser le demarrage avec project Leyden
+==== Abstract
+.Speaker: Sébastien Deleuze
+Sébastien travaille chez Broadcom en tant que core committer Spring Framework. Il a introduit le support de Kotlin dans les projets Spring, et travaille à intégrer différentes technologies avec le but d'optimiser l'efficacité des applications Spring en production (GraalVM, Project CRaC, CDS, Project Leyden). Il est également fan de WebAssembly depuis 2016, Kotlin Google Developer Expert et un ancien membre de l’équipe qui organise la conférence MiXiT.
+```
+Spring Boot 3 a introduit des optimisations visant à améliorer l’efficacité et les performances des applications Spring Boot déployées en tant que conteneurs en production.
+
+Dans cette présentation, Sébastien migrera une application Spring Boot 2 utilisant Java 8 vers Spring Boot 3 utilisant Java 24 de façon à tirer partie de technologies telles que Virtual Threads, Spring AOT, CDS/AOT cache et Buildpacks. Sébastien partagera des benchmarks (temps de démarrage, consommation mémoire, requêtes par seconde et latence), parlera des critères les plus importants pour choisir entre GraalVM, Project CRaC et CDS/AOT cache. Il donnera également un aperçu des améliorations à venir dans Project Leyden afin d’avoir des performances maximales dès le démarrage de la JVM.
+```
+
+=== Notes
+.
+
+=== 15h20 - 15h40 ------------------------------------- BREAK -------------------------------------
+
+=== 15h40 - 16h25 (Amphi Bleu) Requete SQL jusqu'a 1000 fois plus rapide
+==== Abstract
+.Speaker: Alain LESAGE
+Nos données sont ce qu'il y'a de plus précieux et c'est ce pourquoi ce champ de l'informatique me passionne.
+
+```
+Les systèmes de gestion de bases de données relationnels ne sont pas magiques et ont d'abord pour but d'assurer que vos données sont bien rangées et protégées en cas de force majeur. Ceci représente un défi lorsqu'on souhaite récupérer de l'information au cœur de son SGBD, en un temps minimal. Dans cette conférence, je propose d'étudier, avec PostgreSQL, les mécanismes mis en œuvre par le moteur et à disposition de l'administrateur pour s'assurer des performances optimales. Voici les thèmes abordés :
+MVCC
+impact de l'architecture matérielle sur les performances
+les paramètres PostgreSQL à connaître
+Quoi quand, comment et pourquoi indexer (focus sur index b-tree, BRIN)
+le rôle vital des statistiques pour les performances (planification et optimisation de requêtes par le moteur)
+Le partitionnement est-il utile ?
+Les limites de PostgreSQL aujourd'hui.
+Ceci est la synthèse de mon expérience de DBA au support de milliers d'instances pour nos clients, je souhaite partager un maximum d'informations utiles aux développeurs, intégrateurs et toute personne ayant affaire à une base de données (PostgreSQL)
+```
+
+=== Notes
+.
+
+=== 16h25 - 17h00 ------------------------------------- BREAK -------------------------------------
+
+=== 17h00 - 17h30 (Maillot) Nullaway
+==== Abstract
+.Speaker: Alexandre Navarro
+Geek dans l'âme, je suis Développeur / Architecte / Tech Lead pragmatique depuis plus de 20 ans sur des applications java haute performance pour les Traders et Sales.
+```
+Vous aussi vous, vous êtes arrachés les cheveux sur des NullPointerException (NPE pour les intimes) en production et vous voudriez éviter cela?
+Cette présentation est faite pour vous.
+L'idée du talk est de vous présenter différentes techniques afin d'éviter au maximum les potentielles NPE.
+Dans un premier temps, nous parlerons de l'utilisation de certaines classes, de patterns et de bonnes pratiques pour les éviter.
+Le cœur de la présentation s'attardera ensuite sur la présentation et le retour d'expérience sur nullaway, un annotation processor qui permet de vérifier les potentielles NPE à la compilation.
+Nous conclurons avec les avantages de nullaway mais aussi ses limites dans des projets déjà en production et nous finirons avec ce que nous réserve le jdk concernant la gestion des null dans le futur.
+```
+
+=== Notes
+.
+
+=== 16h30 - 17h00 ------------------------------------- NETWORKING -----------------------------------
+
+=== 17h00 - 17h30 (Paris 241) Instrumentez vos applications Java avec OpenTelemetry !
+==== Abstract
+.Speaker: BRUCE BUJON
+Bruce Bujon est ingénieur en Recherche & Développement chez Datadog. Il a passé près d'une quinzaine d'années à construire des systèmes distribués à l'aide du riche écosystème Java. Il mène aussi le Paris Java User Group et contribue à des projets Open Source liés à la vie privée tel son bloqueur de publicité AdAway. Quand il ne travaille pas, il est probablement en train de décompiler une application ou de souder son prochain prototype de gadget.
+
+```
+Second projet le plus actif de la CNCF derrière Kubernetes, OpenTelemetry s'est déjà imposé comme un standard incontournable de l'observabilité. Il permet d’instrumenter vos applications pour générer et exporter des traces, logs, et métriques de façon interopérable sans vendor lock-in.
+Mais démarrer avec OpenTelemetry peut être intimidant avec beaucoup de concepts et de choix à faire lors de sa mise en œuvre. Quels sont les concepts clés à connaître ? Quelles sont les approches à explorer lorsque que l'on souhaite l'appliquer à son projet ? Comment poser les fondations de l'observabilité de son système distribué ?
+Joignez-vous à Bruce Bujon pour une présentation pragmatique, illustrée par du live-coding, des différentes façons d'instrumenter vos applications Java via les outils offerts par OpenTelemetry. Il abordera et implémentera aussi bien les instrumentations manuelles via le SDK, que les supports natifs des différents frameworks, ou encore les instrumentations automatiques à base d'agent. Vous serez alors en mesure de générer des traces dans vos applications, de connaître les avantages et les inconvénients des différentes approches, de savoir comment propager un contexte dans un environnement distribué et bien plus encore. Ne ratez pas sa présentation et commencez à améliorer votre observabilité dès aujourd'hui !
+```
+
+=== Notes
+
+=== 17h30 - 17h50 ------------------------------------- BREAK -----------------------------------
+
+=== 17h50 - 18h20 (Paris 141) Infiscal - le meilleur ami des devs pour garder les secret
+==== Abstract
+.Speaker: Julien Briault
+Ingénieur Réseau / SRE chez Deezer la journée, et manager d’infrastructure bénévole aux Restos du Cœur le soir, je suis un peu le Batman de l’IT : un clavier pour le travail, un autre pour les Restos.
+
+```
+La gestion des secrets est un enjeu crucial pour la sécurité des infrastructures modernes. Si HashiCorp Vault a longtemps régné en maître, de nouvelles alternatives Open Source viennent aujourd'hui en proposant des alternatives sérieuses.
+
+Je présenterais Infisical, une solution Open Source qui mise sur la simplicité d’utilisation, l’efficacité, et une compatibilité sans faille avec vos environnements de développement préférés.
+Spoiler : gérer vos secrets n’a jamais été aussi simple, même avec des environnements multiples (prod/staging/dev/sandbox) – de quoi enfin donner à vos développeurs un sommeil un peu plus paisible.
+
+Et ce n’est pas tout : depuis qu’Hashicorp (IBM) a pris un virage vers la BSL (Business Source License), certains challengers comme Infisical qui redouble d'arguments pour vous séduire.
+
+Enfin, pour ne pas vous laisser sur votre faim, je conclurais avec une démonstration technique. Ainsi, vous découvrirez comment intégrer Infisical dans Kubernetes (grâce au Secret Operator dédié), mais aussi avec Ansible et plusieurs langages comme Java, Python et Go.
+
+Je vous le promets, après cette conférence, gestion des secrets n'aura plus aucun secret pour vous !
+```
+
+=== Notes
+.
+
+== Vendredi
+
+=== 9h00 - 9h25 (AMPHI BLEU) Comment modeliser l'etat du monde en 2100
+==== Abstract
+```
+Comment modéliser l’état du monde en 2100 ? Pas la question la plus simple ! Mais en 1972 un groupe de chercheurs du MIT a essayé de répondre à cette question : c’est le fameux et fascinant rapport Meadows. Et ils ont compris bien des choses avant tout le monde. Dans cette conférence interactive, je vous fais un résumé en 20 minutes de la méthode et surtout des résultats du rapport Meadows !
+```
+
+.speaker ANATOLE CHOUARD
+Je m’appelle Anatole, j’ai 27 ans et je suis vulgarisateur scientifique ! Pour ça j’ai 2 casquettes : je suis à la fois conférencier et sur YouTube. Après des études en classe préparatoire PC (Physique-Chimie), j’ai étudié les mathématiques appliquées à l’École Polytechnique, puis la modélisation mathématique à la University College de Londres. J’applique maintenant ces enseignements dans ma vulgarisation des sciences !
+
+=== Notes
+
+=== 9h00 - 9h25 (AMPHI BLEU) Plongé dans l'ere Quantic
+==== Abstract
+.speaker Fanny Bouton
+Analyste, journaliste et experte en nouvelles technologies depuis plus de 20 ans, elle intervient régulièrement dans les médias et co-produit et anime les podcasts sur le quantique "Quantum" et "Decode Quantum" avec Olivier Ezratty.
+Passionnée d'innovation, elle a lancé dès le début des années 2000 son blog et des soirées "Fanny's Party" dédiés au sujet. Pendant 18 ans, elle a réuni les geeks et vulgarisé les nouvelles technologies et innovations pour aider à la démocratisation des sujets complexes. Elle a animé bon nombre d'émissions comme "Quoi de neuf chez les geeks ?", "World of Fanny", "Follow Fanny", "Tech Away" et a été chroniqueuse pour Direct 8 ou encore GameOne.
+
+```
+La prochaine grande révolution industrielle après l’IA s’écrit déjà : l’informatique quantique. Longtemps considérée comme un concept lointain ou purement académique, cette technologie émergente est sur le point de bouleverser en profondeur l’univers du développement logiciel, des algorithmes et de l’architecture des systèmes.
+
+Dans cette session, nous explorerons les notions clés qui rendent l’informatique quantique si puissante, en démystifiant des concepts essentiels tels que le qubit, l’intrication et la superposition. Nous verrons comment ces principes inédits ouvrent des perspectives vertigineuses pour la recherche, la cryptographie, l’optimisation ou encore la simulation.
+
+L’objectif ? Vous donner un premier bagage de connaissances pratiques pour commencer à appréhender ce nouveau paradigme et aborder en toute confiance les outils, plateformes et langages de programmation quantique.
+
+Ce talk s’adresse à tout développeur ou architecte passionné par l’innovation et curieux de comprendre comment la physique quantique est en passe de remodeler l’informatique.
+```
+
+=== Notes
+
+=== 9h35 - 10h00 (AMPHI BLEU) Les LLMs revent ils de cavaliers electriques ?
+==== Abstract
+.speaker Thibaut Giraud
+Thibaut Giraud est docteur en philosophie et créateur de la chaîne de vulgarisation philosophique "Monsieur Phi" sur YouTube. Il porte un intérêt particulier aux LLM auxquels il consacré une dizaine de vidéo-essais et publiera cette année un livre sur le sujet.
+
+```
+Les LLM ne *comprennent*-ils rien parce qu'ils ne font que de la prédiction de prochain token ? *Comprendre* est un terme notoirement difficile à comprendre. Pour éclairer ce point, je voudrais discuter d'un usage des LLM très particulier : la génération de coups au jeu d'échecs. Un LLM pourrait-il jouer ne serait-ce qu'une partie entière sans coup illégal ? Des études ont mis en évidence que certains LLM sont capables de faire mieux que cela : ils jouent au niveau d'un bon joueur humain à partir seulement d'un historique de coups dont ils prédisent la suite. Plus intéressant encore : on peut montrer qu'ils se construisent spontanément un modèle interne du jeu. Cet exemple sur un cas précis est instructif pour réfléchir plus généralement à la question de savoir si les LLM ont un modèle du monde. Face à de tels résultats, il semble difficile de maintenir la position selon laquelle les LLM se réduisent à des "perroquets stochastiques".
+```
+
+=== Notes
+
+
+=== 10h30 - 11h15 (NEUILLY 151) Si l’enfer existe, on y trouve des devs qui gérent des clés de chiffrement
+
+.speaker Willy Malvault
+Architecte sécurité chez Bpifrance depuis 2023, et dans l'IT depuis 2008. Conférencier sur les sujets Architecture, Cloud Native et sécurité. Je suis un adepte de la vulgarisation : un bon résumé, digeste, d'un sujet technique de 20, 40 ou 50 minutes, ça a une valeur inestimable pour moi, dans ce monde Tech où tout évolue si vite !
+Organisateur du Snowcamp (Grenoble) et coach tremplins avec CraftsRecords.
+Accessoirement improvisateur rookie.
+
+==== Abstract
+```
+Dans un contexte géopolitique mondial instable et anxiogène, on nous demande de protéger nos données en chiffrant tout, partout et tout le temps… Alors on chiffe !
+
+Et puis les exigences de sécurité arrivent : rotation de clé, chiffrement de clé, contrôle d’accès, audit d’utilisation des clés, stockage des clés sur une solution souveraine. C’est dur !
+Pour couronner le tout, le PO a des idées lumineuses : on va faire de l’accès zero-knowledge ! Et puis de la tokenisation, ou encore du chiffrement homomorphique ! Et on arrive rapidement à devoir gérer des millions de clés pour des milliers d’utilisateurs.
+
+Le temps où l'on pouvait passer une clé de chiffrement en paramètre de configuration d'un service (resp. d'une application) est alors révolu !
+
+Deux alternatives s’offrent alors à nous :
+Laisser des trous de sécurité béants dans nos applications en gérant nos clés comme on peut.
+Automatiser la gestion de clés avec un KMS (Key Management Service) et avec le protocole KMIP, ou solution équivalente.
+
+Si vous n’utilisez pas la deuxième alternative : venez vite voir ce talk ! Cela pourrait sauver vos données… et les quelques cheveux qu'ils vous reste !
+```
+
+
+=== Notes
+
+=== 11h35 - 12h20 (Maillot) 45 min pour mettre son application à genoux : le guide complet du test de charge
+
+
+
+.speaker Loïc Ortola
+Quand Loïc n’est pas en train de militer pour qu’on ne copie-colle pas les réponses de StackOverflow sans regarder la doc, il intervient en architecture dans des contextes variés en tant que CTO de Takima. Il s’implique particulièrement à donner des visions d’ensemble concrètes pour que les développeurs puissent mieux dessiner leur système cible, et des retours d’expérience pour faire gagner du temps à ceux qui se lancent, parce que ça, on le trouve pas sur Stack Overflow.
+
+.speaker Mathilde Lorrain
+Mathilde a percé le secret de la fusion nucléaire et ne s’éteint jamais. On raconte même qu’EDF l’a contactée pour lui proposer un raccordement au réseau pour passer l’hiver.
+Passionnée de DevOps et de Backend, elle aime quand les choses sont directes et efficaces. Comme elle. D’ailleurs, elle utilise volontiers son surplus d’énergie pour transmettre ses secrets. Il paraît même qu’elle va revenir faire une conf…
+
+==== Abstract
+```
+45 minutes pour comprendre (un peu) comment ces algorithmes arrivent à écrire des poèmes ou répondre à des questions mieux que ta grand-mère.
+Tout le monde n'a que ça à la bouche : "Generative AI". Parmi les modèles les plus captivants de cette sphère se trouvent les LLM et RAG (Retrieval-Augmented Generation). Ce talk technique vise à dévoiler les mécanismes et les principes fondamentaux qui animent ces puissantes architectures d’IA.
+Plongée dans les Modèles de Langage à Grande Echelle (LLM)
+```
+
+==== Notes
+.
+
+
+=== 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
+
+=== 13h00 - 13h15 (Paris 141) Introduction à la cryptographie post-quantique
+==== Abstract
+.Speaker: Maxime Gosselin
+Je travaille chez Oodrive depuis plus de 15 ans, d'abord en tant que développeur backend Java, puis comme architecte logiciel, et je suis aussi en charge des problématiques de sécurité au sein de nos applications.
+Pendant cette période, Oodrive a notamment obtenu puis renouvelé sa qualification SecNumCloud auprès de l'ANSSI.
+
+```
+Les ordinateurs quantiques utilisables étant encore loin d'exister, pourquoi m'intéresser aujourd'hui à la cryptographie post-quantique ?
+Je vous présenterai une réponse dans ce talk, du point de vue d'un éditeur SaaS de solutions de gestion de données sensibles.
+Nous aborderons ensuite les recommandations pour la transition post quantique, émises par le NIST aux USA et l'ANSSI en France.
+Pour finir, nous reviendrons à la technique avec un exemple de mise en place sur une application web.
+```
+
+=== 13h30 - 14h15 (Amphi bleu) Comment debugger en production ?
+==== Abstract
+.speaker Jean-Philippe Bempel
+Développeur et Java Champion passionné par les performances, les runtimes (JVM, CLR) et adepte de Mechanical Sympathy, Jean-Philippe Bempel a plus de 8 ans d'expérience dans les systèmes de trading low latency. Après avoir optimisé les resources de larges clusters (2000+ noeuds) chez Criteo, Il a rejoint Datadog et développe un debugger de production.
+
+```
+Qui n'a jamais rêvé de rajouter une ligne de log à la volée sans redémarrer son application ? Ne pas avoir à attendre la fin de la CI puis du redéploiement des pods en prod ! Le cycle de vie des applications ayant beaucoup évolué ces dernières années, celui de l'investigation de problèmes (debugging/troubleshooting) n'a pas été facilité par ces évolutions.
+Cette présentation va montrer comment nous avons construit un debugger de production qui est utilisé au quotidien pour résoudre des problèmes de prod et même plus !
+Nous verrons que grâce à l'API d'instrumentation que nous fournit la JVM, il est possible de collecter toutes les données nécessaires pour une investigation tout en conservant un overhead faible compatible avec la production. Vous pourrez ainsi développer vos propres outils qui vous aideront à gérer vos incidents en toute sérénité !
+```
+
+==== Notes
+
+=== 14h35 - 15h20 (Amphi bleu) Optimisation des requêtes PostgreSQL : Parlons Performance !
+==== Abstract
+.Speaker: Lætitia Avrot
+Lætitia Avrot est une figure influente dans le monde de PostgreSQL. Elle est Trésorière de PostgreSQL Europe, fondatrice de Postgres Women et contributrice reconnue du projet PostgreSQL. Lætitia a découvert Postgres en 2007 et occupe actuellement le poste de Principal technical Product Marketing Manager chez EDB.
+
+```
+On a tous vu des requêtes lentes en production, et c'est difficile de prédire lesquelles vont exploser en premier. Certaines requêtes, cependant, peuvent vous mettre la puce à l'oreille quand vous faites votre premier EXPLAIN et vous faire dire qu'elles n'auraient jamais dû arriver en production.
+
+À travers des exemples réels, je vous montrerai comment réécrire une requête peut transformer un job de 3 heures en un job de 3 minutes (et oui, tout le monde ne pense pas de manière holistique), comment EXPLAIN ANALYZE vous dit exactement ce qui ne va pas (fini les suppositions !), et comment les index peuvent aider ou plomber vos performances (oui, cet index que vous avez ajouté parce que Stack Overflow l'a dit).
+
+Il semble aujourd'hui primordial de s'intéresser aux performances en base de données– parce que quel est l'intérêt de passer des heures à optimiser le code applicatif si votre requête fait un scan séquentiel ? Vous obtiendrez peut-être le graal avoir des requêtes stables quelle que soit la quantité de données requêtée. Aujourd'hui, nous levons le voile sur l'optimiseur de Postgres et vous verrez que ce n'est pas de la sorcellerie!
+```
+
+==== Notes
+
+===  15h40 - 16h25 (Maillot) --- OPTIONNEL ---- The DDD Horror Picture Show
+==== Abstract
+.Speaker: Thomas PIERRAIN
+VP of Engineering chez Agicap, Co-organisateur du meetup DDD FR , Speaker international (mais avec un accent de m...). Malgré une certaine passion pour le développement logiciel (écoles XP, Kanban & DDD) ainsi que pour le travail en équipe, Thomas ne désespère pas de trouver un autre moyen d’expression ou sa créativité sera -il l’espère- un peu plus reconnue.
+
+```
+La pratique du Domain-Driven Design (DDD) vous a-t-elle également amené à des situations déroutantes ? Dans ce talk, nous partagerons avec vous quelques-unes de nos petites histoires d’horreur pour vous aider à ne pas tomber dans les mêmes pièges. Par exemple, avez-vous déjà croisé la route d’un Bounded Context (BC) vampire qui absorbe compulsivement les modèles de données de ses congénères, les autres BCs ? Avez-vous déjà été pris d’obsession pour les agrégats ? Ou bien souffert d’envisager la cohérence à terme comme unique horizon ?
+
+Le DDD est-il vraiment le coupable de certains de nos cauchemars, ou y a-t-il quelque chose de plus sombre qui se cache sous la surface ? En partant de quelques-unes de nos expériences angoissantes, nous allons vous faire reconsidérer ce que vous savez à propos du DDD, et révéler les véritables coupables derrière certains de nos tourments récurrents.
+
+Une session aussi amusante qu’enrichissante dans laquelle nous vous dévoilerons quelques fantômes cachés du développement logiciel et certaines idées fausses qui peuvent hanter nos projets.
+```
+
+==== Notes
+
+
+=== 15h20 - 17h00 ------------------------------------- NETWORKING -----------------------------------
+
+=== 17h00 - 17h30 (NEUILLY 153) Du full text search dans postgreSQL
+==== Abstract
+.Speakers: Zied Ben abderrahim
+Développeur java depuis 2008, suis actuellement tech lead chez Capco où j'interviens dans la refonte des applications bancaires. Passionné, j'aime apprendre et partager sur tous les sujets qui touchent au développement et l architecture logicielle.
+
+```
+Aujourd'hui, quand on pense à mettre en place la recherche textuelle dans une application, les mots qui viennent spontanément sont : ElasticSearch, SoLR ou encore Lucene.
+
+Qu’on se le dise : les solutions sont incroyables, et ont vraiment eu un gros impact dans de nombreux SIs. Mais en avez-vous vraiment besoin ?
+Car déployer et maintenir des clusters ElasticSearch, gérer la manière dont on réplique la donnée à indexer, comment on la garde synchronisée...
+
+Et s’il suffisait d’utiliser votre PostgreSQL, est-ce que ça ne serait pas beaucoup plus simple et moins cher ?
+
+Nous commencerons par rappeler les concepts clé de recherche textuelle tels que le FTS, Stemming, IDF, rank et le Fuzzy search, puis nous irons mettre en place une intégration de Postgres search sur une application Spring Boot existante qui gère les transactions bancaires.
+
+On terminera par une prise de hauteur sur ce qui marche bien, les limites du système, pour aider à prendre des décisions d’architecture dans vos projets.
+```
+
+==== Notes
+

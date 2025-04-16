@@ -836,28 +836,38 @@ Fondateur de CraftsRecords, il aide les membres de notre communauté à se lance
 
 === Notes
 dupliquer ne veux pas dire decoupler. quand c'st conceptuellement couplé.
-duoliquer des class en microservice, c'est pas top.
-monolith distribué !
+dupliquer des class en microservice, c'est pas top.
+faut pas faire de monolith distribué !
 
 diviser par comportement
-et divicer les concept par la suite
+et diviser les concept par la suite
+.image:20240419_104926.jpg[]
+.image:20240419_104938.jpg[]
+.image:20240419_105000.jpg[]
+.image:20240419_105003.jpg[]
 
 sharedkernel est le domain qui partagé par les 2 domaines
-
 anticorruption layer doit etre a l'exterieur de la couche qu'on veux proteger.
-
 BBOM big bowl of mud
+.image:20240419_105525.jpg[]
+.image:20240419_105737.jpg[]
 
 polution de concept ne viens pas forceent avec l'importation de type/class, mais notion/concept aussi.
-
+.image:20240419_105746.jpg[]
 shared kernel n'est pas juste un lib common ou utils.
 Il doivent representer exactement le meme concept
 A reecouter ce talk.
 
 iteravitement
-ajouter dans sharedKerel, on va créer des tension de model, et on va devoir specialiser et dupliquer.
-
-
+ajouter dans sharedKerel, on va créer des tension de model, et on va devoir sortir, specialiser et dupliquer.
+.image:20240419_110524.jpg[]
+.image:20240419_110829.jpg[]
+.image:20240419_110842.jpg[]
+.image:20240419_110925.jpg[]
+.
+.image:20240419_111238.jpg[]
+.image:20240419_111302.jpg[]
+.image:20240419_111810.jpg[]
 
 === 11h35 - 12h15 (PARIS 242AB) Comment ça marche l'IA Generative ? LLM, RAG sous le capot.
 ==== Abstract
@@ -874,12 +884,15 @@ De nos jours, si je ne suis pas en réunion d'équipe, en train de peaufiner un 
 Notes
 
 ==== Notes
+.
+.image:20240419_113408.jpg[]
 generative pretrained transformers GPT
 Large Language Model LLM
 
 2000s
 google translate a poussé beaucoup les recherche sur l'IA pour ameliorer les recherches.
 Embeders les mot dans un espace vectoriel
+.image:20240419_114540.jpg[]
 
 LLM est un reseau de neuronnes.
 dans chaque neuronne on a une fonction linéaire, et on ajoute une partit non linéaire
@@ -887,41 +900,59 @@ LLM font partit des model NLP(natural language processing)
 LLM est particulier pour generer du langage naturel.
 "L" dans LLM est large, chatGPT est enorme.
 lisent en moyenne 250 000 000 000 de mot pour s'entrainer. coute cher pour entrainer.
- LM language model, predit la suite des mot avec la meilleur probabilité.
+LM language model, predit la suite des mot avec la meilleur probabilité.
 
 Transformers
 une architecture de model dont se base les GPT.
+.image:20240419_114606.jpg[]
 
 les model on besoin de decouper les phrase en token pour apprendre. les bout de mots qui font du sens ensemble tout seul.
 les token sont transformer en chiffre.
+.image:20240419_114816.jpg[]
 mais le model a besoin d'apprendre aussi le sens des mot = token embedding.
 deux mot qui ont a peu pret le meme sens, sur l'axe X on donne le meme chiffre, on utilise l'axe Y pour faire la meme chose.
-
+.image:20240419_114921.jpg[]
+.image:20240419_115102.jpg[]
 puis on donne ces chifres au reseau neuronne pour qu'il apprenne.
 je donne aussi a met mot une valeur lié a sa position, une courbe.
 token + positional embedding est envoyé au reseau.
+.image:20240419_115146.jpg[]
+.image:20240419_115235.jpg[]
+.image:20240419_115343.jpg[]
+.image:20240419_115410.jpg[]
+.image:20240419_115637.jpg[]
 
 Apres le preptraining viens le fine tuning.
 Question reponse et entrainement sur des donnée specialisé.
 ChatGPT = GPT + finetuning + apprentissage renforcé
 apprentissage renforcé est avec un feedback humain (on utilise un autre mdel qui va jouer avec le GPT)
-
+.image:20240419_120055.jpg[]
+.image:20240419_120709.jpg[]
 
 RAG
 LLMs sont entrainé a un certain moment dans le temps. Il n'est pas a jour.
 y a des connaissance qui ne sont pas publique (lnkedin)
 RAG permet d ajouter une DB de connaissance externe.
 Les DB d'embedding sont plus optimisé.
+.image:20240419_120709.jpg[]
+.image:20240419_120812.jpg[]
+.image:20240419_120940.jpg[]
 
 Diffusion
 Jusqu'a recement on utilisais des GAN pour generer des images.
 une bibli d'image => un reseau de neuronne on demande si c'est vrai ou pas
 on va demander a un autre model de generer une image
 on demande a ces 2 model de se battre. tant que le disctiminateur arrive a dire si l'iage n'est pas vrai, on continue a demander a l'autre model de s'entrainer.
+.image:20240419_121218.jpg[]
+.image:20240419_121445.jpg[]
+.image:20240419_121650.jpg[]
+.image:20240419_121828.jpg[]
 
 on a reussi a generer des image a partir du text quad on a reussi a generer du text a partir de l'image.
 trouver le bruit est plus compute efficient que de debruiter une image.
 on lui donne du bruit et on dis que c'est une grenouille
+
+
 === 11h35 - 12h15 (PARIS 143 Conference) Naviger dans le labyrinth de la gestion des dependences maven
 ==== Abstract
 ```
@@ -937,6 +968,7 @@ Louis Jacomet has been perfecting his knowledge of Java for more than 20 years. 
 TODO
 
 ==== Notes
+.
 
 === 12h20 - 13h00 ------------------------------------- LUNCH -------------------------------------
 
@@ -958,6 +990,10 @@ Venez découvrir ou redécouvrir AssertJ pour vous perfectionner dans l’écrit
 OpenSource
 extraction de attribut est super simple avec assertJ
 softAssertions instead assertAll
+.image:20240419_130750.jpg[]
+.image:20240419_131100.jpg[]
+.image:20240419_131130.jpg[]
+.image:20240419_131250.jpg[]
 assertion sur donnée temporal (ex; closeTo())
 
 
@@ -976,14 +1012,28 @@ A la fin du talk, vous connaitrez toutes les bonnes pratiques et outils pour sup
 ```
 
 ==== Notes
+.
+.image:20240419_132944.jpg[]
+.image:20240419_133127.jpg[]
 74% des attach implique les erreur humain
 60% implique les mdp leak
 gitGardian, truffleDog, gitleak empech le leak.
+.image:20240419_133412.jpg[]
+.image:20240419_133448.jpg[]
+
 
 tmate te donne un debug shell pour voir ce qui se passe dans le runner github actions
+.image:20240419_134334.jpg[]
+.image:20240419_134559.jpg[]
+.image:20240419_134704.jpg[]
 
-vault agent va creer un nouveau fichier/env var pour le seret qui a cahngé, donc mon appli qui tourne sur le pod doit verifier ca regulierement (ex: enotify)
-
+Vault agent va creer un nouveau fichier/env var pour le seret qui a cahngé, donc mon appli qui tourne sur le pod doit verifier ca regulierement (ex: enotify)
+.image:20240419_135656.jpg[]
+.image:20240419_135757.jpg[]
+.image:20240419_135902.jpg[]
+.image:20240419_135931.jpg[]
+.image:20240419_140051.jpg[]
+.image:20240419_141538.jpg[]
 
 === 14h35 - 15h20 (MAILLOT Conference) programmer sa propre JVM avec JIT
 ==== Abstract
@@ -997,8 +1047,19 @@ Puisse le dieu des « segmentation fault (core dumped) » être avec nous !
 ```
 
 ==== Notes
-
-
+JIT usage
+.image:20240419_143745.jpg[]
+.image:20240419_144341.jpg[]
+.image:20240419_144651.jpg[]
+.image:20240419_144854.jpg[]
+.image:20240419_144943.jpg[]
+.image:20240419_145159.jpg[]
+.image:20240419_145308.jpg[]
+.image:20240419_145331.jpg[]
+.image:20240419_145340.jpg[]
+.image:20240419_150427.jpg[]
+.image:20240419_151807.jpg[]
+.image:20240419_151857.jpg[]
 
 === 15h40 - 16h25 (Amphy BLEU Conference) progammation parallel SIMD avec l'API Vector
 ==== Abstract
@@ -1013,21 +1074,31 @@ a première version de l'API Vector a été publié en incubation avec le JDK 16
 
 
 
-=== 15h40 - 16h25 (Amphy BLEU Conference) progammation parallel SIMD avec l'API Vector
+=== 15h40 - 16h25 (Amphy BLEU Conference) Hexagonal architecture live
 ==== Abstract
 .Speaker: Julien Topcu
 
 ==== Notes
-Archi N-tier commence a vieillir, logic etier est partout.
+.
+.image:20240419_154107.jpg[]
+.image:20240419_154315.jpg[]
+Archi N-tier commence a vieillir, logic Ntier est partout.
 
 maven enforcer plugin permet de verifier si
 arcunit verifie si j'ai pas des import inter module
 lean tdd
+.image:20240419_154715.jpg[]
+.image:20240419_154845.jpg[]
 
 des annotation custom me permet d'avoir une documentation de mon domain, et en plus je permet a spring de scanner mon domain
 sans que mon domaine ne connais spring.
-swapi 
-
+swapi
+.image:20240419_160352.jpg[]
+.image:20240419_160953.jpg[]
+.image:20240419_161439.jpg[]
+.image:20240419_162347.jpg[]
+.image:20240419_162750.jpg[]
+.image:20240419_162806.jpg[]
 
 === 16h30 - 17h30 ------------------------------------- NETWORKING -----------------------------------
 
