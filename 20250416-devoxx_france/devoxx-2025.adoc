@@ -1,4 +1,4 @@
-= Devoxx France 2024
+= Devoxx France 2025
 // Handling GitHub admonition blocks icons
 ifndef::env-github[:icons: font]
 ifdef::env-github[]
@@ -40,11 +40,94 @@ toc::[]
 === 09h00 - 09h45 (Amphi BLEU) KEYNOTE - Et si l'intelligence artificielle n'existais pas
 .Speakers: Luc Julia
 
-=== Notes
-.
-.image:
+==== Notes
 
-=== 09h45 - 10h30 ------------------------------------- NETWORKING -------------------------------------
+cest quoi l'IA 1956 modelisation d'un neuronne a dortmund
+1958 ca marche pas. l'hiver de l'IA
+1960 nouveau idée, system expert basé sur logique et non statistic.
+1990 devien fort et bat casparove au echec. ca veux devenir que c'est intelligeant ? lol
+
+l'IA statistic reviens. machine learning
+car grace a l'internet on a beaucoup de donnée.
+
+Quand on dit l'IA ca n'existe pas, cest celle de hollywood.
+AI general generique n'existe pas.
+
+un IA est un outil, comme une scie un marteau.
+un IA dans un domaine particulier il est meilleur que moi, sinon il sert a rien. comme un marteau.
+
+IA generative existe depuis 2018.
+c'est une evolution et non revolution.
+Machine learning avec les donnée d'internet 1995 reussi a reconnaitre des chat à 98%. Un enfant reconnais à 100% apres avoir vu 2 chat.
+
+Deep learning avec capacité de calcule et donnée plus elevé.
+On a passé a des million de donnée, on utilise des GPU, on pete la planette.
+
+IA generative c'est +++. des milliard ou trillion de donnée. 1200 milliard de parametres (c'est l'internet en entier). Pour créer un model qui va pomper tout ca ca prend du temps.
+
+En vrais y a quand meme une revolution. C'est les prompte.
+grace a la language naturelle on peut interagir avec ces IA.
+
+IA "creative" n'existe pas. c'est "generative". Il genere ce que les humains créer. Par les prompt.
+C'est les developpeur qui vont créer en utilisant l'IA, comme on utilisais photoshop à l'epoque.
+
+courbe de gartner. explique les evolutions tech et industrielle.
+.
+image:²
+
+chatGPT a gagné 100 million d'utilisateur en 2 moi.
+Avril 2023 on s'est appercu que c'est de la merde. On a trouvé des cas d'usage et c'est repartit.
+Il a mit 18 mois pour parcourrir la courbe de gartner.
+C'est grace a l'accessibilité et les prompt.
+
+On a decouvert qu'il fait des hallicunation.
+
+Y a un gars (avocat) qui a demandé a chatGPT pour ecrir sont plaidoirie au tribunal (il a etait mal traité dans un avion par la companie)
+Le juge a dis c'est tres bien. mais y a un probleme, les reference de cas judiciere utilisé n'existe pas.
+
+comment calculer la pertinence ? c'est compliqué.
+On peut lui demander que la terre est plate, et il va nous montrer.
+
+fev 2023 université hong kong, on va prendre des million de donnée communament accepté comme vrai. on a vu que chatGPT nous genere des resultat 36% faux.
+
+Si on commence a specialiser l'outil. Ca va marcher mieux.
+C'est grace a ca qu'on commence a avoir un rebon des l'IA dans l'industrie.
+Maintenant on peut faire du fine tune ou RAG. grace a ça on peut avoir des IA avec 99% pertinent.
+
+Faire attention au proprieté intellectuelle. si on genere des truc qui ressemble beaucoup a des choses qui existe réélement.
+
+
+jailbreaking des IA avec le prompt directement.
+des fois y a des reponse que les IA ne peuvent pas donnée legallement.
+ex: donner une recette de bombe.
+novembre 2022 les IA ont etait bridé pour ça.
+decembre 2022, je dis au IA je suis un savant fou, et j'ai la recette.
+fevrier 2023 chatGPT s'est ajusté.
+Le jailbreaking des IA c'est une course.
+aujourdhuis le prompte qu'il faut, c'est une histoire de 30 pages.
+
+
+
+Imacte. on a peté la planete. on colle des central a coté des datacenter.
+chat requete chatGPT utilise de l'electricité et de leau.
+
+image:
+
+
+Majorité des les IA paye les indemnisation pour les amende de propriete intellectuelle.
+grock s'en foue (elon musk)
+
+le future:
+fine tuning et rag
+open source
+lodel plus frugaux
+plus specialise
+
+
+hybrid entre logique et statistic.
+sans utiliser de l'electricité pour créer l'arbre de decision.
+
+=== 09h45 - 10h30 ------------------------------- BREAK -------------------------------
 
 
 === 10h30 - 10h45 (Maillot) Iceberg, pouquoi devez vous connaitre ce nouveau format de stockage
@@ -58,7 +141,22 @@ Apache Iceberg est un nouveau format de stockage de données, qui peut être uti
 Même si vous ne travaillez pas dans une équipe data, cela finira par vous impacter, car Iceberg ouvre de nouvelles perspectives architecturales.
 ```
 
-=== Notes
+==== Notes
+
+15 minute au keynote de AWS summit dessus.
+
+(amazon athena)
+peut stocker sur object storage sur AWS S3 au lieu de stocker sur des fichier sur un server comme PG classic.
+
+compression zst en plus de parquet est le meilleur facon de faire de l'analytics sur Amazon athena.
+
+dans parquet le count(*) est instentané car le nombre de ligne est dans le header des fichier. zero data scan.
+
+on peut faire des update sur les données !
+faux gerer les expired/orphan files. En general service providers vous aides.
+
+
+SRI vs Data
 
 
 === 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
@@ -77,9 +175,34 @@ La Programmation Orienté Données est une approche alternative à la Programmat
 Solutions architect who has worked with different customers in pre-sales, architecture, cloud, DevOps, development, and consulting. I am passionate about designing and delivering custom solutions for customers. When I'm not at work, I enjoy spending time with my baby girl and my family.
 ```
 
-=== Notes
-.
-.image:
+==== Notes
+
+je oeut ajouter des instruction pour copilote dans le fichier .github
+copilot-instructions.md
+
+je oeux ajouter des personnal instructions (ex: use french)
+ça persist sur github globallement pour moi.
+
+je peux retry les question et meme instruction personalisé avec un autre model.
+
+je peux swith entre les reponses des different model et revenir.
+
+il existe un mode "edit" au lieu de "ask" dans github sur les IDE.
+Il faut ajouter la codebase en context.
+We can add features by asking via prompt. and it will generate code for us.
+il me propose de revoir avant d'accpter les changement. fichier par fichier.
+
+on peut generer une description de la PR sur github.
+
+github advance security peut revoir les PR en terme de securité.
+Copilot autofix permet de avoir des solution de fix.
+
+agent mode fonctionne avec MCP protocole
+il peut agire sur github directement créé des issue, PR ect.
+on a aussi plus d'interaction et suivis des etapes.
+
+
+
 
 
 === 12h20 - 13h30 ------------------------------------- LUNCH -------------------------------------
@@ -87,7 +210,7 @@ Solutions architect who has worked with different customers in pre-sales, archit
 
 === 12:35 - 12:50 (Paris 141 ) Snippets - non rien a avoir avec du code
 ==== Abstract
-.speaker Josh Long
+.speaker Ane DIEZ DE TUESTA
 Ane est Software Engineer chez Datadog. Elle est aussi oratrice de conférences et facilitatrice graphique.
 
 ```
@@ -96,9 +219,9 @@ Je vous présente l'utilisation de "snippets" comme un journal personnel de trav
 Également connus comme "Google Snippets", ils prétendent être le secret de productivité de la Silicon Valley.```
 ```
 
-=== Notes
-.
-.image:
+==== Notes
+
+
 
 === 12h50 - 13h30 ------------------------------------- LUNCH -------------------------------------
 
@@ -110,7 +233,66 @@ Ayant commencé ma carrière dans le mainframe, je suis maintenant développeur 
 Durant ce talk, je vous présenterai les deux formats de SBOM existants : CycloneDX, soutenu par l'OWASP, et SPDX, par la Linux Foundation. Je vous expliquerai également comment nous avons automatisé leur génération depuis notre CI, ainsi que leur exploitation via DependencyTrack.
 ```
 
-=== Notes
+==== Notes
+les BOMs
+mend renovate c'est comme dependabot
+
+faut un outils qui scan les composant en prod:
+existant: IDE plugins, sonar, jfrog xray.
+Mais on a pas la vision des composant en prod
+Encore mieux: des alertes automatique.
+
+2020 solarwinds est piraté, infiltré dans leur reseau. ingecté du malware dans la pipeline et la prochaine livraison.
+tout les client sont impacté par leur mise a jour.
+perte de 40 million de dolard.
+les USA impose de fournir un BOM pour tout provider de software.
+
+les normes de BOM
+SPDX(linux) vs cycloneDX(owasp)
+
+SPDX orienté licence
+Norme ISO
+example petclinic de spring
+format json
+.image:
+tout est un package
+
+CycloneDX
+orienté bill of material
+norme ECMA (moin rigide qu'ISO)
+tout est component
+format XML et protobof
+
+conversion enter les 2 model est possible
+
+plusieur facon de generer un SBOM
+outils externe ? vs integré à l'appli
+Syft peut pousser avec un github action le SBOM.
+github peut aussi generer le SBOM dans insights => dependency graph
+docker scout est un scanner aussi pour les images docker.
+Scan de dependence appli et scan congainer (image de base ect, tout pour le runtime) est complementaire.
+
+ya des outils qui ne prend pas en compte le tree shaking fait au build donc n'extrait pas du SBOM ce qui n'est pas utilisé dans le package final.
+
+
+comment exploiter
+Dependency track ou docker scout
+Dependency track donne un score de prediction d'exploitation dans la nature.
+On peut setup des alerte selon des critere custom.
+ex: licence GPL utilisé dans l'entreprise.
+
+pour Cyclone DX on a des variants pour autres sujet que le code et runtime concernant les appli.
+xBOM ou le Fullstack BOM
+SaaS BOM va parler des services externe utilisé (ex: kafka)
+Cryptography BOM va resencer tout les asset lié au crypto (algorithm, clé, certif, certificats, java bouncy castle ect..)
+CBOM ou cdxgen permet de le faire
+HBOM hardware
+Formulation (CI, ect)
+MLBOM (les donnée utilisé pour l'entrainer)
+
+y a cyber resilience act qui commence a imposer des SBOM partout.
+
+
 
 === 14h15 - 14h35 ------------------------------------- BREAK -------------------------------------
 
@@ -122,7 +304,60 @@ Daniel est ingénieur dans les équipes Spring, où il contribue à Spring Secur
 OpenID et OAuth2 sont les protocoles d'authentication et d'authorization web les plus répandus. Ce sont des protocoles compliqués, difficile à appréhender pour les novices, avec plein de concepts qui se mélangent. Souvent expliqué, rarement compris, ils se basent pourtant sur quelques primitives simples à mettre en oeuvre
 ```
 
-=== Notes
+==== Notes
+OUAUTH2 framework d'authorization (permission)
+via des access token
+c'est un ensemble de spec dont RFC6749 qui est l'initial.
+
+ex: je donne access a mon-albul-photo.com à acceder a mes photo sur google photos. sans partager mon mdp google.
+
+OpenID Connect (OIDC) est un framework d'authentification
+identité detenu par un provider d'identité
+donc faire du SSO
+basé sur Oauth2 avec des tokens
+
+BAD IDEA
+image:
+
+OAUTH2
+image:
+
+token d'identification ne doit pas transiter par nos PC.
+REAL OAUTH2
+image:
+
+
+intellij run anything "presentation"
+
+
+1. rediriger l'utilisateur pour qu'il cherche un code chez google
+
+    y a une relation pre etablis entre my-photos-blabal.com et google, pour que il puisse rediriger vers google pour que je puisse me loger et donner un code à myphotoblabla.
+    C'est la ou il definit chez google le ouauth2/callback url.
+
+    google a un api pour ce genre de connu api
+    google.api/.wellknown/openid
+    on trouve le url d'authentfication
+    "authorization-endpoint": accounts.googel/o/oauth2/v2/auth
+
+2. utiliser le code de google pour un token d'identité
+
+    implementer le url callback endpoint sur notre app.
+    sur .well-known/openid prendre le "token_endpoint" :ouath2.googleapis.com/token
+    appeler ce url avec les parametres comme le type de code et grant_type
+    et fournir le code avec le http header "authentication".
+    On optien un JWT.
+
+    on peut decrypter du JWT (base64) sur JWT.io ou un outil en cli "step + jq"
+
+3. je vais metre ça dans la session de mon user sur mon appli my-photos-blabla
+
+
+Faire du single page ap avec OAUTH2 et OICD est different.
+En general on a un backend pour pas avoir les key exposé au client.
+ou alors un gateway devant le signle page app qui gere l'authententification.
+
+Oauth2 browser base apps. (recommend un BFF)
 
 === 15h20 - 15h40 ------------------------------------- BREAK -----------------------------------
 
@@ -137,9 +372,67 @@ Au cours de cette présentation nous ferons le tour des dernières évolutions �
 Au programme: Gateway, kubectl debug, CRD, Operator, partage de GPU, Image Volumes, modification dynamique de ConfigMap, Container Storage Interface et SnapShots, eBPF, CEL pour le contrôle d'admission, request/limits au niveau des Pods, Kueue pour gérer les jobs, sécurité...
 ```
 
-=== Notes
+==== Notes
 
-=== 16h25 - 17h00 ------------------------------------- NETWORKING -------------------------------------
+CRD permet d'ajouter de nouveau type d'objet dans K8s
+Operator permet d'etendre les fonctionalité de K8s. permet de automatiser le cycle de vie d'une application
+Operator = controller + CRD
+
+kubecl debug (vs exec shell) d'un pod qui n'a pas de bash sur l'image de base.
+ajoute un sidecar dans le pod.
+
+kubectl d'un node
+le root FS est visible sous /host.
+
+arakid est un genre de busybox avec diff outils dedans que je peux utiliser comme sidecar dans le pod pour "kubectl debug".
+
+Gateway api (vs old ingress)
+routage inter namespace
+support Grpc
+canary deployment blue/green
+c'est fournis comme un CRD (n'est pas inclus dans les version K8s)
+ingress nginX va etre archivé.
+
+CSI (container storage interface)
+Volume Snapshot d'un persistentVolume.
+sont egallement des CRD.
+
+PVC persistent volume claim
+
+
+eBPF
+ça permeet d'ajouter des fonctionalité au kernel.
+beaucoup utilisé pour du monitoring.
+
+
+CEL common expression language.
+jamais utiliser de "latest" dans les deploiment K8s
+ValidationAdmission policy permet de controller ce que les dev envoie au Kube API. les CEL sont tres utils ici.
+
+
+ConfigMap Dynamic Update
+ça marche quand les config sont monté en volume. pas en env vars.
+
+
+Image Volumes
+permet de monter directement le contenue d'une image OCI dans le FGS ou plusieur container  d'un pod
+decoupler l'appli de ses fichier de config.
+
+
+Request/Limit
+on va les avoir au global au niveau du pod.
+on peut tjr affiner au niveau container
+
+
+Kueue (vs jobs et cronjobs)
+solution cloud native.
+
+Template (vs kustomize)
+
+Secrets store CSI Driver
+
+
+=== 16h25 - 17h00 ------------------------------- NETWORKING -------------------------------
 
 
 === 17h00 - 17h30 (Maillot) ça marche dans mon devcontainer !
@@ -156,7 +449,29 @@ Le projet devcontainer (https://containers.dev) offre une solution à ce problè
 Dans cette présentation axée sur la démonstration, nous verrons quels sont les prérequis, les différents concepts clés et comment plonger facilement dans le monde merveilleux des containers de développement.
 ```
 
-=== Notes
+==== Notes
+
+image:
+
+un env complet de dev dans un container.
+dabord on specifie tout les parametre du runtime dont j'ai besoin pour dev.
+Evite que les dev ait besoin d'installer des truc pour modifier/evoluer leur envs de dev.
+Aussi eviter de pourrir sa machine pour des tache temporaire.
+
+Colima ?
+
+Je peux partager tout mon FS avec le container, mais
+je peux aussi isoler les source en clonnant le repo dans le container.
+il va créer un volume pour la persistence des volume (les vol des container sont moin analysé par les antivirus, donc le code plus rapide a compiler)
+
+vegeta permet de faire du microbenchmark
+
+si on manque de resource en local, on peu projeter avec devcontainers sur github codespace.
+
+
+pas de private endoint sur codespace pour le moment.
+
+
 
 === 17h30 - 17h50 ------------------------------------- BREAK -------------------------------------
 
@@ -171,9 +486,41 @@ IntelliJ IDEA is designed to help developers stay in the flow while working. It 
 In this talk, you will see how IntelliJ IDEA supports your workflow without having to leave the IDE, and learn how you can be a happier and more productive developer.
 ```
 
-=== Notes
+==== Notes
 
+Nullness is implicit in java.
+Rendre ceci explicit avec JSpecify.
+on peut deja faire cela avec Kotlin.
+semantic: Nulleness types
+@Nullable
+@NonNull
+@Unknown
 
+Optional a un runtime overhead.
+Pas possible de changer la JDK et spring APIs pour metre Optional partout.
+
+Pourquoi JSpecify vs Jakarta nullable
+
+Set the default to non-null to reduce noise.
+
+@NullMarked veux dire qu'au niveau du package, quand j'ai pas d'annotation, c'est du nonNull.
+
+unsafe code should break the build.
+Nullaway permet de fail si on a des alert JSpecify.
+on utilise gradle errorprone plugin. Nullaway est une extension.
+
+nullability of arrays and varargs is supported.
+Generic types as well.
+
+grace a JSpecify on peut faire des library java qui peuvent etre utilisé en Kotlin
+
+assert state permet de defnir des contrat sur les body des reponse de restClient.
+
+JSpecify is a zero cost abstraction of nulleness.
+Value classes + jspecify qui enleve un bit par objet, on aura de l'optim important au niveau java.
+
+Optionnel est tjr important pour les valeur de retour et gestion fonctionnel style.
+Mais le nullable avec zero cost peut nous preparer pour le nullness de java avec valhala
 
 == Jeudi
 
@@ -198,7 +545,7 @@ En 2023, elle publie "Géopolitique du numérique : l'impérialisme à pas de g�
 Alors que des investissements massifs sont annoncés pour le développement de l'IA, que représentent les infrastructures de données comme levier de pouvoir géopolitique ? Nous verrons dans cette keynote comment les acteurs de la tech et leurs Etats d'origine mettent en place des mécanismes de dépendances, qu'ils peuvent ensuite instrumentaliser pour orienter les relations internationales et les normes
 ```
 
-=== Notes
+==== Notes
 .
 
 
@@ -219,8 +566,50 @@ Cette session vous donnera les principales clés pour améliorer votre quotidien
 Nous verrons notamment comment faire évoluer des API ou des flux asynchrones sans faire souffrir vos collègues, comment découper vos modules, vos données et vos instances pour moderniser ou scaler, comment faire des bons compromis techniques, et jusqu'à quel point se marier à nos frameworks favoris. Nous verrons aussi comment rester pragmatique tout en profitant des innovations. Vous repartirez avec une vision plus claire des différentes dimensions de l'architecture logicielle.
 ```
 
-=== Notes
-.
+==== Notes
+premiere clé c'est de savoir vivre dans l'insertitude.
+Tout change tjr avec les system modulaire.
+on peut pas tout savoir et tout prevoir.
+
+context diagram C4
+image:
+
+2eme clé est "commencer à parler du problem" (sans parler de solution).
+un probleme bien posé c'est pas que les comportement attendu, mais les quality attributes aussi (volume, availability, language/techno ...ect)
+
+3eme clé talk negotiate educate people.
+
+Technical constraints guide the design.
+DDD says business logic should drive the design.
+But quality attributes are related to business requirements.
+image:
+
+
+4eme clé est la modularité. Subdomains.
+modular monolith (pragmatic solution)
+
+Tout solution apport des nouveau probleme.
+
+5eme clé architectural perspective
+domaines(business logic) vs module(code)
+complexité de chaque partit de l'architecture dois correspondre au competence des personne qui gere ces partit de l'archi.
+
+image:
+
+Modular monolit has top 2 layers divided, but runtime unified.
+
+6eme clé, guarde des option reversible pas cher.
+
+7eme clé, reconnaitre des problem difficile, et les deleguer (cloud, middleware, service managé ...ect)
+
+La fin du modular monolith :( on passe en microservices.
+nouvelle solution: nouveau problemes
+
+ArchUnit.
+Des ADR dans le code.
+
+
+
 
 === 11h15 - 11h35 ------------------------------------- BREAK -------------------------------------
 
@@ -239,7 +628,37 @@ Pourtant, on ne peut pas non plus dire qu'installer, et pire... administrer un c
 Je vous raconterai tout ça, sans tabou 😉.
 ```
 
-=== Notes
+==== Notes
+
+1)
+Liveness/Readiness
+deux url distinct.
+Solution: Liveness ne doit pas avoir de dependence externes.
+
+2)
+l'api version n'est pas le meme que la version des binaires.
+probleme d'historique ?
+Solution: gitops
+
+3)
+2 virtualService/ingress pointe sur le meme url
+C'est permis par la spec de ingress, mais le comportement va dependre du controller utilisé.
+solution: ValidatingWebHooks avec Kyverno ou OPA GateKeeper
+
+4)
+Certificate Authority qui expire ?
+Dans K8s tout les flux sont encrypté
+image:
+solution: monitoring
+
+5)
+systemd bug when update
+solution: ne pas mettre a jour les server/nodes , destroy and create new, test new OS image before using in PROD.
+approche "cattle" vs pets
+
+
+
+
 
 === 12h20 - 13h30 ------------------------------------- LUNCH -------------------------------------
 
@@ -254,7 +673,14 @@ Chez Primary, nous avons fait le choix d’une Event-Driven Architecture depuis 
 Je vous raconterai les hauts, les bas de ces deux dernières années, ainsi que les défis à venir. Vous repartirez avec des éléments concrets pour savoir si cela est pertinent de vous lancer dans ce style d’architecture.
 ```
 
-=== Notes
+==== Notes
+
+Dead letter queue est une bonne pratique pour recuperer les event qui n'ont pas pu etait geré par les consumer/subscriber/handler.
+
+Des erreur ? on rejoue. Donc il faut de l'idempotence.
+Mais on rejoue pas systematiquement. ça depende et il faut une strategie definit.
+
+
 
 === 13h00 - 13h15 (Maillot) TDD et IA
 ==== Abstract
@@ -271,12 +697,12 @@ Dans cette conférence, nous explorerons comment l'IA peut être intégrée effi
 Que vous soyez sceptique ou curieux, venez découvrir comment l'IA peut devenir votre meilleur allié. 🤝
 ```
 
-=== Notes
+==== Notes
 
 === 13h15 - 14h35 ------------------------------------- LUNCH -------------------------------------
 
 
-=== 14h35 - 15h20 (Amphi bleu) Optimiser le demarrage avec project Leyden
+=== 14h35 - 15h20 (Amphi bleu) Optimiser le démarrage avec project Leyden
 ==== Abstract
 .Speaker: Sébastien Deleuze
 Sébastien travaille chez Broadcom en tant que core committer Spring Framework. Il a introduit le support de Kotlin dans les projets Spring, et travaille à intégrer différentes technologies avec le but d'optimiser l'efficacité des applications Spring en production (GraalVM, Project CRaC, CDS, Project Leyden). Il est également fan de WebAssembly depuis 2016, Kotlin Google Developer Expert et un ancien membre de l’équipe qui organise la conférence MiXiT.
@@ -286,8 +712,39 @@ Spring Boot 3 a introduit des optimisations visant à améliorer l’efficacité
 Dans cette présentation, Sébastien migrera une application Spring Boot 2 utilisant Java 8 vers Spring Boot 3 utilisant Java 24 de façon à tirer partie de technologies telles que Virtual Threads, Spring AOT, CDS/AOT cache et Buildpacks. Sébastien partagera des benchmarks (temps de démarrage, consommation mémoire, requêtes par seconde et latence), parlera des critères les plus importants pour choisir entre GraalVM, Project CRaC et CDS/AOT cache. Il donnera également un aperçu des améliorations à venir dans Project Leyden afin d’avoir des performances maximales dès le démarrage de la JVM.
 ```
 
-=== Notes
-.
+==== Notes
+
+CDS class data sharing
+    => AOT cache (java 24 et LTS en 25)
+        => AOT cache with profiling and code complilation (Future experimental)
+
+atteindre le warmup de la JVM plus rapidement grace a ce cache.
+Training run avant de packager et livrer.
+
+CDS ne donne pas de gain si on utilise pas les jar auto extract de spring.
+image:
+
+en demarrant l'appli avec les lib extrait et cds cahce créé, l'appli demarre plus vite etmoin de memoru footprint
+
+ definir le dialect JDCB est une bonne pratique, ca evite que l'appli tappe a la DB au demarrage.
+
+container avec CDS va etre plus gros ! mais c'est le tradeof a faire.
+
+on peut créé l'image docker avec spring boot uildpack, ou alors on peux integrer le chache CDS dans notre custom dockerfile nous meme.
+
+java 24 avec project leyden bring AOT (pas du native GraalVM, mais pour la JVM classic) AOT cache est le successor de CDS.
+
+
+AOT cache (JVM)  X  Spring AOT (graalVM)
+JEP 483
+
+on peut créé le fichier aot.conf sans arrete la JVM en prod.
+
+Crac serialize tout la memoire dans un fichier. donc les MDP !!
+
+
+
+
 
 === 15h20 - 15h40 ------------------------------------- BREAK -------------------------------------
 
@@ -308,8 +765,19 @@ Les limites de PostgreSQL aujourd'hui.
 Ceci est la synthèse de mon expérience de DBA au support de milliers d'instances pour nos clients, je souhaite partager un maximum d'informations utiles aux développeurs, intégrateurs et toute personne ayant affaire à une base de données (PostgreSQL)
 ```
 
-=== Notes
+==== Notes
 .
+Postgresql est modulaire et extensible.
+Libre et opensource
+née à l'université.
+Pas de rique qu'il y a du vendor locking
+
+performence mono thread est imoortant car on fait forcement des operation de tri (qui se fait tjr en un seul thread a un moment)
+
+index only scan permet d'avoir la valeur directement dans la table d'index sans a aller chercher les donnée dans le disk.
+
+les orm retourne tout les colonne, et on paye ça au niveau reseau.
+
 
 === 16h25 - 17h00 ------------------------------------- BREAK -------------------------------------
 
@@ -326,23 +794,26 @@ Le cœur de la présentation s'attardera ensuite sur la présentation et le reto
 Nous conclurons avec les avantages de nullaway mais aussi ses limites dans des projets déjà en production et nous finirons avec ce que nous réserve le jdk concernant la gestion des null dans le futur.
 ```
 
-=== Notes
-.
+==== Notes
 
-=== 16h30 - 17h00 ------------------------------------- NETWORKING -----------------------------------
+Jilt (staged builder) vs lombok builder (le premier permet d'avoir des objet fully initialized)
 
-=== 17h00 - 17h30 (Paris 241) Instrumentez vos applications Java avec OpenTelemetry !
-==== Abstract
-.Speaker: BRUCE BUJON
-Bruce Bujon est ingénieur en Recherche & Développement chez Datadog. Il a passé près d'une quinzaine d'années à construire des systèmes distribués à l'aide du riche écosystème Java. Il mène aussi le Paris Java User Group et contribue à des projets Open Source liés à la vie privée tel son bloqueur de publicité AdAway. Quand il ne travaille pas, il est probablement en train de décompiler une application ou de souder son prochain prototype de gadget.
+Jakarta validation ou Object.requireNonNull
+Rust est safe en threading et type comparé à C°°, mais les meme perf
+pas de null, pas d'exception. Option/result un objet emoty.
 
-```
-Second projet le plus actif de la CNCF derrière Kubernetes, OpenTelemetry s'est déjà imposé comme un standard incontournable de l'observabilité. Il permet d’instrumenter vos applications pour générer et exporter des traces, logs, et métriques de façon interopérable sans vendor lock-in.
-Mais démarrer avec OpenTelemetry peut être intimidant avec beaucoup de concepts et de choix à faire lors de sa mise en œuvre. Quels sont les concepts clés à connaître ? Quelles sont les approches à explorer lorsque que l'on souhaite l'appliquer à son projet ? Comment poser les fondations de l'observabilité de son système distribué ?
-Joignez-vous à Bruce Bujon pour une présentation pragmatique, illustrée par du live-coding, des différentes façons d'instrumenter vos applications Java via les outils offerts par OpenTelemetry. Il abordera et implémentera aussi bien les instrumentations manuelles via le SDK, que les supports natifs des différents frameworks, ou encore les instrumentations automatiques à base d'agent. Vous serez alors en mesure de générer des traces dans vos applications, de connaître les avantages et les inconvénients des différentes approches, de savoir comment propager un contexte dans un environnement distribué et bien plus encore. Ne ratez pas sa présentation et commencez à améliorer votre observabilité dès aujourd'hui !
-```
+image:{docfile}/
 
-=== Notes
+Nullaway
+on est obligé de noter tout les parametre de method, retour de method, attribut de class.
+
+Jilt permet d'obliger les dev a remplir tout les champs avant de builder avec le builder.
+
+Nullaway a certain class de jdk ou spring en dure, pour faire comme si cetait annoté avec JSpecify, meme si ce n'est pas le cas.
+
+
+
+
 
 === 17h30 - 17h50 ------------------------------------- BREAK -----------------------------------
 
@@ -364,21 +835,26 @@ Enfin, pour ne pas vous laisser sur votre faim, je conclurais avec une démonstr
 Je vous le promets, après cette conférence, gestion des secrets n'aura plus aucun secret pour vous !
 ```
 
-=== Notes
-.
+==== Notes
+
+Vault etait acheté par IBM.
+OpenBAO est la version OSS de vault
+
+Infisical est né en 2022. OSS
+exist tne mode SaaS/enterprise ou OSS/self hosted.
+
+les secret dans k8s sont pas vraiment des secret. c'est du base 64.
+stocké dans la DB etcd, on peut les chopé dans les logs de l'api server.
+Operator et CSI exists (comme pour vault)
+CSI est pratique quand on veux pas passer par l'api server.
+
+Infisical a aussi un agent qu'on peut deployer sur les pod de nos appli.
+
+infisical a un scanner pour scanner les projet et etre sur qu'il y a pas de secret en claire
+
+on dis chifré mais pas crypté.
 
 == Vendredi
-
-=== 9h00 - 9h25 (AMPHI BLEU) Comment modeliser l'etat du monde en 2100
-==== Abstract
-```
-Comment modéliser l’état du monde en 2100 ? Pas la question la plus simple ! Mais en 1972 un groupe de chercheurs du MIT a essayé de répondre à cette question : c’est le fameux et fascinant rapport Meadows. Et ils ont compris bien des choses avant tout le monde. Dans cette conférence interactive, je vous fais un résumé en 20 minutes de la méthode et surtout des résultats du rapport Meadows !
-```
-
-.speaker ANATOLE CHOUARD
-Je m’appelle Anatole, j’ai 27 ans et je suis vulgarisateur scientifique ! Pour ça j’ai 2 casquettes : je suis à la fois conférencier et sur YouTube. Après des études en classe préparatoire PC (Physique-Chimie), j’ai étudié les mathématiques appliquées à l’École Polytechnique, puis la modélisation mathématique à la University College de Londres. J’applique maintenant ces enseignements dans ma vulgarisation des sciences !
-
-=== Notes
 
 === 9h00 - 9h25 (AMPHI BLEU) Plongé dans l'ere Quantic
 ==== Abstract
@@ -396,7 +872,17 @@ L’objectif ? Vous donner un premier bagage de connaissances pratiques pour com
 Ce talk s’adresse à tout développeur ou architecte passionné par l’innovation et curieux de comprendre comment la physique quantique est en passe de remodeler l’informatique.
 ```
 
-=== Notes
+==== Notes
+il y a aujourdhuis une 10aine de different ordi quandtine.
+il va faloir tjr des ordi normal pour piloter les ordi quandtic.
+Par contre sur les ordi quandtic la facon de developer va etre completement different.
+des atomes, des photons, des ion dans des diament, ect... chacun sa facon de developper du coup.
+aujourdhuis ça va de 10 quibit a 150. ca fait pas grand chose.
+
+on peut emuler des ordi quandtic sur les PC pour commencer à tester et
+developper.
+
+
 
 === 9h35 - 10h00 (AMPHI BLEU) Les LLMs revent ils de cavaliers electriques ?
 ==== Abstract
@@ -407,8 +893,7 @@ Thibaut Giraud est docteur en philosophie et créateur de la chaîne de vulgaris
 Les LLM ne *comprennent*-ils rien parce qu'ils ne font que de la prédiction de prochain token ? *Comprendre* est un terme notoirement difficile à comprendre. Pour éclairer ce point, je voudrais discuter d'un usage des LLM très particulier : la génération de coups au jeu d'échecs. Un LLM pourrait-il jouer ne serait-ce qu'une partie entière sans coup illégal ? Des études ont mis en évidence que certains LLM sont capables de faire mieux que cela : ils jouent au niveau d'un bon joueur humain à partir seulement d'un historique de coups dont ils prédisent la suite. Plus intéressant encore : on peut montrer qu'ils se construisent spontanément un modèle interne du jeu. Cet exemple sur un cas précis est instructif pour réfléchir plus généralement à la question de savoir si les LLM ont un modèle du monde. Face à de tels résultats, il semble difficile de maintenir la position selon laquelle les LLM se réduisent à des "perroquets stochastiques".
 ```
 
-=== Notes
-
+==== Notes
 
 === 10h30 - 11h15 (NEUILLY 151) Si l’enfer existe, on y trouve des devs qui gérent des clés de chiffrement
 
@@ -434,11 +919,16 @@ Si vous n’utilisez pas la deuxième alternative : venez vite voir ce talk ! Ce
 ```
 
 
-=== Notes
+DEK data encryption key
+KEK key encryption key
+
+BYOK(bring your own key) avec KMIP
+on peut dire a GCP ou AWS de externaliser leur KMS chez nous avec KMIP.
+
+
+==== Notes
 
 === 11h35 - 12h20 (Maillot) 45 min pour mettre son application à genoux : le guide complet du test de charge
-
-
 
 .speaker Loïc Ortola
 Quand Loïc n’est pas en train de militer pour qu’on ne copie-colle pas les réponses de StackOverflow sans regarder la doc, il intervient en architecture dans des contextes variés en tant que CTO de Takima. Il s’implique particulièrement à donner des visions d’ensemble concrètes pour que les développeurs puissent mieux dessiner leur système cible, et des retours d’expérience pour faire gagner du temps à ceux qui se lancent, parce que ça, on le trouve pas sur Stack Overflow.
@@ -454,7 +944,7 @@ Tout le monde n'a que ça à la bouche : "Generative AI". Parmi les modèles les
 Plongée dans les Modèles de Langage à Grande Echelle (LLM)
 ```
 
-==== Notes
+===== Notes
 .
 
 
@@ -484,7 +974,39 @@ Cette présentation va montrer comment nous avons construit un debugger de produ
 Nous verrons que grâce à l'API d'instrumentation que nous fournit la JVM, il est possible de collecter toutes les données nécessaires pour une investigation tout en conservant un overhead faible compatible avec la production. Vous pourrez ainsi développer vos propres outils qui vous aideront à gérer vos incidents en toute sérénité !
 ```
 
-==== Notes
+===== Notes
+pourquoi on voudrais debugger en prod ?
+ajouter des log, spans, metrics.
+
+JVM instrumentation API permet d'ajouter des feature a l'appli qui tourne.
+
+on construit un agent, et ce agent va etre lancé avant le main de notre appli. Et ca va nous permetre d'instrumentatliser notre appli.
+
+Instrumentation API  Nous permet de lancer un transformer quand la JVM charge une class.
+
+image:
+
+Y a des limite. Add/remove/rename fields or sig methods.
+mais on peut changer le bytecode des method.
+
+byteBuddy est tres pratique pour créer des java agent. Les tracer l'utilise beaucoup. Utilise ASM en dessous.
+
+image:
+
+ByteBuddy utilise les API (annotation) "Advice"
+
+Faut faire gaff quand on capture plus de chose comme le context d'execution de ma method. Faut pas logger des truc sensible sans savoir.
+
+faire du sampling pour eviter des boucle.
+mettre des condition pour eviter trop de volume d'instrumentation.
+
+
+example avoir l'argument de la method quand ca a peté une exception.
+j'ai la stacktrace dans les logs sur Datadog, mais cetait quoi l'argument qui a causé ça ?
+
+
+marche pas avec les native (graalVM ou GO) car il faut buildé l'agent avant. et donc ce n'est plus dynamic.
+On fait ca avec les extension kernel ebee
 
 === 14h35 - 15h20 (Amphi bleu) Optimisation des requêtes PostgreSQL : Parlons Performance !
 ==== Abstract
@@ -499,7 +1021,37 @@ On a tous vu des requêtes lentes en production, et c'est difficile de prédire 
 Il semble aujourd'hui primordial de s'intéresser aux performances en base de données– parce que quel est l'intérêt de passer des heures à optimiser le code applicatif si votre requête fait un scan séquentiel ? Vous obtiendrez peut-être le graal avoir des requêtes stables quelle que soit la quantité de données requêtée. Aujourd'hui, nous levons le voile sur l'optimiseur de Postgres et vous verrez que ce n'est pas de la sorcellerie!
 ```
 
-==== Notes
+===== Notes
+
+Optimiser des query ? ANALYZE
+generalement on essaie de reduire le temps passé sur l'executor.
+
+melanie pledgeman explique que fait le rewriter
+
+l'ordre des join est important sur la performance.
+
+les statistic nous permet d'avoir une idée de cout.
+sur le scan d'un page en sequentiel, le cout d'un scan de page aleatoire ect...
+ces cout vont etre important pour l'analyzer a prendre des decision.
+On utilise un index ? ou on scan sequentiellement ?
+
+
+optimizer fait des decision sur les donnée qu'il a :
+1) les statistic
+2) comment les donnée sont modelisé
+violation du 2eme form normal
+
+BRIN index est top pour les colonne deja ordonné (sparce index, c'est petit!)
+Covering index (si il est dans index 1 pas la peine de chercher dans 2)
+Partial index (avec un where)
+
+index sur secondary key est utils car ça accelere les join.
+
+quand on ajoute une index pour ameliorer une requete, penser à l'impacte sur les aux autres requetes !
+
+check index usage regularly.
+
+clustered table nous permet d'ordonner les row d'une table par rapport aux valeurs d'une colonne.
 
 ===  15h40 - 16h25 (Maillot) --- OPTIONNEL ---- The DDD Horror Picture Show
 ==== Abstract
@@ -514,10 +1066,68 @@ Le DDD est-il vraiment le coupable de certains de nos cauchemars, ou y a-t-il qu
 Une session aussi amusante qu’enrichissante dans laquelle nous vous dévoilerons quelques fantômes cachés du développement logiciel et certaines idées fausses qui peuvent hanter nos projets.
 ```
 
-==== Notes
+===== Notes
 
 
-=== 15h20 - 17h00 ------------------------------------- NETWORKING -----------------------------------
+===  15h40 - 16h25 (Maillot) Au secours ! Mon manager me demande des KPIs !
+
+.Speaker: Geoffrey graveaud
+I have been working in the field of computer science for over 15 years.
+I'm a specialist in Accelerate (the science behind DevOps ans Lean) and dora metrics and i am interested in all areas: DevSecOps, Security, Craft, Agility, Method, Product etc…
+I gained extensive experience because I had the opportunity to work for thirty different organizations.
+In my last experiences, I was CTO, Coach, Head of a consulting department, speaker, trainer, facilitator and event organizer.
+I have been a speaker for 3 years (Voxxed Days, Devquest, DevOxx, DevFest, Agile Tour, MixIt, JugSummerCamp, Sunny Tech, BDX.io, etc.)
+Currently, I am passionate about speaking coaching. In 1 year and half, I have already accompanied several 32 people especially for the preparation of TEDX, School of Product, for the contest of Miss Aquitaine, Opening Keynotes and for the springboards of speakers of Craft Records.
+Currently, i'm coach DevOps / Accelerate & Craft at Inside (a provider of solutions, services, and added value for companies and IT departments aiming for agile digital transformation (Ops and Infrastructure • Support and management of IT projects • DevOps Transformation • Digital & Development)
+You can find out more about my news https://insidegroup.fr/coachs-craft-accelerate-devops/[here]
+
+==== Abstract
+```
+Kevin était un bon lead technique. Il travaillait dans une équipe de développement de 8 personnes. Il soutenait son équipe, il était respecté et il était écouté par son manager.
+
+Mais un jour, son responsable lui demanda de mesurer la productivité de son équipe.
+Et lui demanda la chose dont on ne dit pas le nom !
+Des KPIs... 📈 😱
+Ainsi, la vie de Kevin bascule et débute ainsi une période sombre.
+
+Heureusement sur la route de son périple, il rencontre Eline - une coach agile expérimentée.
+A eux 2, ils feront face à la cruauté du destin et ils chercheront à déjouer ce mauvais sort.
+Rétabliront-ils la paix et l'ordre dans leur équipe ?
+
+```
+
+==== Note
+Technique de sandwitch.
+pain (du bon)
+garniture (la merde)
+encore du pain (du bon)
+
+La performance collective ?
+    l'integration continue
+        test auto
+        decoupage en petit lot
+        feedback client
+        management visuel
+        monitoring/alerting
+
+une pratique util ? ça impacte la performance
+
+Avis de l'equipe ? créer un formulaire en respectant les regles de psycometrie.
+Anonima et champs libre d'expression.
+le resultat d'un formulaire doit etre indicative, pas neutre.
+donc nombre de choix paire.
+les question ne doit pas etre tendent à biaiser.
+
+Effet ikea, on a construit un truc. il est pas ouf, mais on a finit de construire. on est content.
+
+KPI utils ?
+    intension
+    attention
+    emotion
+
+keep people interested
+
+=== 16h25 - 17h00 ------------------------------------- BREAK -----------------------------------
 
 === 17h00 - 17h30 (NEUILLY 153) Du full text search dans postgreSQL
 ==== Abstract
@@ -537,5 +1147,33 @@ Nous commencerons par rappeler les concepts clé de recherche textuelle tels que
 On terminera par une prise de hauteur sur ce qui marche bien, les limites du système, pour aider à prendre des décisions d’architecture dans vos projets.
 ```
 
-==== Notes
+===== Notes
 
+=== 17h00 - 17h30 (Paris 143) Dagger Modules : un couteau suisse pour moderniser vos pipelines de CI/CD
+
+.speaker: Jean-Christophe Sirot
+Staff engineer chez Decathlon. Passionné de cryptographie, mais également intéressé par la CI/CD et le Cloud Native Computing. Je fais également parti de l'équipe du ParisJUG et j'ai co-créé le meetup Cloud Native Computing Paris. En 2024 je suis devenu Dagger Commander en contribuant à Dagger avec le SDK Java.
+
+==== Abstract
+```
+Qui n'a jamais été démoralisé devant un pipeline de CI/CD bien complexe, impossible à maintenir, complexe à débuguer et dépendant de sa plateforme d'exécution ? En partant de ce constat que nous avons tous fait, Dagger renouvelle l'approche DevOps en permettant d'écrire des pipelines sous forme de code, exécutables localement, testables et portables sur n'importe quelle plateforme.
+
+Dans cette session, je vous propose d'explorer les Dagger Functions et les Dagger Modules, qui permettent de créer et de partager des composants réutilisables et adaptables pour vos pipelines et ainsi de standardiser les workflows CI/CD. Et comme rien ne vaut un cas pratique, nous découvrirons comment transformer un workflow CI/CD existant en modules Dagger portables et maintenables tout en éliminant à la fois des kilomètres de fichiers YAML et le casse-tête de la dépendance aux plateformes spécifiques.
+
+Cette présentation s'adresse aux développeurs et DevOps qui souhaitent moderniser leurs pratiques CI/CD tout en gardant le contrôle total sur leur code. Vous repartirez avec les clés pour transformer vos pipelines en composants modulaires, testables localement et utilisables partout.
+```
+
+
+=== Notes
+
+Its great to build AI agents and CI/CD pipelines.
+Tourne en locale. donc on peut le tester avant de push.
+Portable sur tout les platform!
+
+des fois on ajoute du bash ou python dans le yaml. plus besoin de script de CI complex comme ça.
+Java peut etre utiliser pour coder le CI ! (version beta)
+
+le module qu'on créer fait 2 choses:
+il s'enregistre au pres de l'engine
+implemente invoke() et decrit des parametres.
+On peu les composer les module grace à ca.
