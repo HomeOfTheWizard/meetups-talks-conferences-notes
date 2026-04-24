@@ -1,0 +1,107 @@
+= DevFest Lille 2025
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 2
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
+
+== Jeudi
+=== 10h00 - 10h45 (Marie Curie) - Commons. Good or Evil ?
+.Speakers:
+
+==== Notes
+
+=== 10h45 - 11h15 ------------------------------- BREAK -------------------------------
+
+
+=== 10h15 - 11h00 (Grand theatre) Mettre à genou vos appli avec les tests de charge
+.Speaker:
+
+==== Abstract
+```
+```
+
+==== Notes
+
+=== 11h00 - 12h15 ------------------------------------- BREAK -------------------------------------
+
+
+=== 13h45 - 14h30 (Grand theatre) Docker Bake
+==== Abstract
+.Speaker:
+
+```
+```
+
+==== Notes
+=== 14h45 - 15h30 (Marie Curie) API Green score
+==== Abstract
+.Speaker:
+
+```
+```
+
+==== Notes
+
+
+
+=== 15h45 - 16h00 Les accords toltheques
+==== Abstract
+.speaker
+
+```
+```
+
+==== Notes
+
+=== 16h00 - 16h30 ------------------------------------- BREAK -----------------------------------
+
+=== 16h30 - 17h15 (Louis Pasteur) To be or not to be Perf-Tested
+.speaker Aurelie Dardenne (SFEIR)
+
+==== Abstract
+
+```
+```
+
+==== Notes
+=== 17h30 - 18h00 Que faire de nos metrics
+.speaker (Manomano)
+
+==== Abstract
+
+```
+```
+
+==== Notes

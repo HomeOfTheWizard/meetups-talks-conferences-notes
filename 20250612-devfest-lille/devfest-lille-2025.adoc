@@ -1,0 +1,496 @@
+= DevFest Lille 2025
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 2
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
+
+== Jeudi
+=== 10h00 - 10h45 (Marie Curie) - Commons. Good or Evil ?
+.Speakers: Thomas Piscitelli
+
+==== Notes
+
+code commun entre les microservices
+    swagger
+    securité
+    fonctionnel: ex: mechanism requette http pour recup le nom des park
+
+les common doivent etre au meme version du spring boot parents
+on va faire no propre starter
+
+faut gerer les package a scanner dans spring boot
+    componentscan marche mais casse les JPATest ect...
+créer des autoconfiguration permet de contourner le problem de componentscan
+
+starter spring boot documentation
+    faire des test, cest la documentation
+suivre le versionin de spring
+faut le maintenir, donc il faut du temp.
+    faire une equipe SOCLE
+
+Evil ?
+    des truc maison cest pas ouf pour les junior
+
+    SI va grandir, donc nombre de version et code dependen a gerer va grandir.
+    dependabot peut aider les monté de version.
+
+    common de common ?
+    mutualisation de l'utilisation des common.
+
+common pour code metier ?
+    pas de dependence entre code technique et metier
+    un seul branche pour common metier
+
+faut metre le cursor selon nos capacité (temps, effectif, money)
+
+MCP est un protocole permet d'integrer les LLM avec des outils
+ex: MCP gitlab
+
+roo est une extension VSCode qui permet d'avoir access a nos LLM en chat (comme copilot)
+
+Le "S" dans MCP c'est pour la "securité"
+attentions au failles.
+
+=== 10h45 - 11h15 ------------------------------- BREAK -------------------------------
+
+
+=== 10h15 - 11h00 (Grand theatre) Mettre à genou vos appli avec les tests de charge
+.Speaker: Loic Ortola (takima)
+.Speaker: Mathilde Lorrain (takima)
+
+==== Abstract
+```
+```
+
+==== Notes
+Gatling c'est open source
+
+Soak test
+stress test
+Capacity test
+
+Scenario
+    test logic
+Protocoles
+    httpClient
+Profile d'ingection
+    combien de user dans combien de temps
+
+regrouper les scenario sur la meme basepath avec "group"
+refaire la meme action ? "repeat"
+y a aussi des "action" comme "asLongAs", "doSwitch" ect...
+"session" peut permetre de reutiliser la session d'un virtual user quand on veut avancer plus loin dans le meme "group"
+l'interpolation permet d'avoir plus de lisibilité sur des objet comme la session.
+On peut utiliser un "feeder" pour gerer les session dans gatling.
+
+y 3 types de class
+les groupes
+les actions
+les feeders
+
+il ne faut pas faire les memes test tout le temps.
+les DB et JVM optimise et met en cache les meme requetes qui arrive souvent.
+Faut faire du random. il faut discuter avec les PO et PM pour faire des simulation qui ont du sense.
+
+2 facon d'utiliser les session
+    dans la method exec
+    avec "check"
+
+Simplifier l'authent pour les test de charge.
+on fait pas de test e2e UI, on charge le backend. Pas la peine de tester la secu.
+
+Un petterne qui marche.
+TestGateway
+I API dans mon SI, existe que en staging.expose des endpoint specific pour mes tests.
+Genre renvoie 5000 access token pour 5000 virtual user.
+
+
+Comment clean les donnée généré par les test.
+Approche dev ? (before and after hooks, clean Db)
+Approche platforme. c'est mieux.
+
+
+Faciliter la maintenance des test ? les lancer souvent. sur le CI.
+faire des smoke test à chaque PR. avec peux de user, pour valider que ça fonctionne.
+
+
+https://taki.lo/gatling
+
+
+
+=== 11h00 - 12h15 ------------------------------------- BREAK -------------------------------------
+
+
+=== 13h45 - 14h30 (Grand theatre) Docker Bake
+==== Abstract
+.Speaker: Mazlum Tosun
+
+```
+```
+
+==== Notes
+BuildKit est l'ancestor de bake.
+
+Buildx est un plugin CI basé sur build kit.
+Devenu la cli de docker standard.
+
+Bake viens aujourdhuis par default avec buildx.
+peut utiliser les langages HCL(hashicorp terraform) ou Yaml.
+
+UV est un package manager python codé en rust. (plus rapide que les autres existant)
+
+cache docker est important pour ne pas build les layer qui n'ont pas changé.
+
+multi build permet de ne pas avoir tout ce qui n'est pas necessaire dans l'execution de l'image final, dans l'image.
+que le stage final reste dans l'image.
+donc les stage builder sont effacé.
+
+
+Avec bake, on peut faire de l'inheritence de build docker entre les build target.
+
+on peut faire du bake dans docker compose !
+
+on peut combiner plusieurs fichiers hcl bake (on peut pas avec docker build classic)
+
+en mettant le cache de build docker sur un registry distant, on peut profiter d'un cache inter CI (dispo depuis github, gitlab ect...)
+
+
+pour le moment les notion de "foreach" de terraform n'existe pas encore dans bake.
+
+
+=== 14h45 - 15h30 (Marie Curie) API Green score
+==== Abstract
+.speaker (IPPON)
+
+```
+```
+
+==== Notes
+le reseau core consomme plus d'energie que les datacenter
+
+collectif de API thinking fournis un grill de calcule API Green score avec des regles/questions.
+
+https://www.collectif-api-thinking.com/noslivrables
+
+
+
+=== 15h45 - 16h00 Les accords toltheques
+==== Abstract
+.speaker
+
+```
+```
+
+==== Notes
+Anti egoless programming.
+Faut etre doux dans sa communication.
+Mes mots on un effet sur les autres.
+
+"n'en fait pas une affaire personnelle". les paroles des autre que j'accepte deviens ma perception personelle.
+il faut eviter ça.
+
+Il ne faut pas faire de supposition.
+
+fait le mieux de toi meme, mais ne dis pas systematiquement oui à tout.
+
+soit sceptique, mais apprend à ecouter
+
+
+Don moguel Ruiz
+les accords toltheque
+
+
+=== 16h00 - 16h30 ------------------------------------- BREAK -----------------------------------
+
+=== 16h30 - 17h15 (Louis Pasteur) To be or not to be Perf-Tested
+.speaker Aurelie Dardenne (SFEIR)
+
+==== Abstract
+
+```
+```
+
+==== Notes
+Web perf vs Perf test
+
+LoadTest:
+    attendre sur un plateau haut qui correspond à la charge en production
+Stress Test:
+    on surcharge. le plateau est plus haut que la prod actuelle
+Endurence Test
+    on ralonge la durée sur le plateau haut.
+Peak Test:
+    on fait un plateau bas, et on va lui ajouter des coup soudins. On test le scaling de l'appli.
+Crash Test:
+    on test le point de rupture de l'appli.
+
+
+Strategie de test:
+* Env Iso Prod
+    env isolé
+    env iso archi
+    env iso interaction
+    env iso infra
+    mocks
+    à la demande.
+
+* Senario
+    Iso prod: parcour utilisateur réél
+        on peut les chercher a travers le metrics de monitoring
+        on peut aussi utiliser les SLO
+    Iso prod: volume, distribution, loi de pareto
+    20% des feature devrons repondre a 80% de l'utilisation en prod.
+    Il faut couvrir que les cas successful dans les test de charge.
+
+
+* Données
+    Dump de prod vs construction
+        annonymisées
+    Distribution (definir des tails de tshirt pour nos URL)
+
+
+Quel Outils ?
+    Pour qui je fait les test ?
+    Communauté ? licence ?
+    Orchestrateur ?
+    Automatisation ?
+    Besoin de suivi de test ?
+
+blazemeter permet d'avoir un interface et suivis de resultat.
+    sort des metrics orienté client.
+    applicative peut aller sur datadog
+    Db sur Aiven
+    Permet d'envoyer des raport par mail ou autres.
+
+
+Quest ce qu'on regle grace au test de perf ?
+    Optim DB (index)
+    Fuite memoire (sur les test d'endurence)
+    Split des lecture et ecriture sur les meme ligne de la table
+    Mise en cache
+    Retry / Timeout
+    Tunning de la JVM
+    Scaling
+
+
+
+=== 17h30 - 18h00 Que faire de nos metrics
+.speaker (Manomano)
+
+==== Abstract
+
+```
+```
+
+==== Notes
+A base agent (datadog)
+a base de scrapper (prometeus)
+
+un appli spring boot
+    just dire qu'il est healcheck up
+        et une consommation CPU
+        ne veux pas dire qu'il est en train de faire son boulot.
+    Hautement disponible ? (nb d'instance ready)
+    un pod qui redemarre doit remonter une alerte (donc avoir une metric)
+    il faut pas 1000 metric
+        prendre ce qui nous interesse
+        ex: image.
+
+une erreur sur 3 occurence n'a pas la meme signigication que une erreur sur 1000 occurence.
+Genre un moyen de payement qui n'est presque jamais utilisé remonte une alerte, c'est peut etre pas si grave.
+
+
+
+== Vendredi
+
+=== 11h15 - 12h00 (Grand Theatre) Deconstruire le JS
+==== Abstract
+.Speakers Nirina Rabeson
+
+```
+```
+
+=== Note
+
+    Quand on créer des composant, il faut garder la composibilité des element web.
+    ex: on construit une fonction "h" pour afficher un tableau de bingo.
+    Quand on construit la fonction "h", on s'en foue de comment ça va s'afficher.
+    on delegue ça a la fonction "render"
+
+Reactivité:
+    aucun des 3 majeur framework fait de la meme facon.
+    un standard emerge, "proxy" qui est present dans tout les navigateur.
+    un proxy intercept la lecture et l'ecriture / modification d'un variable.
+    il faut qu'on stock qqpart nos dependence de reactivité pour faire ça. (un weakmap)
+    on enregistre a l'initialisation tout nos dependences.
+
+Svelt promote le vibe. les hook dans react viens de ça
+SolidJS, je veux de la reactivité dés le debut.
+
+on va peut etre arriver a avoir des outils independent des framework. ex: routeur react utilisé dans d'autres projet ect...
+
+
+
+=== 13h00 - 13h20 (Grand theatre) Frontend first, et si au final on avais plus besoin de backend
+
+==== Abstract
+.Speaker: Nasim Yagoub (gojob)
+
+```
+```
+
+==== Notes
+permetre au dev front de rejoindre le projet au niveau de la definition de la maquette. Pas apres.
+Developper dés le debut un front fonctionnel (comme ce que Sophian a fait pour improve)
+
+developper des fausse donnée ?
+non ! alterner entre implementation fausse et réél données.
+L'inversion de dependence (comme en java)
+
+mock vs frontend first
+    moin de dependence au test
+
+context ou il faut pas:
+    la valeur ajouté est au niveau backend
+    equipe peu d'appetence front (iteration majoritairement sur le front)
+    CRUD (pas de logic sur le front)
+
+
+
+
+=== 13h45 - 14h30 MPC
+.Speaker:
+
+==== Abstract
+```
+```
+
+==== Notes
+MCP c'est du JSON RPC avec un transport.
+en gros un API qui permet au outils d'interagir avec les LLM.
+
+bigAG AI est un interface de chat qui interragie avec le backend AI.
+
+les standard permet de l'interoperabilité et rependre l'utilisation des IA.
+
+Les 3 pouvoirs que ça donne aux IA
+* les ressources = les yeux de l'IA
+* les actions = les main de l'IA
+* les prompt = le mode d'emploi
+    ex: recupere mes ressources (le LLM va aller lire la DB)
+        "met à jour les slide" (dans le server MCP j'ai exposé un promp "met à jour les slide", qui est preprogrammé à faire l'action de la facon que je veux)²
+
+MCP est les API REST du future.
+
+Les notification est prevu dans le protocole MCP
+les prix on changé ? qu'est ce qu'on fait ? ok je gere !
+
+API vs MCP, la nueance est sur le niveau d'utilisation par l'IA.
+Les API sont fait pour les dev. Il ne vont pas potentiellement bien etre utilisé par les IA.
+MCP permet de faire un server vraiment utilisable pour les IA
+
+
+
+=== 14h45 - 15h30 Faut il deconstruire l'IA
+.Speaker: Marine Sobas (dataiku)
+
+==== Abstract
+```
+```
+
+==== Notes
+Deconstruire/decomposer pour faire du modulaire.
+
+les archi monolitique sont arrivé a une saturation de taille.
+en augmentant la taille du model on ne gagne plus asses de performance. Les model statistic sont meilleurs. ex: imagerie medical.
+
+Faut trouver le juste milieu entre latence et modularité
+.image
+
+anthropic fait un travail:
+le reverse engineering des model permet d'interpreter le finctionnement des models.
+
+la decomposition permet de créer des model specialiser sur un concept. ex claude golden gate.
+
+si on arrive a extraire ces concept utilisé par les model general de langue comme claude, on pourrais comprendre l'interaction des diff concept et remplacer ces interaction par du code, et utiliser des model special qui interagissent a travers du code.
+
+
+
+deconstruction phylosophique des IA
+ex: l'exceptionnalism americain est present dans les grand LLM.
+
+
+
+
+=== 16h25 - 17h00 ------------------------------------- BREAK -------------------------------------
+
+=== 17h00 - 17h30 (Maillot) Nullaway
+.Speaker: Alexandre Navarro
+Geek dans l'âme, je suis Développeur / Architecte / Tech Lead pragmatique depuis plus de 20 ans sur des applications java haute performance pour les Traders et Sales.
+
+==== Abstract
+```
+Vous aussi vous, vous êtes arrachés les cheveux sur des NullPointerException (NPE pour les intimes) en production et vous voudriez éviter cela?
+Cette présentation est faite pour vous.
+L'idée du talk est de vous présenter différentes techniques afin d'éviter au maximum les potentielles NPE.
+Dans un premier temps, nous parlerons de l'utilisation de certaines classes, de patterns et de bonnes pratiques pour les éviter.
+Le cœur de la présentation s'attardera ensuite sur la présentation et le retour d'expérience sur nullaway, un annotation processor qui permet de vérifier les potentielles NPE à la compilation.
+Nous conclurons avec les avantages de nullaway mais aussi ses limites dans des projets déjà en production et nous finirons avec ce que nous réserve le jdk concernant la gestion des null dans le futur.
+```
+
+==== Notes
+
+
+=== 17h30 - 17h50 ------------------------------------- BREAK -----------------------------------
+
+=== 17h50 - 18h20 (Paris 141) Infiscal - le meilleur ami des devs pour garder les secret
+.Speaker: Julien Briault
+Ingénieur Réseau / SRE chez Deezer la journée, et manager d’infrastructure bénévole aux Restos du Cœur le soir, je suis un peu le Batman de l’IT : un clavier pour le travail, un autre pour les Restos.
+
+==== Abstract
+```
+La gestion des secrets est un enjeu crucial pour la sécurité des infrastructures modernes. Si HashiCorp Vault a longtemps régné en maître, de nouvelles alternatives Open Source viennent aujourd'hui en proposant des alternatives sérieuses.
+
+Je présenterais Infisical, une solution Open Source qui mise sur la simplicité d’utilisation, l’efficacité, et une compatibilité sans faille avec vos environnements de développement préférés.
+Spoiler : gérer vos secrets n’a jamais été aussi simple, même avec des environnements multiples (prod/staging/dev/sandbox) – de quoi enfin donner à vos développeurs un sommeil un peu plus paisible.
+
+Et ce n’est pas tout : depuis qu’Hashicorp (IBM) a pris un virage vers la BSL (Business Source License), certains challengers comme Infisical qui redouble d'arguments pour vous séduire.
+
+Enfin, pour ne pas vous laisser sur votre faim, je conclurais avec une démonstration technique. Ainsi, vous découvrirez comment intégrer Infisical dans Kubernetes (grâce au Secret Operator dédié), mais aussi avec Ansible et plusieurs langages comme Java, Python et Go.
+
+Je vous le promets, après cette conférence, gestion des secrets n'aura plus aucun secret pour vous !
+```
+
+==== Notes
