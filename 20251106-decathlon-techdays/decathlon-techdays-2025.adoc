@@ -1,0 +1,242 @@
+= DevFest Lille 2025
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 2
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
+
+== Jeudi
+
+=== 09h30 - 10h30 (Salle de Sport) - Building an MCP server with Spring-AI
+.Speakers: Gregoire WAYMEL
+
+==== Notes
+
+Streamable HTTP replaces http + SSE transport
+difficult to configure sessions on MCP servers with classic http. Streamable http allows this.
+req/resp only.
+Second call contains the context built from first query.
+Streamable http but cannot send multiple query in one http request.
+
+OICD (fedId) local authentication is useful for debug. even if not for prod.
+
+you can configure an endpoint on your MCP yoruself to get a client_id for OICD but allow it only if the call comes from localhost to localhost.
+
+.image
+
+transferine authetication from MCP agent to server is difficult.
+Its not a simple API call.
+Spring AI 1.1 manages OICD
+
+Easier if your agent is on UI.
+If it is on the back, you need to ask IAM team to configure the token exchange. Not yet on loginWith.
+
+
+Can I MCP any API server ?
+API =
+.image
+
+80% of MCP will be user oriented.
+But it is difficult to make one MCP generic enough to target all user requirement on the same API.
+That is why we have more MCP than users.
+
+
+
+
+== HANDSONS
+=== 10h30 - 12h30 (Camping) Introduction to Rust
+.Speaker:
+
+==== Abstract
+```
+```
+
+==== Notes
+Memory model
+    Stack & Heap
+    In Rust we have the heap managed better than low level languages (it is not manual) but not like java neither (no GC).
+
+    In rust we have Structs (like C), instead of classes (in java)
+    String literal in stack and String objects in heap (just like in java)
+
+    Memory in rust is managed by Ownership.
+    Every value in heap has an owner.
+    if owner goes out of scope, the value is erased from heap automatically.
+
+    if you assign the value of a Objects to another one, the first one becomes undefined. That is how memory in heap works.
+    We dont copy values in heap, we change reference and ownership.
+
+    In stack, the values are copied. So assigning values to other variables works without deleting the source variable.
+
+    you can have either immutable (&) or mutable reference to the same value (&mut). Not both at the same time.
+
+
+
+
+
+
+
+
+
+== --------
+
+=== 12h30 - 13h00 ------------------------------- BREAK -------------------------------
+
+
+=== 13h00 - 13h30 (Cap Horn) Authorize Anything, Anywhere: The Power of a Decoupled, Fine-Grained Auth Service with OPA
+
+==== Abstract
+.Speaker: Cheikna ANSOKO (OPS NETWORK engineer))
+.Speaker: Augustin MARMUS (OPS NETWORK engineer)
+
+```
+```
+
+==== Notes
+Open Policy agent is part of CNCF.
+Use a language 'REGO' to define its policies.
+
+OPA acts as a middleware between data and api requests comoint to an API server from a user.
+.image
+
+
+
+
+=== 13h30 - 14h00 (Salle de Sport) Agentic AI Patterns
+==== Abstract
+.Speaker: Mario FUSCO (Quarkus Redhat)
+
+```
+From orchestrated workflows to autonomous agents: A guide to implemention and testing
+```
+
+==== Notes
+1. Single AI service
+    * Chat memory allows the agent to be conversational.
+    It allows it "to remember" what you said previously to the LLM.
+    * Tooling allows to fill the parts LLMs fall short (matematical queries for example)
+    * Prompts
+    * RAGs
+    * Guardrails
+
+2. Agentic system (we have multiple specialised services collaborating together)
+    * sequence workflow
+        called prompt chaining
+        Stores shared variables (state)
+        Persistable via a pluggable SPI
+    * Paralell workflow
+        Uses an aggregator
+    * Routing workflow
+        local agent states are not shared among sub agents.
+        Routing agent must be configured to manage that explicitely
+
+Workflow vs Supervisor Agent
+Use wherewhere you can the programmatic workflow.
+.image
+
+You can plug a normal API to the workflow as an non AI agent with Langchain4j annotations.
+
+Humain in the loop.
+
+A2A integration
+
+CDI support by a quarkus extension
+
+
+=== 14h00 - 15h00 ------------------------------- BREAK -------------------------------
+
+=== 15h00 - 17h00 (Capoeira) Instrumenting Your Application with OpenTelemetry: A Hands-On Workshop
+==== Abstract
+.Speaker
+
+```
+```
+
+==== Notes
+It is a standard (like MP3 that deprecated IPods)
+Logs:
+    Tags in DD is Ressource Attributes in OpenTelemetry.
+        "service.name"
+        "k8s.cluster.name"
+        "deployment.environment.name"
+        ect ...
+    Resource attributes are fix by execution
+    Log related attributes can change. ex: "http.request.method"
+
+    Decathlon 3S has conventions for specific attributes.
+        "dkt.country.code"
+
+    (NOTE)Colibra is the business data inventory of decathlon.
+
+Trace:
+    APM is the science behind the trace.
+    Cloud event headers in HTTP requests allow us to correlate events that spans multiple applications.
+    Trace regroups events from different spans.
+        TraceId and spanId are from a W3C specification that were taken later by open telemetry.
+
+    Auto vs Manual Instrumentation
+        Auto means the DD agent is created automatically in your pod, by an agent running on your cluster.
+        Or opentelemetry agent
+
+Metrics:
+    Numeric values:
+        Gauge is an average of multiple measures in time
+        Sum is an aggregation of measurements.
+
+@WithSpan
+allow us to add business related information into our trace so we can debug our app easily (ex: productId)
+
+=== 16h30 - 17h00 ------------------------------------- BREAK -----------------------------------
+
+=== 16h30 - 17h00 (Salle de Sport) Don’t trust Kafka Spring default error handler, build your own !
+.Speaker:
+
+==== Abstract
+
+```
+```
+
+==== Notes
+
+
+
+=== 17h00 - 17h30
+.Speaker
+
+==== Abstract
+
+```
+```
+
+==== Notes
